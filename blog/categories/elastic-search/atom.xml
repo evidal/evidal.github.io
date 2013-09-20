@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: elastic search | Le Blog d'Eric Vidal]]></title>
+  <link href="http://evidal.github.io/blog/categories/elastic-search/atom.xml" rel="self"/>
+  <link href="http://evidal.github.io/"/>
+  <updated>2013-09-20T10:33:49+02:00</updated>
+  <id>http://evidal.github.io/</id>
+  <author>
+    <name><![CDATA[Eric Vidal]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Elastic Search]]></title>
+    <link href="http://evidal.github.io/blog/2012/10/18/elastic-search/"/>
+    <updated>2012-10-18T00:00:00+02:00</updated>
+    <id>http://evidal.github.io/blog/2012/10/18/elastic-search</id>
+    <content type="html"><![CDATA[<p>Elastic Search est un moteur de recherche basé sur Lucene expérimenté par la société
+dans laquelle je travaille depuis un certain temps. Ce moteur était présenté
+dans le cadre du Lyon JUG par <a href="http://dev.david.pilato.fr/">David Pilato</a> et <a href="https://twitter.com/tlrx">Tanguy Leroux</a>.</p>
+
+<p>L'interview pre-JUG par les Duchess est disponible <a href="http://www.duchess-france.org/rencontre-avec-david-pilato-sur-elastic-search/">ici</a>.
+La présentation elle même est disponible <a href="http://t.co/piqUOkTE">ici</a>.</p>
+
+<p>Je ne vais pas réexpliquer le fonctionnement d'Elastic Search car de nombreux articles le font déjà (et notamment la présentation de David Pilato).
+De notre coté nous avons sélectionner Elastic Serach pour plusierus fonctionnalités importantes pour nous:</p>
+
+<ul>
+<li>Nos logicielles sont déployés sur des clusters pour avoir un fonctionnement Actif-Actif. C'est une des fonctionnalités de base d'Elastic Search.</li>
+<li>Nous manipulons des données très volumineuses en terme de nombre (plusieurs dizaines, voir centaines de millions). Elastic Serach est &ldquo;taillé&rdquo; pour ce volume.</li>
+<li>La navigation par &ldquo;Facet&rdquo; qui nous est nécéssaire</li>
+</ul>
+
+
+<p>Cependant nous en sommes encore au stade de l'étude et nous n'avons pas encore de vrai déploiement utilisant cette technologie.</p>
+
+<p>Voilà quelques points importants que j'ai noté pour mémoire:</p>
+
+<ul>
+<li>Sécurisation,
+
+<ul>
+<li>pour l’instant Elastic Search n’est pas sécurisé. Il est possible qu’il le devienne mais pas dans les toutes prochaines versions.</li>
+<li>1ère stratégie : mettre un apache devant et « jouer » avec les règles d'un firewall (DMZ)
+<strong> ajouter une couche http authent pour l'accès
+</strong> utiliser des filtres pour restreindre l’utilisation de certaines commande (comme DELETE, PUT)
+** en séparant les index, on peut spécifier des chemins d’accès à des données et gérer des profils</li>
+<li>2ème stratégie, utiliser le plugin suivant <a href="https://github.com/sonian/elasticsearch-jetty">https://github.com/sonian/elasticsearch-jetty</a> (solution recommandé uniquement par 1 des speakers)</li>
+</ul>
+</li>
+<li>Cluster et déploiement
+
+<ul>
+<li>Les préconisation de déploiement sont de 1 shard par serveur (1 shard = 1 instance de Lucene) + 1 replica</li>
+<li>/!\ on ne peut pas changer le nombre de shards une fois qu’un index est crée</li>
+<li>Les intervenants recommandent de bien dimensionner son cluster dès le départ, rajouter un nouveau membre au cluster est assez lourd en terme de consommation sur des indexes volumineux</li>
+<li>Il est préférable d’effectuer les montées de version à froid (même si des procédures à chaud existent)</li>
+<li>D’après le concepteur d’Elastic Search si une requête met plus de 100ms, c’est que la plate-forme est sous dimmensionné.</li>
+</ul>
+</li>
+<li>Il existe une JDBC River qui permet automatiquement d’indexer une table au fil de l’eau
+
+<ul>
+<li><a href="https://github.com/jprante/elasticsearch-river-jdbc">https://github.com/jprante/elasticsearch-river-jdbc</a></li>
+</ul>
+</li>
+<li>Un projet d’indexation de Log existe déjà
+
+<ul>
+<li><a href="http://logstash.net/">http://logstash.net/</a></li>
+</ul>
+</li>
+<li>Déploiement de références
+
+<ul>
+<li>Des déploiements existent avec 25 noeuds indexant plus d’1 milliard de documents</li>
+<li>Le premier intervenant (David Pilato) a travaillé sur un projet indexant 500.000 documents des douanes françaises. Le projet tournait sur 3 serveurs low end (CPU 2 cores, mémoire 4GB)</li>
+<li>Le deuxième (Tanguy Leroux) a travaillé pour un assureur pour indexer 20.000.000 documents (chaque document était l’équivalent d’une page word). Le projet tournait sur 4 serveurs low end (CPU 2 cores, mémoire 4GB)</li>
+</ul>
+</li>
+<li>Utiliser Elastic Search comme un entrepot de données
+
+<ul>
+<li>le créateur le déconseille pour l'instant mais ce sera peut-être possible à l'avenir.</li>
+<li>Un des intervenant a indiqué qu'il connaissait un projet utilisant Elastic Search comme base de données principale. Mais dans ce cas il fallait faire une croix sur les transactions et autres fonctionnalités d'une base de données.</li>
+</ul>
+</li>
+</ul>
+
+
+<p>Session très intéréssante et speakers disponibles pour répondre aux questions !</p>
+
+<p>Merci le Lyon JUG.</p>
+]]></content>
+  </entry>
+  
+</feed>

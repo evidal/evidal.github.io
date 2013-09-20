@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: jee | Le Blog d'Eric Vidal]]></title>
+  <link href="http://evidal.github.io/blog/categories/jee/atom.xml" rel="self"/>
+  <link href="http://evidal.github.io/"/>
+  <updated>2013-09-20T10:33:49+02:00</updated>
+  <id>http://evidal.github.io/</id>
+  <author>
+    <name><![CDATA[Eric Vidal]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Sophisme et Spring]]></title>
+    <link href="http://evidal.github.io/blog/2012/07/24/sophisme-et-spring/"/>
+    <updated>2012-07-24T00:00:00+02:00</updated>
+    <id>http://evidal.github.io/blog/2012/07/24/sophisme-et-spring</id>
+    <content type="html"><![CDATA[<p>Une petite note en passant suite aux commentaires d'un fournisseur (qui m'énerve).</p>
+
+<p>Ce fournisseur donc aime bien travailler avec Spring, ils sont à l'aise avec et travaille plutôt bien dessus.
+Ces gens là donc sont en train de récupérer un logiciel pour en assurer sa maintenance et sa roadmap.
+Une de leur mission et d'améliorer les tests unitaires qui sont pour l'instant faible, et la c'est le drame (avec le ton d'Enquêtes exclusives ).</p>
+
+<p>Voila leur argumentaire:</p>
+
+<ul>
+<li>Spring c'est super testable</li>
+<li>Votre application utilise des EJB (NB: JEE 1.5, EJB 3.1)</li>
+<li>Votre application n'est pas testable, il faut tout injecter à la main, c'est trop compliqué.</li>
+<li>Vous auriez dû utiliser Spring</li>
+</ul>
+
+
+<p>AAaaaaah mais que ça me fatigue/énerve.</p>
+
+<p>Disclaimer : Je considère que le système d'injection de Spring ne sert à rien dans un serveur d'application depuis JEE 1.5.
+Après pour les autres éléments &ldquo;Springuiens&rdquo;, c'est une autre histoire.
+D'autant plus que l'utilisation de JEE ou Spring n'est pas exclusive !</p>
+
+<p>Quand j'entends des arguments du genre Spring c'est mieux parce que c'est plus simple à tester, ça me fait juste bondir. C'est un argument moisi.
+Il serait beaucoup plus honnête et acceptable de dire &ldquo;je suis plus à l'aise avec Spring qu'avec JEE 1.5, alors s'il te plait laisse moi utiliser Spring&rdquo;.
+Ça je pourrais l'entendre. Le reste, c'est juste de l'incompétence.</p>
+
+<p>Pour mémoire &ndash;> <a href="http://www.adam-bien.com/roller/abien/entry/unit_testing_ejb_3_1">http://www.adam-bien.com/roller/abien/entry/unit_testing_ejb_3_1</a></p>
+
+<p>ou alors</p>
+
+<p><a href="http://www.jboss.org/arquillian.html">http://www.jboss.org/arquillian.html</a></p>
+]]></content>
+  </entry>
+  
+</feed>

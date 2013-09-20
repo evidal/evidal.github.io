@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Tunning de la JVM - Le Blog d'Eric Vidal</title>
+  <meta name="author" content="Eric Vidal">
+
+  
+  <meta name="description" content="">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Cardo" rel="stylesheet" type="text/css">
+
+  
+  <link rel="canonical" href="http://evidal.github.io/blog/2012/02/20/Tunning-de-la-JVM">
+  <link href="/favicon.png" rel="icon">
+  
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link href="/stylesheets/elusive-webfont.css" rel="stylesheet">
+
+  
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/custom.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  <script src="/javascripts/libs/jquery.js"></script>
+  <script src="/javascripts/libs/modernizr-2.0.js"></script>
+  <script src="/javascripts/libs/bootstrap.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Le Blog d'Eric Vidal" type="application/atom+xml">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+  
+
+</head>
+
+<body   >
+  <div class="container-narrow">  
+	  <div class="container">
+	  	<div class="header">
+  <div class="container">
+    <img src="/images/coffee-cup-48.png" class="headerct">
+    <a class="headerct" href="/">Le Blog d'Eric Vidal</a>
+  </div>
+  <nav role="navigation"><div class="navbar navbar-inverse container">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <!-- <a class="brand" href="/">Le Blog d'Eric Vidal</a> -->
+
+      <div class="nav-collapse">
+        <ul class="nav">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/cv">CV</a></li>
+</ul>
+
+
+        <ul class="nav pull-right" data-subscription="rss">
+          <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS"><i class="icon-rss"></i></a></li>
+          
+        </ul>
+
+        
+          <form class="pull-right navbar-search" action="http://google.com/search" method="get">
+            <fieldset role="search">
+              <input type="hidden" name="q" value="site:evidal.github.io" />
+              <input class="search-query" type="text" name="q" results="0" placeholder="Search"/>
+            </fieldset>
+          </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+      <!-- <div class="">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/blog/archives">Archives</a></li>
+        </ul>
+        <h3 class="muted">
+          <img src="/images/coffee-cup-48.png" class="headerct">
+          <a class="headerct" href="/">Le Blog d'Eric Vidal</a>
+        </h3>
+      </div> -->
+</nav>
+</div>
+
+	    <div class="row">
+	      
+<div class="span9">
+
+  <article class="hentry" role="article">
+    
+  <header class="page-header">
+    
+      <h1 class="entry-title">Tunning De La JVM</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-20T00:00:00+01:00" pubdate data-updated="true">20/02/12</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Le 17 janvier 2012 avait lieu une soirée au Lyon JUG ayant pour thème la performance des serveurs en java. Le speaker Ludovic Poitou est un ancien de chez Sun qui a quitté la société suite au rachat par Oracle.</p>
+
+<p>Sa présentation était originale, car contrairement à beaucoup d’entre nous, son logiciel <a href="http://forgerock.com/opendj.html">Open DJ</a> ne tourne pas sur un serveur d’application mais en standalone.</p>
+
+<p>Après une présentation détaillée de sa société, j’ai beaucoup aimé l’explication de la gestion de la mémoire de la JVM. J’avoue que c’est un sujet sur lequel je me suis peu penché car les applications sur lesquelles je travaille n’ont pas le même niveau d’exigence que c’est fixé l’équipe d’Open DJ. L’application la plus “chargée” sur laquelle j’ai travaillé répondait sans broncher à 400 requêtes/seconde HTTP en pointe sur un seul serveur, ce qui est déjà un score honorable sur un serveur d’application d’il y a 5 ans. Mais je ne joue pas dans la même cour, le serveur Open DJ monte à plus de 80000 requêtes/seconde, 200 fois plus de charge.</p>
+
+<p>Pour arriver à ce niveau de performance, il faut avoir une très bonne connaissance du fonctionnement de la JVM, et notamment de la gestion de sa mémoire. Open DJ utilise également une base donnée simple et embarquée : <a href="http://www.oracle.com/technetwork/database/berkeleydb/overview/index.html">Berkeley DB</a></p>
+
+<p>Je vous invite à relire la présentation disponible via le site du Lyon JUG (<a href="http://www.lyonjug.org/evenements/perf-serveur">ici</a>).</p>
+
+<p>Suite à cette présentation je me suis penché sur les paramètres qu’on utilisait pour faire tourner notre JBoss en production. On avait optimisé les options de la JVM de manière un peu empirique, en s’appuyant sur des morceaux de configuration qu’on avait récupéré à travers différents blogs et aussi suite à de nombreuses campagnes de test.
+Voilà ce que nous utilisons en production:</p>
+
+<ul>
+<li>-d64 : pour faire fonctionner la JVM en 64 bits, et donc adresser au delà de 4Go</li>
+<li>-Xms8192m, pour réserver au minimum 8Go de Mémoire vive. C’est une stratégie défensive pour être sur que notre JVM ne se fera pas “piquer” la mémoire par d’autres applications.</li>
+<li>-Xmx8192m, pour ne pas dépasser ces fameux 8Go et donc laisser de l’espace aux autres applications tournant sur le serveur.</li>
+<li>-XX:MaxPermSize=512m, l’espace la mémoire de type Permanent Generation contient toute les données statiques de la JVM. Il faut qu’il soit suffisamment grand mais pas démesuré. 512 Go est un bon chiffre pour les applications allouant au delà de 8Go de mémoire, il peut être réduit à moins pour les applications plus petite. Il est extrêmement rare d’allouer au delà de 512Mo (jamais vu de mon coté)</li>
+<li>-Djava.awt.headless=true, l’option classique pour les serveurs Unix n’ayant pas de serveur X installé</li>
+<li>-Dorg.jboss.resolver.warning=true, c’est une option qui était déjà présente. On l’a laissée.</li>
+<li>-Dsun.rmi.dgc.client.gcInterval=3600000, c’est une option qui permet de donner la fréquence de garbage collection. En l&#8217;occurrence ça ne sert à rien car nous lui avons donné la valeur par défaut.</li>
+<li>-XX:+UseParNewGC, cette option permet de gérer la copie des objets dans la portion de mémoire à plus long terme de manière “multi-threadée” en profitant de la puissance des machines multi-cpu (ce qui est notre cas)</li>
+<li>-XX:+AggressiveOpts, je pense que cette option est aussi inutile dans le sens ou elle est devenue activé par défaut depuis la version du JRE 1.5_06. Elle permet d’activer des flags de compilation plus performant.</li>
+<li>-XX:+DoEscapeAnalysis, c’est un flag qui permet à la JVM d’optimiser les locks sur l’application, plus d’explication <a href="http://blog.xebia.com/2007/12/21/did-escape-analysis-escape-from-java-6/">ici</a></li>
+<li>-XX:+UseLargePages, option permettant d’allouer de gros espaces mémoire, pour plus de détail aller voir <a href="http://www.oracle.com/technetwork/java/javase/tech/largememory-jsp-137182.html">ici</a></li>
+<li>-XX:+UseTLAB, option permettant à chaque thread d’allouer sa propre mémoire. C’est une option à activer sur les systèmes multi-processeurs.</li>
+<li>-XX:TLABSize=64k, cette option spécifie la taille de la young generation pour chaque thread.</li>
+</ul>
+
+
+<p>Pour compléter ce petit billet, voilà 2 liens utiles</p>
+
+<ul>
+<li>la <a href="http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html">documentation</a> officielle de la commande java</li>
+<li>un <a href="http://www.datadisk.co.uk/html_docs/java_app/jboss5/jboss5_tuning.htm">blog</a> qui nous avait bien aidé</li>
+</ul>
+
+</div>
+
+
+    <footer>
+      <p class="meta">
+        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Eric Vidal</span></span>
+
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-20T00:00:00+01:00" pubdate data-updated="true">20/02/12</time>
+        
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/java/'>java</a>, <a class='category' href='/blog/categories/perf/'>perf</a>
+  
+</span>
+
+
+      </p>
+      
+        <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://evidal.github.io/blog/2012/02/20/Tunning-de-la-JVM/" data-via="EricVidalPro" data-counturl="http://evidal.github.io/blog/2012/02/20/Tunning-de-la-JVM/" >Tweet</a>
+  
+  
+  
+</div>
+
+      
+      
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+      </section>
+      
+      <ul class="pager">
+        
+        <li class="previous"><a class="basic-alignment left"
+          href="/blog/2012/01/12/Gestion-des-performances/" title="Previous Post:
+          Gestion des performances">&laquo; Gestion des performances</a></li>
+        
+        <li><a href="/blog/archives">Blog Archives</a></li>
+        
+        <li class="next"><a class="basic-alignment right" href="/blog/2012/02/21/Maitriser-sa-production/"
+          title="Next Post: Ma&icirc;triser sa production">Ma&icirc;triser sa production
+          &raquo;</a></li>
+        
+      </ul>
+    </footer>
+  </article>
+</div>
+
+<aside class="sidebar-nav span3">
+  
+    <section class="aside" >
+	<h4>&Agrave; propos</h4>
+	<img src="/images/evidal_200.png" class="picid"> Je suis architecte chez <a href="http://www.sicap.com">Sicap</a>. Passionné par mon métier et les nouvelles technologies, ce blog me sert de bloc-notes pour partager certaines découvertes.
+	<ul class="social">
+		<li><a title="Twitter" href="http://twitter.com/#!/EricVidalPro"><i class="icon-twitter"></i></a></li>
+        <li><a title="Linkedin" href="http://www.linkedin.com/pub/eric-vidal/4/582/99"><i class="icon-linkedin"></i></a></li>
+        <li><a title="Viadeo" href="http://www.viadeo.com/fr/profile/eric.vidal"><i class="icon-viadeo"></i></a></li>
+        <li><a title="Github" href="https://github.com/evidal"><i class="icon-github"></i></a></li>
+        <li><a title="RSS" href="/blog/eric-vidal.rss"><i class="icon-rss"></i></a></li>
+    </ul>
+</section>	<section class="aside">
+	<h4>R&eacute;cemment post&eacute;s</h4>
+  <ul id="recent_posts" class="nav nav-list">
+    
+      <li class="post">
+        <a href="/blog/2013/02/24/angular.js-et-yeoman/">Angular.js et Yeoman</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/24/mon-premier-sprite-en-HTML-5/">Mon premier sprite en HTML 5</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/18/elastic-search/">Elastic Search</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/24/sophisme-et-spring/">Sophisme et Spring</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/07/Groovy-2.0-Quoi-de-neuf-doc/">Groovy 2.0 : Quoi de neuf doc</a>
+      </li>
+    
+  </ul>
+</section>
+<section class="aside">
+	<h4>Tags</h4>
+	<div id="cloud">
+		
+	        <a href="/blog/categories/blog/" rel="1">blog</a>
+		
+	        <a href="/blog/categories/conf/" rel="4">conf</a>
+		
+	        <a href="/blog/categories/java/" rel="6">java</a>
+		
+	        <a href="/blog/categories/cloud/" rel="1">cloud</a>
+		
+	        <a href="/blog/categories/perf/" rel="3">perf</a>
+		
+	        <a href="/blog/categories/groovy/" rel="1">groovy</a>
+		
+	        <a href="/blog/categories/jee/" rel="1">jee</a>
+		
+	        <a href="/blog/categories/elastic search/" rel="1">elastic search</a>
+		
+	        <a href="/blog/categories/html5/" rel="1">html5</a>
+		
+	        <a href="/blog/categories/javascript/" rel="1">javascript</a>
+		
+	</div>
+</section>	
+  
+</aside>
+
+
+	    </div>
+	    <footer role="contentinfo" class="page-footer"><div class="footer">
+	<div class="container">
+	  Copyright &copy; 2013 - Eric Vidal -
+	  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+	</div>
+</div>
+</footer>
+	  </div>	  
+  </div>  
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'ericvidalblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://evidal.github.io/blog/2012/02/20/Tunning-de-la-JVM/';
+        var disqus_url = 'http://evidal.github.io/blog/2012/02/20/Tunning-de-la-JVM/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+<script type="text/javascript" src="/javascripts/jquery.tagcloud.js"></script>
+<script type="text/javascript">
+	$.fn.tagcloud.defaults = {
+	  size: {start: 10, end: 20, unit: 'pt'},
+	  color: {start: '#5C7270', end: '#FF7530'}
+	};
+
+	$(function () {
+		console.log("coucou")
+	  $('#cloud a').tagcloud();
+	});
+</script>
+
+
+
+</body>
+</html>
+<script language="javascript">
+	$.backstretch("http://unsplash.s3.amazonaws.com/batch%204/jet-sky.jpg");
+</script>

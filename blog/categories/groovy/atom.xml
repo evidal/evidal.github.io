@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: groovy | Le Blog d'Eric Vidal]]></title>
+  <link href="http://evidal.github.io/blog/categories/groovy/atom.xml" rel="self"/>
+  <link href="http://evidal.github.io/"/>
+  <updated>2013-09-20T10:33:49+02:00</updated>
+  <id>http://evidal.github.io/</id>
+  <author>
+    <name><![CDATA[Eric Vidal]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Groovy 2.0 : Quoi de neuf doc]]></title>
+    <link href="http://evidal.github.io/blog/2012/06/07/Groovy-2.0-Quoi-de-neuf-doc/"/>
+    <updated>2012-06-07T00:00:00+02:00</updated>
+    <id>http://evidal.github.io/blog/2012/06/07/Groovy-2.0-Quoi-de-neuf-doc</id>
+    <content type="html"><![CDATA[<p>J'ai assisté le 16 juin dernier à la présentation Groovy 2.0 par
+<a href="http://glaforge.appspot.com/">Guillaume Laforge</a> au
+<a href="http://www.lyonjug.org/">Lyon JUG</a>.
+J'ai découvert <a href="http://groovy.codehaus.org/">Groovy</a> il n'y a pas si longtemps,
+c'était il y a un peu plus de 2 ans. Le but de son utilisation dans notre
+application était d'écrire des règles évaluées à la volée. Finalement une autre
+solution a été choisie par l'équipe mais j'ai beaucoup aimé la simplicité du
+langage.
+Depuis ce premier contact, je l'utilise régulièrement pour la manipulation de
+fichier (un peu comme un super script), comme support via grails pour des démos
+ou POC et aussi pour ce blog qui est développé avec
+<a href="http://gaelyk.appspot.com/">Gaelyk</a>. C'est donc un langage que j'apprécie.</p>
+
+<p>La présentation de <a href="http://glaforge.appspot.com/">Guillaume Laforge</a> se déroulait en 2 temps:</p>
+
+<ul>
+<li>un rappel des fonctionnalité actuelles de Groovy 1.8</li>
+<li>une présentation des nouveautés Groovy 2.0</li>
+</ul>
+
+
+<p>Cette présentation est accessible sur Slideshare
+<a href="http://www.slideshare.net/glaforge/groovy-20-devoxx-france-2012">ici</a>.</p>
+
+<p>Honnêtement le rappel des fonctionnalités était salutaire. Comme j'utilise
+Groovy comme un meilleur <a href="http://java.com/fr/">Java</a>, il y a certains aspects
+du langage que je n'utilise pas comme GPars (un équivalent de <a href="http://akka.io/">AKKA</a>)
+ou trop partiellement comme le commande chain ou je me limite par reflexe.
+La présentation m'a clairement montré que j'avais besoin de me plonger
+sérieusement dans la doc de Groovy pour en exploiter toutes ces facets
+(ou du moins mieux les connaitre).</p>
+
+<p>Concernant la version 2.0 de Groovy, les évolutions concerne moins le langage
+que la plate-forme. Cette nouvelle version est modulaire, c'est à dire qu'au lieu
+d'avoir un groovy-all.jar (qui existe encore), on peut prendre d'autres jars qui
+sont des sous modules de Groovy. Le but de cette modularité est de faciliter
+l'utilisation de groovy dans des applications mobiles par exemple, car on va
+réduire la taille de l'application.
+Le reste des évolutions concerne l'adaptation de Groovy aux nouvelles
+fonctionnalités de Java 7 permettant d'intégrer les nouveautés du langage Java
+(<a href="http://openjdk.java.net/projects/coin/">projet Coin</a>) et d'améliorer les
+performances de Groovy. Les performances sont maintenant très proches de Java.
+Enfin le compilateur Groovy a été amélioré pour être plus râleur et signaler
+les erreurs de compilations qui n'apparaissaient avant qu'à l'exécution. Il
+permet également maintenant de faire de compilation statique du code.</p>
+
+<p>J'ai beaucoup aimé cette session et je vais essayer d'appliquer tout ça notamment
+en refondant ce site. Sa vitesse ne me satisfait pas pour l'instant. Quand à Groovy
+le langage est clairement facile et puissant. Sa syntaxe proche de Java fait qu'il
+est très simple à apprendre et petit à petit, avec l'experience, on incorpore
+les spécificités du langage : closure, GDK, JSon, parsers&hellip; Je n'ai jamais fait de
+Scala (qui a le même âge que Groovy) ou de Clojure (plus jeune) mais quand je lis
+des sources de ces langages, leur lecture ne me semble pas simple. Avec Groovy,
+même quand j'ignorais les rudiments du langage, le lecture des exemples était
+facile pour moi.</p>
+
+<p>Bref, vive Groovy !</p>
+]]></content>
+  </entry>
+  
+</feed>

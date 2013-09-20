@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: conf | Le Blog d'Eric Vidal]]></title>
+  <link href="http://evidal.github.io/blog/categories/conf/atom.xml" rel="self"/>
+  <link href="http://evidal.github.io/"/>
+  <updated>2013-09-20T10:33:49+02:00</updated>
+  <id>http://evidal.github.io/</id>
+  <author>
+    <name><![CDATA[Eric Vidal]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Angular.js et Yeoman]]></title>
+    <link href="http://evidal.github.io/blog/2013/02/24/angular.js-et-yeoman/"/>
+    <updated>2013-02-24T00:00:00+01:00</updated>
+    <id>http://evidal.github.io/blog/2013/02/24/angular.js-et-yeoman</id>
+    <content type="html"><![CDATA[<p>Je suis allé au <a href="http://lyonjs.org/">LyonJS</a> ce 18 février 2013, c'était mon premier User Group JS&hellip; et je pense que je reviendrais. Les sujets présentés étaient <a href="http://angularjs.org/">Angular.js</a>, <a href="http://yeoman.io/">Yeoman</a> et un lightning talk sur les Web Workers.</p>
+
+<p>Premier contact donc avec Angular avec la présentation de <a href="https://twitter.com/ThierryChatel">Thierry Chatel</a> qui nous fait un petit historique sur Angular et qui nous expose les bases du framework.</p>
+
+<p>Sa présentation est suivie d'une super séance de live coding faite par <a href="https://twitter.com/Swiip">Matthieu Lux</a>. Yeoman est un outil permettant de gérer les dépendances de ses projets Javascript. Il intégre 3 outils:</p>
+
+<ul>
+<li>Yeoman qui permet d'initialiser un projet JS en configurant des outils standard JS</li>
+<li>Grunt, un outil de build, preview et test JS préconfiguré par yeoman</li>
+<li>Bower, l'outil de gestion de dépendance intégré à Yeoman</li>
+</ul>
+
+
+<p>Matthieu installe donc Yeoman et initie un projet Angular à l'aide de Yeoman. Ces outils pour cette présentation sont IntelliJ IDEA, une console bash et Google Chrome. Pour la partie service, il utilise une base Mongo DB hébergée chez <a href="https://www.mongohq.com/">Mongo HQ</a> &ldquo;attaquée&rdquo; via des services REST préalablement développés et déployés.</p>
+
+<p>Le projet est initialisé simplement avec la commande yeoman. L'outil pose un certain nombre de questions (Bootstrap/pas Boostrap, Compass/pas Compass, etc&hellip;). Matthieu ajoute ensuite la dépendance vers Angular (même si un initialiseur Angular existe) pour montrer comment on peut ajouter des éléments à un projet existant.</p>
+
+<p>Une fois le projet initialisé il lance le serveur Web intégré et il peut vérifier le résultat dans Chrome. La nature d'Angular fait que la page est mise à jour en continu, donc tout changement fait au niveau du HTML est immédiatement pris en compte sur le navigateur. C'est assez plaisant car avec 2 écrans pour développer, on peut avoir un écran avec le code source et un écran avec le résultat avec un affichage temps réel.</p>
+
+<p>Matthieu a réalisé en 1 heure un projet permettant de gérer une liste avec création/édition/suppression d'items. Ce qui m'a plu c'est la concision et la clarté avec laquelle est structuré ce petit exemple. Le même code écrit uniquement avec JQuery aurait été beaucoup plus volumineux et certainement moins clair.</p>
+
+<p>Bonne cession qui m'a en tout cas donné envie de me plonger un peu plus sérieusement sur tous ces frameworks Javascript.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Elastic Search]]></title>
+    <link href="http://evidal.github.io/blog/2012/10/18/elastic-search/"/>
+    <updated>2012-10-18T00:00:00+02:00</updated>
+    <id>http://evidal.github.io/blog/2012/10/18/elastic-search</id>
+    <content type="html"><![CDATA[<p>Elastic Search est un moteur de recherche basé sur Lucene expérimenté par la société
+dans laquelle je travaille depuis un certain temps. Ce moteur était présenté
+dans le cadre du Lyon JUG par <a href="http://dev.david.pilato.fr/">David Pilato</a> et <a href="https://twitter.com/tlrx">Tanguy Leroux</a>.</p>
+
+<p>L'interview pre-JUG par les Duchess est disponible <a href="http://www.duchess-france.org/rencontre-avec-david-pilato-sur-elastic-search/">ici</a>.
+La présentation elle même est disponible <a href="http://t.co/piqUOkTE">ici</a>.</p>
+
+<p>Je ne vais pas réexpliquer le fonctionnement d'Elastic Search car de nombreux articles le font déjà (et notamment la présentation de David Pilato).
+De notre coté nous avons sélectionner Elastic Serach pour plusierus fonctionnalités importantes pour nous:</p>
+
+<ul>
+<li>Nos logicielles sont déployés sur des clusters pour avoir un fonctionnement Actif-Actif. C'est une des fonctionnalités de base d'Elastic Search.</li>
+<li>Nous manipulons des données très volumineuses en terme de nombre (plusieurs dizaines, voir centaines de millions). Elastic Serach est &ldquo;taillé&rdquo; pour ce volume.</li>
+<li>La navigation par &ldquo;Facet&rdquo; qui nous est nécéssaire</li>
+</ul>
+
+
+<p>Cependant nous en sommes encore au stade de l'étude et nous n'avons pas encore de vrai déploiement utilisant cette technologie.</p>
+
+<p>Voilà quelques points importants que j'ai noté pour mémoire:</p>
+
+<ul>
+<li>Sécurisation,
+
+<ul>
+<li>pour l’instant Elastic Search n’est pas sécurisé. Il est possible qu’il le devienne mais pas dans les toutes prochaines versions.</li>
+<li>1ère stratégie : mettre un apache devant et « jouer » avec les règles d'un firewall (DMZ)
+<strong> ajouter une couche http authent pour l'accès
+</strong> utiliser des filtres pour restreindre l’utilisation de certaines commande (comme DELETE, PUT)
+** en séparant les index, on peut spécifier des chemins d’accès à des données et gérer des profils</li>
+<li>2ème stratégie, utiliser le plugin suivant <a href="https://github.com/sonian/elasticsearch-jetty">https://github.com/sonian/elasticsearch-jetty</a> (solution recommandé uniquement par 1 des speakers)</li>
+</ul>
+</li>
+<li>Cluster et déploiement
+
+<ul>
+<li>Les préconisation de déploiement sont de 1 shard par serveur (1 shard = 1 instance de Lucene) + 1 replica</li>
+<li>/!\ on ne peut pas changer le nombre de shards une fois qu’un index est crée</li>
+<li>Les intervenants recommandent de bien dimensionner son cluster dès le départ, rajouter un nouveau membre au cluster est assez lourd en terme de consommation sur des indexes volumineux</li>
+<li>Il est préférable d’effectuer les montées de version à froid (même si des procédures à chaud existent)</li>
+<li>D’après le concepteur d’Elastic Search si une requête met plus de 100ms, c’est que la plate-forme est sous dimmensionné.</li>
+</ul>
+</li>
+<li>Il existe une JDBC River qui permet automatiquement d’indexer une table au fil de l’eau
+
+<ul>
+<li><a href="https://github.com/jprante/elasticsearch-river-jdbc">https://github.com/jprante/elasticsearch-river-jdbc</a></li>
+</ul>
+</li>
+<li>Un projet d’indexation de Log existe déjà
+
+<ul>
+<li><a href="http://logstash.net/">http://logstash.net/</a></li>
+</ul>
+</li>
+<li>Déploiement de références
+
+<ul>
+<li>Des déploiements existent avec 25 noeuds indexant plus d’1 milliard de documents</li>
+<li>Le premier intervenant (David Pilato) a travaillé sur un projet indexant 500.000 documents des douanes françaises. Le projet tournait sur 3 serveurs low end (CPU 2 cores, mémoire 4GB)</li>
+<li>Le deuxième (Tanguy Leroux) a travaillé pour un assureur pour indexer 20.000.000 documents (chaque document était l’équivalent d’une page word). Le projet tournait sur 4 serveurs low end (CPU 2 cores, mémoire 4GB)</li>
+</ul>
+</li>
+<li>Utiliser Elastic Search comme un entrepot de données
+
+<ul>
+<li>le créateur le déconseille pour l'instant mais ce sera peut-être possible à l'avenir.</li>
+<li>Un des intervenant a indiqué qu'il connaissait un projet utilisant Elastic Search comme base de données principale. Mais dans ce cas il fallait faire une croix sur les transactions et autres fonctionnalités d'une base de données.</li>
+</ul>
+</li>
+</ul>
+
+
+<p>Session très intéréssante et speakers disponibles pour répondre aux questions !</p>
+
+<p>Merci le Lyon JUG.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mix-IT 2012]]></title>
+    <link href="http://evidal.github.io/blog/2012/04/28/Mix-IT-2012/"/>
+    <updated>2012-04-28T00:00:00+02:00</updated>
+    <id>http://evidal.github.io/blog/2012/04/28/Mix-IT-2012</id>
+    <content type="html"><![CDATA[<p>J'étais avant-hier à Mix-IT 2012 er j'ai passé un très bon moment. Bravo à l'organisation pour avoir fait intervenir des speakers de qualité dans un cadre agréable pour seulement 30€. J'ai participé aux keynotes de bienvenu et à 6 conférences : Social Architecture, Lean Startup, lightning talks, Development Process at Google, Phone Gap et Zero MQ. Je n'ai malheureusement pas pu assister à la keynote finale de Pamela Fox.</p>
+
+<!--more-->
+
+
+<h2>Keynotes</h2>
+
+<p>En fait il y avait 2 keynotes d'accueil, je vais passer rapidement sur la première qui n'était en fait qu'une présentation de Chrome Mobile. En revanche, la 2ème était vraiment rafraîchissante. Claire Blondel c'est présenté à nous comme une Alien : c'est une fille et elle ne fait pas d'informatique. Elle est venue nous parler de notre droit à échouer. Ca réflexion a commencé quand elle est parti quelques années à l'étranger. Ces filles sont allées à l'école la bas et ont adoré ça. Puis lorsque toute la famille est rentrée en France, ses filles ont commencé à détester l'école et à y être mauvaises. En creusant elle s’est aperçu que ces filles étaient bloquées car elles avaient peur d'échouer. Et cette peur les bloquait totalement et les empêchait de faire des progrès. Par la suite tout c'est arrangé pour ces filles mais elle a tiré de cette expérience que la peur de se tromper est un vrai frein. Après tout que peut-il nous arriver si nous échouons. Cette réflexion  4 principes que nous devrions appliquer pour ne plus avoir peur d'échouer et donc devenir finalement entreprenant dans notre vie de tous les jours et dans notre travail. J'ai beaucoup aimé sa présentation.</p>
+
+<h2>Social Architecture 101</h2>
+
+<p>J'ai enchainé avec la présentation de <a href="http://www.mix-it.fr/profile/hintjens">Pieter Hintjens</a>. Bon j'avoue, ce n'était pas tout à fait ce que j'attendais mais la présentation était intéressante. Pieter était là pour expliquer comment construire un projet et monter une équipe efficace. Je pense que cette présentation a été un peu traumatisante pour certains car Pieter a une approche un peu brutale pour un français : on vire les gens quand ils sont mauvais, on définit des règles et on s'y tient, sinon on part. De la même façon il considère que tout projet ne s'appuyant pas sur GitHub et un licence GPL est au pire une hérésie et au mieux une perte de temps et d'argent. Il nous a également donné sa vision pour construire une équipe: pas les meilleurs développeurs du monde mais des gens engagés et capables de travailler ensemble. De manière générale il voit son rôle de manager comme quelqu'un qui est là pour résoudre tous les problèmes qui pourrait ralentir l'avancement du projet. Brutal mais intéressant.</p>
+
+<h2>Lean Startup</h2>
+
+<p>Lean Startup était une session introduisant la méthode Lean, donner ses grands principes.  <a href="http://www.mix-it.fr/profile/PIA_Emmanuel">Emmanuel Levi-Valensi</a> voit la méthode Lean comme une méthode rigoureuse permettant de mêler les méthodes agiles et le Customer Development. La présentation c’est axée sur cette dernière méthode permettant de capter l’avis d’un client. L'idée du Lean c'est de fournir au plus vite un Minimal Viable Product aux clients et mesurer de manière effective si le produit rencontre sa clientèle ou non. En fonction de ces retours on peut être amené à faire des &ldquo;Pivots&rdquo; consistant à changer le produit, parfois de manière radicale.</p>
+
+<h2>Lightning Talks</h2>
+
+<p>Petite pause déjeuné (plus de sandwich à la viande!) ou j'ai pu serrer la main de beaucoup d'anciens collègues, et Lightning Talks. Honnêtement je ne m'attendais pas à ce que ce format fonctionne : 5 minutes pour parler d'un sujet, pas de questions. En fait c'était très bien, ça oblige les speakers à concentrer leur présentation sur l'essentiel. J'ai bien aimé la première intervention sur le fait d'être fier d'être développeur et l'intervention Mongo DB.</p>
+
+<h2>Development Process at Google</h2>
+
+<p>A la présentation Development Process at Google, <a href="http://www.mix-it.fr/profile/GooglePetraCross">Petra Cross</a> nous a expliqué comment les ingénieurs chez Google étaient organisés. Il y a 10000 ingénieurs chez Google. Et tous ces ingénieurs travaillent en mode Agile. Ils ne font pas de Scrum, pas de Kanban ni de Xtreme Programming, mais un peu de tout ça mélangé. Les principes d'organisation sont les suivants, une hiérarchie la plus faible possible et de l'auto-organisation. Pour être efficace, les équipes sont composées d'environ 5 ingénieurs : un Tech Lead et 4 ingénieurs. Les items à développer niveau marketing sont mis dans un tas appellé Icebox. De là, le chef de projet va sortir et prioriser les items. Les ingénieurs vont les découper en tâches et estimer ensemble la complexité (pas le temps) grâce au planning poker (on en a eu un en goodies). Si les tâches so)nt trop complexes, elles sont redécoupées. Une fois que tout est découpé, les ingénieurs prennent les tâchent par ordre d'importance et les réalisent. Pas de filtrage en fonction du niveau de chaque développeur : tout le monde doit être interchangeable. Les revues de code sont obligatoires et un département Q&amp;A valide ou non les développements. Une équipe fait une release toutes les 1 ou 2 semaines. Je ne comprends définitivement pas les boites utilisant encore le cycle en V, permettant au mieux une release tous les 6 mois.</p>
+
+<h2>PhoneGap</h2>
+
+<p>PhoneGap est un sujet qui m'intéresse particulièrement. La société dans laquelle je travaille réalise depuis peu quelques applications mobiles. Nos développements doivent être supportés par le plus grand nombre d'appareil et la fragmentation des systèmes est un vrai problème. <a href="http://www.pamelafox.org/">Pamela Fox</a>, une ancienne employée de Google qui a créé un système nommé &ldquo;<a href="http://www.eatdifferent.com">eat different</a>&rdquo;. Vu que c'est une application qu'on utilise pendant les repas, il fallait une application mobile. Pamela a exploré plusieurs solutions. L'approche native a pour avantage d'utiliser les performances du téléphone ainsi que tous les appareils qui lui sont liés (caméra, Bluetooth, etc.). Cette approche permet d'être au plus près des API natives et permet de profiter des qualités de l'OS. Le gros problème de cette approche c'est que chaque OS mobile a ça propre plate-forme. iOS utilise de l'Objective C dans l'ide X-IDE, disponible uniquement sous MAC. Android utilise du Java (Pamela a un problème avec Java, c'est le langage que son père utilisait &ndash;> je suis vieux) avec l'IDE Eclipse. Idem pour tous les autres Bada, RIM, Windows, WebOS.</p>
+
+<p>Une autre approche est d'utiliser un langage qui va, à partir d'une même source, générer des applications natives pour tous les systèmes. Cette approche permet de conserver la performance mais empêche une utilisation poussée des API natives.</p>
+
+<p>La dernière approche est de développer son application en utilisant un bridge qui va jouer le rôle d'interface avec l'OS hôte. C'est à cette dernière catégorie que Phone Gap appartient. Avec Phone Gap on développe son application en HTML 5, CSS et Javascript. Cela permet d'utiliser les librairies Javascript habituelles pour réaliser une application tout en ayant accès via le bridge aux capacités du téléphone. Au moment du packaging, Phone Gap intègre les sources HTML, Javascript et CSS et le bridge au sein d'une application native (un navigateur sur lequel on ne peut pas naviguer en fait). Pour avoir une interface  graphique adapté au mobiles, de nombreuses librairies CSS et Javascript existes JQuery Mobile, Zepto, Twitter Bootstrap (qu'elle utilise), etc&hellip;</p>
+
+<p>Bonne présentation, je pense que je vais essayer dans peu de temps Phone Gap.</p>
+
+<h2>ZeroMQ, 0MQ</h2>
+
+<p>Dernière présentation pour moi : ZeroMQ avec le retour de la vengeance de Pieter Hintjens. Là encore, c'était une présentation un petit peu déroutante. Il a expliqué ce qu'on pouvait faire avec ZeroMQ mais sans vraiment présenter d'applications, ce qui a perdu je pense une partie de l'auditoire. Etant dans le monde Télécom, et donc sensible aux questions de messaging, j'ai pu y voir un interet. Zero MQ est donc pour Pieter l'aboutissement de que l'on peut faire dans le monde du messaging. Un système très light écrit en C permettant de supporter des millions de messages secondes. Il est particulièrement adapté aux applications financières traitant un grand nombre de données en temps réel ou aux applications télécoms donc. J'ai demandé quel était la différence avec AMQP et Zero MQ et&hellip; il m'a demandé d'allé voir sur Internet. Ce que j'ai fait. Ce que je comprends c'est que si AMQP a une approche classique centralisée, ZeroMQ permet d'avoir une approche décentralisée pour la distribution des messages. Bon ça reste un peu obscure, je pense que pour comprendre il va falloir y mettre les mains dedans.</p>
+
+<p>Très bonne journée, ambiance détendue, j'y retournerai l'année prochaine.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mix-IT]]></title>
+    <link href="http://evidal.github.io/blog/2011/05/03/Mix-IT/"/>
+    <updated>2011-05-03T00:00:00+02:00</updated>
+    <id>http://evidal.github.io/blog/2011/05/03/Mix-IT</id>
+    <content type="html"><![CDATA[<p>J'ai assisté le 5 avril à la Conférence <a href="http://www.mix-it.fr/">Mix-it</a> avec l'aimable participation de mon employeur.
+Pour une première, j'ai trouvé que c'était plutôt réussi, les sujets étaient nombreux et variés.
+Un petit bémol sur le manque de Clim': Ça sentait &ldquo;l'homme&rdquo; en fin de journée.</p>
+
+<p>5 tracks étaient accessibles:</p>
+
+<ul>
+<li>Techy : Java et son écosystème,</li>
+<li>Agility : Agilité pour débutants et passionnés,</li>
+<li>Trendy : Tendances novatrices et avant-gardistes,</li>
+<li>Mixy : Le meilleur de l’agilité et des technologies Java,</li>
+<li>Gamy : Echanges autour de jeux agiles et de coding dojos</li>
+</ul>
+
+
+<p>J'ai participé aux sessions suivantes:</p>
+
+<ul>
+<li>Let&rsquo;s make this test suite run faster</li>
+<li>HTML 5</li>
+<li>Clojure</li>
+<li>Apache Mahout</li>
+<li>ASGI &amp; Flex</li>
+</ul>
+
+
+<p>Voilà les notes (complétés) que j'ai prises, la suite après le break (attention, c'est long).</p>
+
+<!--more-->
+
+
+<h2>Let&rsquo;s make this test suite run faster</h2>
+
+<p>Une présentation assez intéréssante pour les équipes qui ont des builds interminables (plus d'un heure tests compris).
+Le speaker <a href="http://blog.javabien.net/">David Gageot</a> était assez pertinent est a présenté 3 stratégies combinables ont été présentées sur le mode le bon, la brute, le truand : The Cheater (le tricheur), The Lazy (le fainéant), The Brave (le brave).</p>
+
+<ul>
+<li>Stratégie du Cheater
+
+<ul>
+<li>Acheter une machine plus puissante</li>
+<li>Utilisez les nouvelle options de Maven MultiCore support (-T 4, -T 1C)</li>
+<li>Utilisez des outils comme SureFire sur Ant pour distribuer les test</li>
+<li>Stratégie du Lazy</li>
+<li>Nettoyer les tests inutiles (ça enlève du temps de test),</li>
+<li>Nettoyer le code mort et les tests associés (ça enlève également du temps de test)</li>
+<li>Ne pas utiliser les vrais IO pour les test (Réseau, Sytème de fichiers, base de données)
+
+<ul>
+<li>utilisation d'une base en mémoire comme H2</li>
+<li>utiliser Apache Virtual File System pour simuler un file system</li>
+<li>utiliser un serveur Smtp light comme Subetha</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Stratégie du Brave
+
+<ul>
+<li>Restructurer tous les tests pour
+
+<ul>
+<li>éviter de tester plusieurs fois la même fonctionnalité</li>
+<li>éviter de tester les couches basses (persistence, frameworks, etc…)</li>
+<li>mettre le plus de test du coté unitaire pour éviter de surcharger les tests d'intégration</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<p>J'ai trouvé une version de la présentation ici :
+<a href="http://www.slideshare.net/dgageot/lets-make-this-test-suite-run-faster-paris-jug-2011">http://www.slideshare.net/dgageot/lets-make-this-test-suite-run-faster-paris-jug-2011</a></p>
+
+<p>J'ai beaucoup aimé cette présentation car elle donnait des solutions pragmatiques à des problèmes qu'on rencontre tous les jours.</p>
+
+<h2>HTML 5</h2>
+
+<p>Une des grosses présentations (pour moi) de Mix-It donnée par Alain Duval et Cédric Beurtheret.
+Je m'intéresse depuis peu de temps à HTML 5, pendant longtemps les frameworks java ont cherché à tous prix à masquer le HTML.
+Avec les possibilités redécouvertes de Javascript, et les nouvelles API ajoutées aux différentes normes, il va falloir se remettre très sérieusement à HTML.
+Voilà un petit résumé de la présentation :</p>
+
+<ul>
+<li>HTML 4 est vieux, il a été livré en 1998 !</li>
+<li>Le travail sur HTML 5 a commencé en  2004, la release finale est prévue entre 2012-2014</li>
+<li>3 consortiums bossent sur le sujet : W3C, IETF, WHATWG</li>
+<li>La plupart des dernières version des navigateurs commence a supporté des éléments de HTML 5 (pour voir comment se comporte le votre, allez sur <a href="http://html5test.com/">http://html5test.com/</a>)</li>
+<li>HTML 5 cen'est pas seulement le HTML, c'est aussi tout un tas d'évolutions et d'APIs qui ont été ajoutées.</li>
+</ul>
+
+
+<h4>Les évolutions en détails</h4>
+
+<ul>
+<li>Des headers plus simples
+
+<ul>
+<li>doctype, charset</li>
+</ul>
+</li>
+<li>Des nouveaux tags pour une approche plus sémantique des pages
+
+<ul>
+<li>article, aside, header, footer, nav, etc&hellip;</li>
+<li>C'est particulièrement intéressant pour l'accessibilité des sites WEB (malvoyants)</li>
+</ul>
+</li>
+<li>le querySelector
+
+<ul>
+<li>Je le vois comme un standardisation de la sélection d'éléments avec Jquery</li>
+</ul>
+</li>
+</ul>
+
+
+<p><img src="http://blog.referencementschool.com/wp-content/uploads/2009/07/html5_structure.png" alt="..." /></p>
+
+<ul>
+<li>Les formulaires HTML 5 sont enrichis
+
+<ul>
+<li>de nouveau type de champs (Number, Phone, URL, email, Date, Color Picker, Slider), les navigateurs ne râlent pas mais n'implémentent pas encore ces types de champs.</li>
+<li>de nouveau attributs (PlaceHolder, AutoComplete, AutoFocus,&hellip;)</li>
+<li>de la validation coté client</li>
+</ul>
+</li>
+<li>Widget
+
+<ul>
+<li>Des Applications WEB disponibles comme de vrais applications</li>
+</ul>
+</li>
+<li>Les Canvas (attention les yeux)
+
+<ul>
+<li>Je crois qu'on peut oublier Flash, VML ou Silverlight</li>
+<li>On peut rendre de la 2D, de la 3D en utilisant Javascript
+
+<ul>
+<li>comme exemple célèbre, Google a porté Quake 2 avec cette technologie</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Support du SVG natif</li>
+<li>Tags Audio et Video
+
+<ul>
+<li>Sans plugin, sans flash</li>
+<li>les formats audios supportés : AAC, MP3, OGG VORBIS</li>
+<li>les formats vidéo supportés : H264, VPM, OGG THEORA (pas encore validé)</li>
+</ul>
+</li>
+<li>Des évolutions sur les APIs Javascript
+
+<ul>
+<li>Drag &amp; Drop, Geolocation, Web Socket (Full duplex connection), Offline Web</li>
+</ul>
+</li>
+<li>Web Workers
+
+<ul>
+<li>C'est un genre de Thread dans un navigateur</li>
+</ul>
+</li>
+<li>Cross Window Messaging, API pour communiquer entre différentes fenêtres</li>
+<li>Web Storage, de nouveaux espaces pour stocker des informations offline de manière plus ou moins structurée
+
+<ul>
+<li>Session (hashmap) durée de vie Session,</li>
+<li>Local (hashmap persisted) durée de vie du cache du navigateur,</li>
+<li>Database (Real SQL database persisted) durée de vie du cache du navigateur,</li>
+<li>Ces storages sont accessibles uniquement par les sites qui les ont créés, mais à mon avis la sécurité de ces espaces sera faible. Il faudra donc faire attention à ce que l'on stocke dans ces espaces.</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>Focus sur Device API</h4>
+
+<p>Device API m'intéresse particulièrement. Elle a juste été évoquée mais j'ai eu la chance de pouvoir discuter avec Cédric Beurtheret qui m'a donné plus de détails et des liens pour creuser.
+La Device API est une initiative qui permet d'accéder à des informations sur la machine sur laquelle est vue le site.
+Une initiative parallèle a été démarré par un autre consortium <a href="http://www.wacapps.net">WAC</a> mais les APIs définis coté HTML 5 et WAC vont convergés.
+Device API est clairement une des specs les moins avancés de HTML 5, mais elle clairement prometteuse pour les développeurs d'application mobile.
+C'est particulièrement intéressant quand on tourne sur un téléphone Mobile car cette Device API exposera tout un tas d'information et d'actions à propos du Device (téléphone):</p>
+
+<ul>
+<li>Application Launcher (pour lancer des applications à partir d'un site Web)</li>
+<li>Contacts (accès et gestion)</li>
+<li>Calendar (accès et gestion)</li>
+<li>Tasks (accès et gestion)</li>
+<li>Camera (accès et gestion)</li>
+<li>Messaging : SMS, MMS, Email (accès et gestion)</li>
+<li>Communication Logs (accès et gestion)</li>
+<li>File System (Accès)</li>
+<li>Gallery (accès et gestion)</li>
+<li>System Information &amp; Event (accès statistiques CPU, network, etc.)</li>
+<li>User Interface (Gestion)</li>
+<li>Permissions (pour autoriser/bloquer un site WEB souhaitant utiliser les Device API)
+Quelques navigateurs mobiles en mode pre-release supportent ces fonctionnalités : Webkit, Opera et Obigo.</li>
+</ul>
+
+
+<p>Quelques liens:</p>
+
+<ul>
+<li>Une version de la présentation : <a href="http://www.slideshare.net/normandyjug/html5-jug">http://www.slideshare.net/normandyjug/html5-jug</a></li>
+<li>Les specs : <a href="http://dev.w3.org/html5/spec/Overview.html">http://dev.w3.org/html5/spec/Overview.html</a></li>
+<li>Sur Device API :
+
+<ul>
+<li><a href="http://www.wacapps.net">http://www.wacapps.net</a></li>
+<li><a href="http://www.w3.org/2009/dap/">http://www.w3.org/2009/dap/</a> (Device API)</li>
+</ul>
+</li>
+<li>Quelques démos
+
+<ul>
+<li><a href="http://html5demos.com/">http://html5demos.com/</a></li>
+<li><a href="http://mrdoob.com/">http://mrdoob.com/</a> (Canvas Demos)</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Clojure</h2>
+
+<p>Bon pour être honnête j'ai pas été très convaincu. Je n'avais jamais regardé à quoi ressemblait Clojure, donc je suis vraiment arrivé &ldquo;vierge&rdquo; sur le sujet.
+Et là le choc, Clojure est un langage LISP. La dernière fois que j'ai fait du LISP, c'était à la FAC. Je me souviens que la principale difficulté du langage était de s'y retrouver dans les parenthèses.
+Bon ben là c'est un peu pareil. En plus la présentation était juste après le déjeuner, ça n'a pas aidé.
+En gros, voilà les buts de Coljure:</p>
+
+<ul>
+<li>Réduire la complexité</li>
+<li>faire des applications concurrentes</li>
+<li>être expressif</li>
+<li>d'être un langage généraliste</li>
+<li>d'être compatible avec le Byte Code</li>
+<li>faire de la programmation fonctionnelle</li>
+<li>gérer les états</li>
+<li>Syntaxe LISP :&lsquo;(</li>
+</ul>
+
+
+<p>Quelques exemples :</p>
+
+<ul>
+<li>(def a (/ 1.0 3.0))</li>
+<li>(def b (/ 3.0 1.0))</li>
+<li>(* a b)</li>
+<li>(def c (* a a a a a a a a a a))</li>
+<li>(def d (* b b b b b b b b b b))</li>
+<li>(* c d)</li>
+<li>(defn plusn [x]   (fn [y] (+ x y)))</li>
+<li>(def plus5 (plusn 5))</li>
+<li>(plus5 3)</li>
+</ul>
+
+
+<p>Je n'en dis pas plus, je n'ai pas accroché. Par contre j'ajouterai qu'il y a une tendance dans l'univers Java pour utilser la JVM différement.
+De nombreux langages bytecode compatible apparaissent : Jython, Groovy, Scala, Clojure, Ceylon, &hellip;
+Cela est dû en fait à une longue pause de 5 ans au niveau de la syntaxe Java, du coup d'autres langages ont voulu prendre le relais.
+Il faut dire que certains aspects de Java font assez vieillots (je pense à la lecture d'un fichier texte en JAVA par rapport à son équivalent en Groovy).</p>
+
+<p>Pour revenir à Clojure, pour en savoir plus ilfaut aller voir: <a href="http://clojure.org/">http://clojure.org/</a></p>
+
+<h2>Apache Mahout</h2>
+
+<p>Apache Mahout est un nouveau projet Apache, très jeune mais prometteur. Il propose de mettre à disposition des algorithmes puissants d'analyse sur de très gros volumes de données.
+Pour se faire, il utilise la méthode MapReduce (la version Hadoop) pour traiter les très gros volumes de données.
+Grace à ce système on va pouvoir par exemple:</p>
+
+<ul>
+<li>Recommander
+
+<ul>
+<li>sur Amazon, ce genre d'outil permet de proposer des articles similaires ou ayant été acheté par le même type d'utilisateurs</li>
+</ul>
+</li>
+<li>Classifier
+
+<ul>
+<li>Classer des documents à partir d'un échantillon déja classer</li>
+<li>détections de SPAM sur Gmail par exemple</li>
+<li>détections de document suspect (ou hors sujet)</li>
+</ul>
+</li>
+<li>Rassembler
+
+<ul>
+<li>Trouver des groupes de documents dans un vaste ensemble de documents</li>
+<li>Trouver les tendances, les idées directrices dans un ensemble de documents (comme dans Google News par exemple)</li>
+<li>Trouver des comportements typiques d'utilisateurs</li>
+</ul>
+</li>
+<li>Pattern Mining, evolutionary algorithm</li>
+</ul>
+
+
+<p>Si on va faire un tour sur le site de Apache Mahout, on verra que de nombreux algorithmes sont déjà disponibles (et qu'il grossit):</p>
+
+<ul>
+<li>Classification : Logisitc Regression, Bayesian, Support Vector Machines, Perceptron an Winnow, Neural Network, &hellip;</li>
+<li>Clustering : Canopy, K-Means, Fuzzy K-Means, Expectation Maximization, Mean Shift Clustering, Hierachical Clustering, &hellip;</li>
+<li>Pattern : FP Growth Alorithm</li>
+<li>Regression : Locally Weighted Linear Regression</li>
+<li>Dimension Reduction : Singular Value Decomposition, Principal Components Analysis, Independent Component Analysis, &hellip;</li>
+<li>Evolutionary Algorithms</li>
+<li>Recommenders / Collaborative Filtering</li>
+</ul>
+
+
+<p>Pour plus d'informations:</p>
+
+<ul>
+<li><a href="http://www.slideshare.net/mfiguiere/mixit-apr-2011-intelligence-collective-et-apache-mahout">http://www.slideshare.net/mfiguiere/mixit-apr-2011-intelligence-collective-et-apache-mahout</a></li>
+<li><a href="http://mahout.apache.org/">http://mahout.apache.org/</a></li>
+</ul>
+
+
+<h2>OSGI and Flex</h2>
+
+<p>C'est un peu l'erreur de casting cette journée. Je pensais qu'on allait avoir une vue d'ensemble de ces technologies, en fait il fallait venir en connaissant déjà Flex ou OSGI.
+C'était une session très technique avec des réponses à des problèmes précis.</p>
+
+<p>Voilà ce qu'il faut retenir:</p>
+
+<ul>
+<li>Le but du mariage entre OSGI et Flex est de modulariser l'application</li>
+<li>Flex normalement utilise HTTP ou SOAP pour échanger avec la partie serveur</li>
+<li>Avec OSGI, on va pouvoir avoir plus d'interaction avec des objets distants ou travailler en mode Producer/Consumer (Topic)</li>
+<li>Plusieurs Frameworks sont disponibles pour faciliter l'interaction avec le serveur
+
+<ul>
+<li>AMF 3</li>
+<li>GraniteDS</li>
+<li>Spring Flex</li>
+</ul>
+</li>
+<li>Le code source était assez compliqué pour les néophytes comme moi sur Flex et OSGI></li>
+<li>Par contre la démo était assez bluffante:
+
+<ul>
+<li>quand le speaker ajouter des JAR sur le serveur, de nouvelles portion d'écran apparaissaient sur la GUI.</li>
+<li>Différentes version d'un portlet pouvait également cohabiter sur la GUI</li>
+</ul>
+</li>
+</ul>
+
+
+<p>Plus d'informations sur
+<a href="http://www.slideshare.net/ougf/ougf-osgi-flex-5395089">http://www.slideshare.net/ougf/ougf-osgi-flex-5395089</a></p>
+]]></content>
+  </entry>
+  
+</feed>

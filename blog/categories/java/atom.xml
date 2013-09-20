@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: java | Le Blog d'Eric Vidal]]></title>
+  <link href="http://evidal.github.io/blog/categories/java/atom.xml" rel="self"/>
+  <link href="http://evidal.github.io/"/>
+  <updated>2013-09-20T10:33:49+02:00</updated>
+  <id>http://evidal.github.io/</id>
+  <author>
+    <name><![CDATA[Eric Vidal]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Sophisme et Spring]]></title>
+    <link href="http://evidal.github.io/blog/2012/07/24/sophisme-et-spring/"/>
+    <updated>2012-07-24T00:00:00+02:00</updated>
+    <id>http://evidal.github.io/blog/2012/07/24/sophisme-et-spring</id>
+    <content type="html"><![CDATA[<p>Une petite note en passant suite aux commentaires d'un fournisseur (qui m'énerve).</p>
+
+<p>Ce fournisseur donc aime bien travailler avec Spring, ils sont à l'aise avec et travaille plutôt bien dessus.
+Ces gens là donc sont en train de récupérer un logiciel pour en assurer sa maintenance et sa roadmap.
+Une de leur mission et d'améliorer les tests unitaires qui sont pour l'instant faible, et la c'est le drame (avec le ton d'Enquêtes exclusives ).</p>
+
+<p>Voila leur argumentaire:</p>
+
+<ul>
+<li>Spring c'est super testable</li>
+<li>Votre application utilise des EJB (NB: JEE 1.5, EJB 3.1)</li>
+<li>Votre application n'est pas testable, il faut tout injecter à la main, c'est trop compliqué.</li>
+<li>Vous auriez dû utiliser Spring</li>
+</ul>
+
+
+<p>AAaaaaah mais que ça me fatigue/énerve.</p>
+
+<p>Disclaimer : Je considère que le système d'injection de Spring ne sert à rien dans un serveur d'application depuis JEE 1.5.
+Après pour les autres éléments &ldquo;Springuiens&rdquo;, c'est une autre histoire.
+D'autant plus que l'utilisation de JEE ou Spring n'est pas exclusive !</p>
+
+<p>Quand j'entends des arguments du genre Spring c'est mieux parce que c'est plus simple à tester, ça me fait juste bondir. C'est un argument moisi.
+Il serait beaucoup plus honnête et acceptable de dire &ldquo;je suis plus à l'aise avec Spring qu'avec JEE 1.5, alors s'il te plait laisse moi utiliser Spring&rdquo;.
+Ça je pourrais l'entendre. Le reste, c'est juste de l'incompétence.</p>
+
+<p>Pour mémoire &ndash;> <a href="http://www.adam-bien.com/roller/abien/entry/unit_testing_ejb_3_1">http://www.adam-bien.com/roller/abien/entry/unit_testing_ejb_3_1</a></p>
+
+<p>ou alors</p>
+
+<p><a href="http://www.jboss.org/arquillian.html">http://www.jboss.org/arquillian.html</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Groovy 2.0 : Quoi de neuf doc]]></title>
+    <link href="http://evidal.github.io/blog/2012/06/07/Groovy-2.0-Quoi-de-neuf-doc/"/>
+    <updated>2012-06-07T00:00:00+02:00</updated>
+    <id>http://evidal.github.io/blog/2012/06/07/Groovy-2.0-Quoi-de-neuf-doc</id>
+    <content type="html"><![CDATA[<p>J'ai assisté le 16 juin dernier à la présentation Groovy 2.0 par
+<a href="http://glaforge.appspot.com/">Guillaume Laforge</a> au
+<a href="http://www.lyonjug.org/">Lyon JUG</a>.
+J'ai découvert <a href="http://groovy.codehaus.org/">Groovy</a> il n'y a pas si longtemps,
+c'était il y a un peu plus de 2 ans. Le but de son utilisation dans notre
+application était d'écrire des règles évaluées à la volée. Finalement une autre
+solution a été choisie par l'équipe mais j'ai beaucoup aimé la simplicité du
+langage.
+Depuis ce premier contact, je l'utilise régulièrement pour la manipulation de
+fichier (un peu comme un super script), comme support via grails pour des démos
+ou POC et aussi pour ce blog qui est développé avec
+<a href="http://gaelyk.appspot.com/">Gaelyk</a>. C'est donc un langage que j'apprécie.</p>
+
+<p>La présentation de <a href="http://glaforge.appspot.com/">Guillaume Laforge</a> se déroulait en 2 temps:</p>
+
+<ul>
+<li>un rappel des fonctionnalité actuelles de Groovy 1.8</li>
+<li>une présentation des nouveautés Groovy 2.0</li>
+</ul>
+
+
+<p>Cette présentation est accessible sur Slideshare
+<a href="http://www.slideshare.net/glaforge/groovy-20-devoxx-france-2012">ici</a>.</p>
+
+<p>Honnêtement le rappel des fonctionnalités était salutaire. Comme j'utilise
+Groovy comme un meilleur <a href="http://java.com/fr/">Java</a>, il y a certains aspects
+du langage que je n'utilise pas comme GPars (un équivalent de <a href="http://akka.io/">AKKA</a>)
+ou trop partiellement comme le commande chain ou je me limite par reflexe.
+La présentation m'a clairement montré que j'avais besoin de me plonger
+sérieusement dans la doc de Groovy pour en exploiter toutes ces facets
+(ou du moins mieux les connaitre).</p>
+
+<p>Concernant la version 2.0 de Groovy, les évolutions concerne moins le langage
+que la plate-forme. Cette nouvelle version est modulaire, c'est à dire qu'au lieu
+d'avoir un groovy-all.jar (qui existe encore), on peut prendre d'autres jars qui
+sont des sous modules de Groovy. Le but de cette modularité est de faciliter
+l'utilisation de groovy dans des applications mobiles par exemple, car on va
+réduire la taille de l'application.
+Le reste des évolutions concerne l'adaptation de Groovy aux nouvelles
+fonctionnalités de Java 7 permettant d'intégrer les nouveautés du langage Java
+(<a href="http://openjdk.java.net/projects/coin/">projet Coin</a>) et d'améliorer les
+performances de Groovy. Les performances sont maintenant très proches de Java.
+Enfin le compilateur Groovy a été amélioré pour être plus râleur et signaler
+les erreurs de compilations qui n'apparaissaient avant qu'à l'exécution. Il
+permet également maintenant de faire de compilation statique du code.</p>
+
+<p>J'ai beaucoup aimé cette session et je vais essayer d'appliquer tout ça notamment
+en refondant ce site. Sa vitesse ne me satisfait pas pour l'instant. Quand à Groovy
+le langage est clairement facile et puissant. Sa syntaxe proche de Java fait qu'il
+est très simple à apprendre et petit à petit, avec l'experience, on incorpore
+les spécificités du langage : closure, GDK, JSon, parsers&hellip; Je n'ai jamais fait de
+Scala (qui a le même âge que Groovy) ou de Clojure (plus jeune) mais quand je lis
+des sources de ces langages, leur lecture ne me semble pas simple. Avec Groovy,
+même quand j'ignorais les rudiments du langage, le lecture des exemples était
+facile pour moi.</p>
+
+<p>Bref, vive Groovy !</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ma&icirc;triser sa production]]></title>
+    <link href="http://evidal.github.io/blog/2012/02/21/Maitriser-sa-production/"/>
+    <updated>2012-02-21T00:00:00+01:00</updated>
+    <id>http://evidal.github.io/blog/2012/02/21/Maitriser-sa-production</id>
+    <content type="html"><![CDATA[<p>Un blog un peu court pour expliquer à quel point il est important que les équipes de production soient formées aux environnements d'exécution qu’elles utilisent. La plupart des administrateurs avec qui j’ai travaillé sont vraiment très bon dans le domaine système, il est beaucoup plus rare qu’ils connaissent aussi nos environnements d'exécution comme JBoss par exemple.</p>
+
+<p>Bien sur il arrive que les équipes de développement assurent des formations sur l’application que les administrateurs vont déployer. Mais si tous les aspects purement “administratif” sont au mieux passés rapidement, ils sont souvent ignorés.</p>
+
+<p>Et quand on donne des outils aussi puissant qu’un serveur d’application à des administrateurs mal formés, on peut aboutir à des catastrophes. J’ai un exemple récent dans une société dont je tairai le nom d’un serveur JBoss ayant une adresse IP public. Ce serveur avait été installé pour une démo brut de décoffrage, sans paramétrage. Ce qui fait que la console JMX était accessible sans mot de passe, ainsi que la console d’admin qui avait les mots de passe par défaut. Ce serveur c’est fait attaqué. L’attaque a été construite comme cela:</p>
+
+<ul>
+<li>scan des ports de la machine</li>
+<li>repérage et identification d’un serveur JBoss</li>
+<li>repérage que la faille décrite <a href="http://eromang.zataz.com/2011/10/25/jboss-worm-analysis-in-details/">ici</a> fonctionnait bien</li>
+</ul>
+
+
+<p>Et voila un serveur ultra puissant à la merci de pirates.</p>
+
+<p>Ce qu’il faut retenir de cette histoire, c’est qu’un serveur d'application n’est pas un simple outil qu’on dé-zippe quelque part et qu’on laisser tel quel. De réels efforts doivent être fait pour former les équipes de productions à l’utilisation et à la configuration de tels outils. Une bonne solution est de les faire participer aux tests de performances de l’application. On complétera cette prise en main par une formation adaptée aux problématiques de production (Déploiement, Monitoring, Sécurité, Backup, Restore, Logs, Tunning, etc&hellip;)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tunning de la JVM]]></title>
+    <link href="http://evidal.github.io/blog/2012/02/20/Tunning-de-la-JVM/"/>
+    <updated>2012-02-20T00:00:00+01:00</updated>
+    <id>http://evidal.github.io/blog/2012/02/20/Tunning-de-la-JVM</id>
+    <content type="html"><![CDATA[<p>Le 17 janvier 2012 avait lieu une soirée au Lyon JUG ayant pour thème la performance des serveurs en java. Le speaker Ludovic Poitou est un ancien de chez Sun qui a quitté la société suite au rachat par Oracle.</p>
+
+<p>Sa présentation était originale, car contrairement à beaucoup d’entre nous, son logiciel <a href="http://forgerock.com/opendj.html">Open DJ</a> ne tourne pas sur un serveur d’application mais en standalone.</p>
+
+<p>Après une présentation détaillée de sa société, j’ai beaucoup aimé l’explication de la gestion de la mémoire de la JVM. J’avoue que c’est un sujet sur lequel je me suis peu penché car les applications sur lesquelles je travaille n’ont pas le même niveau d’exigence que c’est fixé l’équipe d’Open DJ. L’application la plus “chargée” sur laquelle j’ai travaillé répondait sans broncher à 400 requêtes/seconde HTTP en pointe sur un seul serveur, ce qui est déjà un score honorable sur un serveur d’application d’il y a 5 ans. Mais je ne joue pas dans la même cour, le serveur Open DJ monte à plus de 80000 requêtes/seconde, 200 fois plus de charge.</p>
+
+<p>Pour arriver à ce niveau de performance, il faut avoir une très bonne connaissance du fonctionnement de la JVM, et notamment de la gestion de sa mémoire. Open DJ utilise également une base donnée simple et embarquée : <a href="http://www.oracle.com/technetwork/database/berkeleydb/overview/index.html">Berkeley DB</a></p>
+
+<p>Je vous invite à relire la présentation disponible via le site du Lyon JUG (<a href="http://www.lyonjug.org/evenements/perf-serveur">ici</a>).</p>
+
+<p>Suite à cette présentation je me suis penché sur les paramètres qu’on utilisait pour faire tourner notre JBoss en production. On avait optimisé les options de la JVM de manière un peu empirique, en s’appuyant sur des morceaux de configuration qu’on avait récupéré à travers différents blogs et aussi suite à de nombreuses campagnes de test.
+Voilà ce que nous utilisons en production:</p>
+
+<ul>
+<li>-d64 : pour faire fonctionner la JVM en 64 bits, et donc adresser au delà de 4Go</li>
+<li>-Xms8192m, pour réserver au minimum 8Go de Mémoire vive. C’est une stratégie défensive pour être sur que notre JVM ne se fera pas “piquer” la mémoire par d’autres applications.</li>
+<li>-Xmx8192m, pour ne pas dépasser ces fameux 8Go et donc laisser de l’espace aux autres applications tournant sur le serveur.</li>
+<li>-XX:MaxPermSize=512m, l’espace la mémoire de type Permanent Generation contient toute les données statiques de la JVM. Il faut qu’il soit suffisamment grand mais pas démesuré. 512 Go est un bon chiffre pour les applications allouant au delà de 8Go de mémoire, il peut être réduit à moins pour les applications plus petite. Il est extrêmement rare d’allouer au delà de 512Mo (jamais vu de mon coté)</li>
+<li>-Djava.awt.headless=true, l’option classique pour les serveurs Unix n’ayant pas de serveur X installé</li>
+<li>-Dorg.jboss.resolver.warning=true, c’est une option qui était déjà présente. On l’a laissée.</li>
+<li>-Dsun.rmi.dgc.client.gcInterval=3600000, c’est une option qui permet de donner la fréquence de garbage collection. En l'occurrence ça ne sert à rien car nous lui avons donné la valeur par défaut.</li>
+<li>-XX:+UseParNewGC, cette option permet de gérer la copie des objets dans la portion de mémoire à plus long terme de manière “multi-threadée” en profitant de la puissance des machines multi-cpu (ce qui est notre cas)</li>
+<li>-XX:+AggressiveOpts, je pense que cette option est aussi inutile dans le sens ou elle est devenue activé par défaut depuis la version du JRE 1.5_06. Elle permet d’activer des flags de compilation plus performant.</li>
+<li>-XX:+DoEscapeAnalysis, c’est un flag qui permet à la JVM d’optimiser les locks sur l’application, plus d’explication <a href="http://blog.xebia.com/2007/12/21/did-escape-analysis-escape-from-java-6/">ici</a></li>
+<li>-XX:+UseLargePages, option permettant d’allouer de gros espaces mémoire, pour plus de détail aller voir <a href="http://www.oracle.com/technetwork/java/javase/tech/largememory-jsp-137182.html">ici</a></li>
+<li>-XX:+UseTLAB, option permettant à chaque thread d’allouer sa propre mémoire. C’est une option à activer sur les systèmes multi-processeurs.</li>
+<li>-XX:TLABSize=64k, cette option spécifie la taille de la young generation pour chaque thread.</li>
+</ul>
+
+
+<p>Pour compléter ce petit billet, voilà 2 liens utiles</p>
+
+<ul>
+<li>la <a href="http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html">documentation</a> officielle de la commande java</li>
+<li>un <a href="http://www.datadisk.co.uk/html_docs/java_app/jboss5/jboss5_tuning.htm">blog</a> qui nous avait bien aidé</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gestion des performances]]></title>
+    <link href="http://evidal.github.io/blog/2012/01/12/Gestion-des-performances/"/>
+    <updated>2012-01-12T00:00:00+01:00</updated>
+    <id>http://evidal.github.io/blog/2012/01/12/Gestion-des-performances</id>
+    <content type="html"><![CDATA[<p>Je travaille depuis maintenant 2 ans sur un très gros projet qui gère des dizaines de millions d'utilisateurs. Notre logiciel est donc très sensible à la charge et à toutes améliorations de performance. Voilà une petite liste d'actions qui permettent de traquer ou de prévenir les problèmes de performances en général.</p>
+
+<p></p>
+
+<h2>Prévention</h2>
+
+<h3>Simplification</h3>
+
+<p>De manière général plus un traitement est simple, plus il est performant. Il faut donc rechercher dans le design la façon de faire la plus simple.
+En bonne pratique il faut:</p>
+
+<ul>
+<li>ne pas multiplier les couches d'abstraction. Plus on multiplie les intermédiaires, moins on est réactif.</li>
+<li>ne pas multiplier l'utilisation de librairies techniques (construire de gros échafaudages de librairie). On prend le risque de rendre une fonctionnalité simple beaucoup plus compliquée.</li>
+<li>utiliser des environnements maitrisés. Utiliser les dernières technologies c'est super, mais si on ne maitrise pas tous les impacts, on peut construire de vraies bombes à retardement.</li>
+</ul>
+
+
+<h3>Faire des tests de performance</h3>
+
+<p>Sur notre projet nous avons utilisé JMeter pour simuler du trafic. Attention on ne doit pas seulement faire un hit sur de 2-3 pages mais réaliser un scénario complet et dynamisé.
+Par la suite les tests doivent se dérouler sur plusieurs heures ou jours pour voir si la plateforme est stable dans le temps.
+Pendant ces tests il ne faut pas forcément essayer de trouver les limites de l'application mais la soumettre à un stress nominal.
+Les tests aux limites sont intéressants mais uniquement si la plate-forme répond correctement au stress nominal.</p>
+
+<h3>Dimensionner l'infrastructure, limiter la charge</h3>
+
+<p>A partir des tests établis précédemment on peut en déduire des infrastructures cibles.
+On ne va pas mettre la même infrastructure chez un client ayant 2 millions de comptes que chez un client ayant 80 millions de comptes.
+Il est important de définir ces infrastructures dans les contrats quand on vend le logiciel.
+De plus il est important pour les applications critiques de mettre en place des mécanismes de protection pour éviter la saturation de la plate-forme.
+On peut par exemple mettre en place un système de licence qui limite le nombre d'utilisateurs à 10 millions et/ou à un certain nombre de requêtes HTTP par seconde.
+Avec cela on garantit le service pour la charge que l'on a défini contractuellement. Il faudra bien sur penser à ce système dès la conception du logiciel.</p>
+
+<h2>Corrections</h2>
+
+<p>Au niveau développement voilà un certain nombre d'éléments permettant de traquer les problèmes.</p>
+
+<h3>Optimisation SQL</h3>
+
+<p>De manière générale le tout premier élément limitant d'un logiciel sur un serveur est la base de données mal utilisée. Il peut y avoir plusieurs causes:</p>
+
+<ul>
+<li>mauvais modèle de données</li>
+<li>pas d'index</li>
+<li>trop de requêtes SQL</li>
+<li>requêtes SQL non optimisées</li>
+<li>non maitrise du Framework technique accédant à la base</li>
+</ul>
+
+
+<p>Dans un premier temps, il va falloir tracer les requêtes SQL générées par l'application. Si vous utilisez Hibernate, vous pouvez par exemple mettre à true le paramètre hibernate.show_sql.
+Par la suite vous allez exécuter un scenario de test unitaire sur votre application. Cela va vous permettre d'identifier les requêtes SQL exécutées à chaque étape de votre scénario.
+Des actions doivent être prises si:</p>
+
+<ul>
+<li>une même requête est exécutée plusieurs fois pour une étape donnée</li>
+<li>une ou plusieurs requêtes inattendues apparaissent (par exemple un delete et des insert alors qu'on fait un simple select, si si c'est possible voir [[www.yonita.com/2011_11_16_PERFORMANCE_ANTIPATTERNS_DEVOXX.pdf|ici]])
+Ils faut impérativement rester maitre des requêtes faites vers la base de données.</li>
+</ul>
+
+
+<p>Dans un deuxième temps il fait traquer les requêtes consommatrices de ressources. Sur Oracle, on peut utiliser l'outil Oracle Enterprise Manager qui est une console d'administration Web de la base de données.
+Cet outil permet de monitorer en temps réel la charge de la base de donnée mais aussi d'avoir la liste des requêtes les plus consommatrices. Un fois ces requêtes identifiées on pourra les optimiser en:</p>
+
+<ul>
+<li>ajoutant des index</li>
+<li>ajoutant des hints pour l'optimiseur SQL (les hints sont tout à fait compatible avec des outils comme Hibernate)</li>
+<li>en repensant une partie du modèle de base de données pour l'optimiser</li>
+</ul>
+
+
+<p>Enfin une des dernières optimisations au niveau base de données est de bien préparer la base.
+Si le modèle a un impact très fort sur les performances, il ne faut pas négliger la configuration de la base.
+Il faut notamment travailler avec un DBA pour optimiser (pour Oracle) la taille des blocs, des redo-logs, des archives-logs.
+Attention toutefois à ne pas faire n'importe quoi, si vous ne maitrisez  pas ces paramètres, n'y touchez pas.</p>
+
+<h3>Optimisation des Objets/Mémoire/Threads</h3>
+
+<p>Ce paragraphe s'intéresse à l'étude et l'optimisation du code java.</p>
+
+<p>L'utilitaire jmap permet d'avoir plus d'information sur l'utilisation de la mémoire et des objets. Cet outil est utile pour monitorer la JVM quand elle est stressée de manière normale.</p>
+
+<ul>
+<li>jmap -d64 -heap <pid> > heap.txt
+
+<ul>
+<li>cette commande permet d'avoir un état détaillé de la mémoire. Cela vous permettra d'ajuster les paramètres mémoires de la JVM.</li>
+</ul>
+</li>
+<li>jmap -d64 -histo:live <pid> > histo.txt
+
+<ul>
+<li>cette commande permet d'avoir la liste de toutes les instances tournant dans la JVM. On pourra détecter un trop grand nombre d'instance pour un type d'objet.</li>
+</ul>
+</li>
+</ul>
+
+
+<p>Les applications JEE sont multi-threadés, les threads sont cachés par les APIs de haut niveau de la norme JEE (Servlet, EJB).
+Si c'est API sont mal utilisées, des problèmes de performance apparaissent (notamment des cas d'inter-blocage).
+Pour s'assurer que notre application n'est pas dans ce cas, il faut la soumettre à sa charge nominale grâce à des injecteurs ou des outils comme JMeter.
+Une fois que l'application est en cours de fonctionnement, on va faire des Threads Dump de manière régulière pour vérifier qu'aucun thread n'est bloqué.
+La résolution des cas d'inter-blocage en changeant l'implémentation d'une méthode a souvent des résultats spectaculaires.
+A noter que les threads dump en Java se font en envoyant SIGQUIT au process à l'aide de la commande kill -3 &lt;process_id>.
+Sous JBoss on peut faire ça via la console JMX sur le bean ServerInfo.</p>
+
+<p>Une des dernières techniques pour voir plus claire dans le fonctionnement d'une application. Personnellement j'ai rarement progressé en profilant une application.
+De nombreux outils existent pour profiler une application, cependant un profiler est livré avec le JDK: HPROF. Il peut fonctionner en mode classique (on enregistre tous les évènements) ou en mode sampling (on prend un photo de la JVM toutes les minutes par exemple).
+Si on travaille sur environnement stressé, il est préférable d'utiliser le mode Sampling.</p>
+
+<p>Voilà, c'était un petit aperçu des différentes techniques que j'utilise pour améliorer les performances de mes applications. Il en existe certainement bien d'autres mais celles-ci nous ont bien aidé pour avoir une application performante en production.</p>
+]]></content>
+  </entry>
+  
+</feed>
