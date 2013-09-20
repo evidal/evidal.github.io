@@ -1,0 +1,8 @@
+<section class="aside">
+	<h4>Tags</h4>
+	<div id="cloud">
+		{% for category in site.categories %}
+	        <a href="/blog/categories/{{ category | first }}/" rel="{{ category | last | size }}">{{ category | first }}</a>
+		{% endfor %}
+	</div>
+</section>	

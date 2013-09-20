@@ -1,0 +1,10 @@
+<section class="aside">
+	<h4>R&eacute;cemment post&eacute;s</h4>
+  <ul id="recent_posts" class="nav nav-list">
+    {% for post in site.posts limit: site.recent_posts %}
+      <li class="post">
+        <a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

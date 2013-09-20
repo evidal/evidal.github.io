@@ -1,0 +1,12 @@
+<script type="text/javascript" src="/javascripts/jquery.tagcloud.js"></script>
+<script type="text/javascript">
+	$.fn.tagcloud.defaults = {
+	  size: {start: 10, end: 20, unit: 'pt'},
+	  color: {start: '#5C7270', end: '#FF7530'}
+	};
+
+	$(function () {
+		console.log("coucou")
+	  $('#cloud a').tagcloud();
+	});
+</script>

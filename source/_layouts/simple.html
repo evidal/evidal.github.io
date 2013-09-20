@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div class="span9">
+  <article role="article">
+  	{{ content }}
+  </article>
+</div>
+<aside class="sidebar-nav span3">
+  {% if site.page_asides.size %}
+    {% include_array page_asides %}
+  {% else %}
+    {% include_array default_asides %}
+  {% endif %}
+</aside>

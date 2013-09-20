@@ -1,0 +1,66 @@
+#content {
+    background: url(/images/cream_dust.png) repeat 0 0;
+}
+
+body {
+    background: black;
+}
+
+.header {
+    height: 100px;
+    padding-top: 20px;
+    padding-left: 20px;
+    background-color: #336699;
+    color: #FFFFFF;
+}
+
+.header h1, .header img{
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.footer222 {
+    background-color: #336699;
+    color: #FFFFFF;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.navbar-inner {
+    height: 41px;
+}
+
+.center {
+    text-align: center;
+}
+
+.footer {
+    padding-top: 120px;
+}
+
+.side-item {
+    padding-top: 30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Corben', Georgia, Times, serif;
+    font-stretch: extra-expanded;
+}
+
+p, div {
+    font-family: 'Nobile', Georgia, Times, serif;
+    font-size: 16px;
+    line-height: 25px;
+}
+button, a {
+    font-family: 'Nobile', Georgia, Times, serif;
+}
+
+a {
+    color: #666666
+}
+
+/*Form*/
+#f_title, #f_content, #f_tags {
+    width: 600px;
+}
