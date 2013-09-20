@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: cloud | Le Blog d'Eric Vidal]]></title>
+  <link href="http://evidal.github.io/blog/categories/cloud/atom.xml" rel="self"/>
+  <link href="http://evidal.github.io/"/>
+  <updated>2013-09-20T10:37:31+02:00</updated>
+  <id>http://evidal.github.io/</id>
+  <author>
+    <name><![CDATA[Eric Vidal]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Cloud Synth&egrave;se]]></title>
+    <link href="http://evidal.github.io/blog/2011/07/07/Cloud-Synthese/"/>
+    <updated>2011-07-07T00:00:00+02:00</updated>
+    <id>http://evidal.github.io/blog/2011/07/07/Cloud-Synthese</id>
+    <content type="html"><![CDATA[<p>Le 9 et 10 juin j'ai eu la chance de participer à synthèse sur les technologies du Cloud.</p>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Cirrocumulus_to_Altocumulus.JPG/800px-Cirrocumulus_to_Altocumulus.JPG" alt="source http://commons.wikimedia.org/" /></p>
+
+<p>Voilà mes notes.</p>
+
+<!--more-->
+
+
+<h2>Concepts</h2>
+
+<p>Le Cloud est un terme à la mode. Il faut se méfier des imitations. Le Cloud ne veut pas dire
+Hosting ou logiciel en ligne. L'hébergement ou les logiciels accessiblesne sont pas nouveau et
+existe depuis longtemps. Le Coud est plus l'arrivé à maturité de certaines technologies et d'acteurs IT:</p>
+
+<ul>
+<li>La virtualisation est massivement utilisée dans le Cloud</li>
+<li>Les applications sont dévenues des application WEB</li>
+<li>Les Architecures SOA sont utilisées</li>
+<li>Des sociétés IT suffisemment grosse pour inspirer la confiance existe</li>
+<li>Les start-up des années 2000 ont eu besoin des technologies Cloud pour exister et grossir</li>
+</ul>
+
+
+<p>Pour résumer les points clés d'un/e déploiement/applciation Cloud sont:</p>
+
+<ul>
+<li>controlable par une API pour couplage au SI</li>
+<li>Multi-Tenancy, ou capacité à cohabiter utilisateur du Cloud sans interférence.</li>
+<li>Reliability, c'est à dire pour un coup identique ou moindre, augmenter sa résistence aux aléas d'un système (composants qui crashent, datacenter qui brulent, etc&hellip;).</li>
+<li>Scalability (in and out), être capable de muscler sa solution si besoin ou au contraire diminiuer sa puissance si trop grosse (et payer ce qu'on utilise).</li>
+<li>Performance, la puissance est potentiellement infinie du point de vue de notre utlisation.</li>
+</ul>
+
+
+<p>3 types d'usages existent:</p>
+
+<ul>
+<li>IaaS – Infrastructure as a Service, pour disposer d'une machine virtuelle dans le Cloud</li>
+<li>PaaS – Platform as a Service, Middleware utilisant une infrastructure de type Cloud pour fonctionner et utilisable via une API</li>
+<li>SaaS – Software as a Service, un logiciel utilisant une infrastructure de type Cloud pour fonctionner (et intégrable dans son SI via des APIs)</li>
+</ul>
+
+
+<h3>IaaS</h3>
+
+<p>Les offres IaaS (Infrastructure as a Service) proposent de se construire infrastructure dans le Cloud (serveur, réseau). On peut utiliser cette infrastructure comme une extension de son propre système ou comme une infrastructure prête à l'emploi: on utilise exactement ce dont on a besoin, avec l'OS qu'on veut. Si plus (ou moins) de puissance est nécéssaire, on définit des règles pour adapter la puissance dont on a besoin, et donc son coût.</p>
+
+<h3>PaaS</h3>
+
+<p>Le PaaS (Platfom as a Service) vous proposent toute une gamme de middleware prêts à être utilisé. Toutes la partie matériel, système d'exploitation est complètement masqué, n'est visible que le middleware. On trouvera dans cette gamme de service des solutions très variées: Base de données (SQL ou non), Serveur d'Application (Java ou non), des Messages Broker, des solutions de paiements, etc. Comme dans le cas de l'IaaS ces plateformes sont virtuellement illimitées en terme de puissance et on paye uniquement ce que l'on consomme.</p>
+
+<h3>SaaS</h3>
+
+<p>Le Software as a Service existe depuis longtemps mais ne doit pas confondu avec des solutions &ldquo;hostées&rdquo;. Les  principales différences avec un service hosté sont les suivantes :</p>
+
+<ul>
+<li>le logiciel disponible en mode SaaS est virtuellement illimité en terme de nombre d'utilisateurs.</li>
+<li>des APIs doivent permettre une interconnexion avec d'autres systèmes (comme le SI)</li>
+<li>l'utilisateur paye pour ce qu'il utilise
+Dans cette gamme de service, la variété de solutions est pléthorique : Suites Bureautiques, Messageries, Wiki d'entreprise, logiciel de gestion ultra scpécialisé (gestion commerciale), etc.</li>
+</ul>
+
+
+<h3>Sécurité et Cloud</h3>
+
+<p>On voit donc que migrer tout ou partie de ces applications vers le Cloud est très attractif, mais comme pour toute décision, on doit soigneusement réfléchir aux conséquences, notamment en terme de sécurité. Car migrer vers le Cloud ça veut dire donner l'accès à un tiers à des données qui nous appartiennent, ce qui peut dans certains cas présenter des problèmes légaux ou de confidentialités.</p>
+
+<p>Du coté des points positifs, on retiendra les éléments suivants:</p>
+
+<ul>
+<li>Les Administrateurs de ce genre de solutions sont très bons, souvent meilleurs que les personnes dont nous disposons en interne.</li>
+<li>Les plateformes (et leurs administrateurs) sont disponibles en 365/7/24 : 365 jours par an, 7 jours sur 7, 24 heures sur 24. Peu d'entreprises peuvent se permettre une telle disponibilités.</li>
+<li>Les infrastructures des ces solutions sont bien mieux protégées des attaques car tous les patchs de sécurité sont appliqués très rapidement et de manière transparente pour les utilisateurs.</li>
+<li>Toute l'infrastructure est redondante donc les pannes matériels sont correctement gérées.</li>
+<li>PaaS, IaaS ou SaaS tournent dans des VM, ce qui isole des autres clients et de leur défaillance potentielles (ex. mémoire saturée).</li>
+<li>Les données sont distribuées ce qui assure plus de sécurité quand à leur conservation.</li>
+</ul>
+
+
+<p>Mais tous n'est pas rose, et pour tempérer tous ces points positifs, voila une liste d'éléments auxquels ont doit réfléchi avant de basculer:</p>
+
+<ul>
+<li>Toutes ces solution sont opaques: on ne sait pas comment ça fonctionne, on ne sait pas qui gère notre plateforme, on ne sait pas où se trouve le datacenter, etc.</li>
+<li>On doit avoir complètement confiance dans notre fournisseur.</li>
+<li>Les possesseurs de la plateforme peuvent accéder à mes données, comment s'assurer de la confidentialités des données sensibles</li>
+<li>Une fois qu'on utilise plus la plateforme, que deviennent mes données ? Sont-elles détruites ou conservées par mon fournisseur ?</li>
+<li>La plupart des administration publique ne peuvent pas utiliser de tels services pour des raisons légales (localisation géographique des serveurs, agrément pour la gestion des données médicales, etc.)</li>
+<li>Rien n’empêche le fournisseur de faire de faire du Datamining sur mes données (ex. Google Mail et les publicités)</li>
+</ul>
+
+
+<h3>Cas d'utilisation</h3>
+
+<p>Venons-en au cas d'utilisation, c'est à dire comment utiliser cette technologie dans mon entreprise.</p>
+
+<ul>
+<li>Externaliser son IT. Dans ce cas la, je confie à un tiers la gestion des comptes emails, des calendriers partagés, de l'Intranet, etc&hellip; (Google Apps)</li>
+<li>Externaliser sa solution de CRM (Sales Force)</li>
+<li>Optimiser ses ressources IT : migrer tous les serveurs dans le Cloud et utiliser la puissance machine uniquement quand c'est nécessaire.</li>
+<li>Application WEB a très forte audience pour être capable de gérer les très grosses montées en charge et être capable de relacher cette puissance par la suite</li>
+<li>&ldquo;Business Continuity&rdquo; conserver une partie de ses machines en interne et prévoir un système complet de Fail-Over dans le Cloud.</li>
+</ul>
+
+
+<p>Un des points fort des applications Cloud sont les SLA (Service Level Agreement ou Qualité de Service), mais tout n'est pas parfait. En effet les plateforme Cloud ont des  SLA très importante (99.999999999 pour Amazon S3) mais il arrive qu'il y ait des pannes. Tout le monde ce souvient de la grosse panne Amazon en avril 2011 qui a paralysé certains gros site pendant quelques jours. Il faut donc se tenir prêt à ce que le Cloud soit défaillant, voilà quelques idées pour réduire ce risque. Ces idées ne sont pas nouvelles et doivent déjà être mise en oeuvre sur les très gros projets à hébergement classique:</p>
+
+<ul>
+<li>Varier les solutions d'hébergement
+
+<ul>
+<li>serveurs internes/externes, 2 fournisseurs Cloud différents,</li>
+<li>différents fournisseurs Cloud (Amazon, Google Microsoft, &hellip;)</li>
+<li>différentes localisations de datacenter (Amazon Europe, Amazon US East#</li>
+</ul>
+</li>
+<li>Monitorer les applications pour détecter/prévenir les problèmes et réduire les temps d'indisponibilités.</li>
+<li>Etre capable d'utiliser les API de son fournisseur Cloud pour réagir rapidement</li>
+<li>Avoir une plate-forme suffisamment générique pour changer de fournisseur en cas de besoin.</li>
+</ul>
+
+
+<h2>Les offres Cloud</h2>
+
+<p>Il y a 4 &ldquo;gros&rdquo; fournisseurs (Cloud Service Providers) dans le domaines du Cloud:</p>
+
+<ul>
+<li><a href="http://aws.amazon.com">Amazon</a></li>
+<li><a href="http://www.google.com/Apps">Google Apps</a> et <a href="https://appengine.google.com/">Google App Engine</a></li>
+<li><a href="http://www.force.com/">Force</a> et <a href="www.salesforce.com">Salesforce</a></li>
+<li><a href="http://msdn.microsoft.com/fr-fr/windowsazure">Microsoft</a> et <a href="http://www.microsoft.com/fr-fr/office365/online-software.aspx">Office 365</a></li>
+</ul>
+
+
+<h3>Amazon</h3>
+
+<p><a href="http://aws.amazon.com">Amazon</a> est l'un des tous premiers fournisseurs Cloud. La légende (rumeur) veut qu'ils aient acheté trop de machine à leur début et qui'ils aient cherché un moyen de les utiliser grâce à de nouveaux services. Amazon est positionné sur les solutions de type IaaS et PaaS avec notamment</p>
+
+<ul>
+<li>EC2, Elastic Compute Cloud
+
+<ul>
+<li>Location de serveur (avec choix dymanique de la puissance)</li>
+<li>Location de Serveur avec HADOOP (pour faire du <a href="http://fr.wikipedia.org/wiki/MapReduce">map reduce</a>)</li>
+</ul>
+</li>
+<li>S3, Simple Storage Service,
+
+<ul>
+<li>On peut considérer S3 comme le disque dur d'Internet. De nombreux services à très forte volumétrie utilisent S3 (comme dropbox)/</li>
+<li>SLA : 99,999999999%</li>
+<li>La SLA est tellement énorme, qu'une nouvelle solution moins chère avec des SLA moins élevés est à l'étude.</li>
+</ul>
+</li>
+<li>et aussi
+
+<ul>
+<li>EBS, Elastic Block Store (Disques pour EC2)</li>
+<li>SQS, Simple Queue Service (Système de queue)</li>
+<li>SNS, Simple Notification System (Messaging en mode push)</li>
+<li>Simple DB (Stockage clé/valeur)</li>
+<li>RDS, Relational Database Service (MySQL)</li>
+<li>Elastic Load Balancing, Elastic IP, Autoscale</li>
+<li>VPC, Virtual Private Cloud</li>
+<li>&hellip;</li>
+</ul>
+</li>
+</ul>
+
+
+<p>Pour les développeurs JAVA, une solution est intéressante : Elastic Beanstalk. C'est la combinaison de tout un tas de service Amazon pour fournir un serveur d'application JEE prêt à l'emploi. Point intéressant, si vous utilisez Beanstalk, la première année est gratuite à condition de ne pas dépasser des quotas.</p>
+
+<h3>Google</h3>
+
+<p>Google est positionné sur les SaaS avec <a href="http://www.google.com/Apps">Google Apps</a> et le PaaS avec <a href="https://appengine.google.com/">Google App Engine</a></p>
+
+<ul>
+<li>pour <a href="http://www.google.com/Apps">Google Apps</a> on aura à notre disposition
+
+<ul>
+<li>Google Docs (Suite Bureautique)</li>
+<li>Google Sites (Pour réaliser des sites WEB)</li>
+<li>Gmail &amp; Calendar (Email et Calendrier)</li>
+<li>Google Groups (Groupe de discussion)</li>
+<li>…</li>
+</ul>
+</li>
+<li>et pour <a href="https://appengine.google.com/">Google App Engine</a> on va trouver les services suivants
+
+<ul>
+<li>héberger des applications JEE/Python/Go</li>
+<li>A noter pour Java seule une partie de l'API est implémentée. Il faut utiliser les classes de la Google White List</li>
+<li>Les quotas gratuits sont assez élevés (moins de 5 millions de pages vues par mois)</li>
+<li>Base de données orientée colonnes et un &ldquo;Blobstore&rdquo; pour les fichiers</li>
+<li>Et tout un tas de service Google  (Accounts, URL Fetching, MemCache, XMPP, CRON, TaskQueue, Image Processing, Emails)</li>
+</ul>
+</li>
+</ul>
+
+
+<p>Petit retour d’expérience personnel avec Google App Engine, le principe est vraiment bien par contre j'ai 2 remarques importantes:</p>
+
+<ul>
+<li>d'une version à l'autre du SDK, j'ai certaine fonctionnalité de ce blog qui change.</li>
+<li>le comportement du SDK n'est pas identique au comportement du vrai Google App Engine.</li>
+</ul>
+
+
+<h3>Force.com</h3>
+
+<p>Force.com était un acteur que je ne connaissais pas (bien que ma boite utilise Salesforce sans que je le sache). Ils ont commencé avec le SaaS <a href="www.salesforce.com">Salesforce</a> puis ils on peu à peu créé une offre Paas avec <a href="http://www.force.com/">Force.com</a>.
+Voila un aperçu de leurs solutions:</p>
+
+<ul>
+<li>SaaS
+
+<ul>
+<li><a href="http://www.salesforce.com">Sales Force</a>, outil CRM</li>
+<li>JigSaw, Customer Service</li>
+<li><a href="http://www.salesforce.com/remedyforce/">RemedyForce</a>, Gestion de Helpdesk</li>
+<li><a href="http://www.salesforce.com/fr/chatter/">Chatter</a>, (Twitter, Facebook et chat pour Entreprise)</li>
+<li><a href="http://www.radian6.com/">Radian 6</a>, Social Network Listener</li>
+<li>&hellip;</li>
+</ul>
+</li>
+<li>PaaS avec Force.com
+
+<ul>
+<li><a href="http://www.heroku.com/">Heroku</a> qui est un hébergeur Node.js et Ruby</li>
+<li><a href="http://database.com">Database.com</a> une base de donnée Cloud</li>
+<li><a href="http://www.salesforce.com/platform/appforce/">AppForce</a> pour écrire des applications avec un L4G pour Force.com</li>
+<li><a href="http://www.force.com/products/index.jsp?a#1&amp;slide#1">SiteForce</a> pour créer des sites WEB</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Azure</h3>
+
+<p><a href="http://msdn.microsoft.com/fr-fr/windowsazure">Azure</a> est la solution de Microsoft. D'après le formateur, c'est des meilleurs infrastructure technique qu'il connaisse. La ou le bas blesse pour le formatteur, c'est au niveau des offres. Pour lui quand on prend un service Cloud chez Microsoft, on s'attendrait à avoir un Exchange prêt à l'emploi ce qui n'est pas directement possible apparemment. L'offre de Microsoft est en fait beaucoup plus orientée vers les développeurs avec:</p>
+
+<ul>
+<li>intégration dans Visual Studio</li>
+<li>Instanciation de de Serveur Windows</li>
+<li>Service Bus</li>
+<li>SQL Server dans le Cloud</li>
+<li>Blob Storage (stockage binaire)</li>
+<li>Workers (genre de traitement batch)</li>
+<li>Web</li>
+</ul>
+
+
+<p>L'autre offre de Microsoft est <a href="http://www.microsoft.com/fr-fr/office365/online-software.aspx">Office 365</a>. C'est une offre qui permet d'utiliser les outiles bureautique de la suite Office en mode Web.</p>
+
+<h3>Autres Offres</h3>
+
+<p>Il existe tout un tas d'autres offres</p>
+
+<ul>
+<li>IaaS
+
+<ul>
+<li><a href="http://www.gogrid.com/">GoGrid</a></li>
+<li><a href="http://www.rackspace.com/">Rackspace</a></li>
+<li><a href="http://www.joyent.com/">Joyent</a></li>
+<li><a href="http://www.orange-business.com/fr/entreprise/portfolio/catalogue/toutes-solutions/flexible-computing.html">Orange Flexible Computing</a></li>
+<li><a href="http://www.ovh.com">OVH</a></li>
+</ul>
+</li>
+<li>PaaS
+
+<ul>
+<li><a href="http://www.gridgain.com/">GridGrain</a></li>
+<li><a href="http://www.gigaspaces.com/">GigaSpaces</a></li>
+<li><a href="http://www.cloudbees.com/">Cloud Bees</a></li>
+<li><a href="http://www.cloudfoundry.com/">Cloud Foundry</a></li>
+</ul>
+</li>
+</ul>
+
+
+<p>D'autres offres se créent tous les jours. Il est fort à parié qu'après cette explosion, il va y avoir de la concentration dans les années à venir.</p>
+
+<p>Notons également qu'une norme Cloud est en train de voir le jour : la norme Open Data Center.</p>
+
+<h2>Conclusion</h2>
+
+<p>On voit que les possibilités du Cloud sont immenses et que les fournisseurs et leurs services sont nombreux. Aussi il me parait important avant de se lancer dans n'importe quel projet Cloud de faire un étude sérieuse et de ne pas promettre à ses clients/décideurs que le Cloud est la réponse à tous leurs problèmes.</p>
+]]></content>
+  </entry>
+  
+</feed>

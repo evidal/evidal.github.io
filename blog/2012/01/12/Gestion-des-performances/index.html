@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Gestion des performances - Le Blog d'Eric Vidal</title>
+  <meta name="author" content="Eric Vidal">
+
+  
+  <meta name="description" content="">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Cardo" rel="stylesheet" type="text/css">
+
+  
+  <link rel="canonical" href="http://evidal.github.io/blog/2012/01/12/Gestion-des-performances">
+  <link href="/favicon.png" rel="icon">
+  
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link href="/stylesheets/elusive-webfont.css" rel="stylesheet">
+
+  
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/custom.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  <script src="/javascripts/libs/jquery.js"></script>
+  <script src="/javascripts/libs/modernizr-2.0.js"></script>
+  <script src="/javascripts/libs/bootstrap.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Le Blog d'Eric Vidal" type="application/atom+xml">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+  
+
+</head>
+
+<body   >
+  <div class="container-narrow">  
+	  <div class="container">
+	  	<div class="header">
+  <div class="container">
+    <img src="/images/coffee-cup-48.png" class="headerct">
+    <a class="headerct" href="/">Le Blog d'Eric Vidal</a>
+  </div>
+  <nav role="navigation"><div class="navbar navbar-inverse container">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <!-- <a class="brand" href="/">Le Blog d'Eric Vidal</a> -->
+
+      <div class="nav-collapse">
+        <ul class="nav">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/cv">CV</a></li>
+</ul>
+
+
+        <ul class="nav pull-right" data-subscription="rss">
+          <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS"><i class="icon-rss"></i></a></li>
+          
+        </ul>
+
+        
+          <form class="pull-right navbar-search" action="http://google.com/search" method="get">
+            <fieldset role="search">
+              <input type="hidden" name="q" value="site:evidal.github.io" />
+              <input class="search-query" type="text" name="q" results="0" placeholder="Search"/>
+            </fieldset>
+          </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+      <!-- <div class="">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/blog/archives">Archives</a></li>
+        </ul>
+        <h3 class="muted">
+          <img src="/images/coffee-cup-48.png" class="headerct">
+          <a class="headerct" href="/">Le Blog d'Eric Vidal</a>
+        </h3>
+      </div> -->
+</nav>
+</div>
+
+	    <div class="row">
+	      
+<div class="span9">
+
+  <article class="hentry" role="article">
+    
+  <header class="page-header">
+    
+      <h1 class="entry-title">Gestion Des Performances</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-12T00:00:00+01:00" pubdate data-updated="true">12/01/12</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Je travaille depuis maintenant 2 ans sur un très gros projet qui gère des dizaines de millions d&#8217;utilisateurs. Notre logiciel est donc très sensible à la charge et à toutes améliorations de performance. Voilà une petite liste d&#8217;actions qui permettent de traquer ou de prévenir les problèmes de performances en général.</p>
+
+<h2>Prévention</h2>
+
+<h3>Simplification</h3>
+
+<p>De manière général plus un traitement est simple, plus il est performant. Il faut donc rechercher dans le design la façon de faire la plus simple.
+En bonne pratique il faut:</p>
+
+<ul>
+<li>ne pas multiplier les couches d&#8217;abstraction. Plus on multiplie les intermédiaires, moins on est réactif.</li>
+<li>ne pas multiplier l&#8217;utilisation de librairies techniques (construire de gros échafaudages de librairie). On prend le risque de rendre une fonctionnalité simple beaucoup plus compliquée.</li>
+<li>utiliser des environnements maitrisés. Utiliser les dernières technologies c&#8217;est super, mais si on ne maitrise pas tous les impacts, on peut construire de vraies bombes à retardement.</li>
+</ul>
+
+
+<h3>Faire des tests de performance</h3>
+
+<p>Sur notre projet nous avons utilisé JMeter pour simuler du trafic. Attention on ne doit pas seulement faire un hit sur de 2-3 pages mais réaliser un scénario complet et dynamisé.
+Par la suite les tests doivent se dérouler sur plusieurs heures ou jours pour voir si la plateforme est stable dans le temps.
+Pendant ces tests il ne faut pas forcément essayer de trouver les limites de l&#8217;application mais la soumettre à un stress nominal.
+Les tests aux limites sont intéressants mais uniquement si la plate-forme répond correctement au stress nominal.</p>
+
+<h3>Dimensionner l&#8217;infrastructure, limiter la charge</h3>
+
+<p>A partir des tests établis précédemment on peut en déduire des infrastructures cibles.
+On ne va pas mettre la même infrastructure chez un client ayant 2 millions de comptes que chez un client ayant 80 millions de comptes.
+Il est important de définir ces infrastructures dans les contrats quand on vend le logiciel.
+De plus il est important pour les applications critiques de mettre en place des mécanismes de protection pour éviter la saturation de la plate-forme.
+On peut par exemple mettre en place un système de licence qui limite le nombre d&#8217;utilisateurs à 10 millions et/ou à un certain nombre de requêtes HTTP par seconde.
+Avec cela on garantit le service pour la charge que l&#8217;on a défini contractuellement. Il faudra bien sur penser à ce système dès la conception du logiciel.</p>
+
+<h2>Corrections</h2>
+
+<p>Au niveau développement voilà un certain nombre d&#8217;éléments permettant de traquer les problèmes.</p>
+
+<h3>Optimisation SQL</h3>
+
+<p>De manière générale le tout premier élément limitant d&#8217;un logiciel sur un serveur est la base de données mal utilisée. Il peut y avoir plusieurs causes:</p>
+
+<ul>
+<li>mauvais modèle de données</li>
+<li>pas d&#8217;index</li>
+<li>trop de requêtes SQL</li>
+<li>requêtes SQL non optimisées</li>
+<li>non maitrise du Framework technique accédant à la base</li>
+</ul>
+
+
+<p>Dans un premier temps, il va falloir tracer les requêtes SQL générées par l&#8217;application. Si vous utilisez Hibernate, vous pouvez par exemple mettre à true le paramètre hibernate.show_sql.
+Par la suite vous allez exécuter un scenario de test unitaire sur votre application. Cela va vous permettre d&#8217;identifier les requêtes SQL exécutées à chaque étape de votre scénario.
+Des actions doivent être prises si:</p>
+
+<ul>
+<li>une même requête est exécutée plusieurs fois pour une étape donnée</li>
+<li>une ou plusieurs requêtes inattendues apparaissent (par exemple un delete et des insert alors qu&#8217;on fait un simple select, si si c&#8217;est possible voir [[www.yonita.com/2011_11_16_PERFORMANCE_ANTIPATTERNS_DEVOXX.pdf|ici]])
+Ils faut impérativement rester maitre des requêtes faites vers la base de données.</li>
+</ul>
+
+
+<p>Dans un deuxième temps il fait traquer les requêtes consommatrices de ressources. Sur Oracle, on peut utiliser l&#8217;outil Oracle Enterprise Manager qui est une console d&#8217;administration Web de la base de données.
+Cet outil permet de monitorer en temps réel la charge de la base de donnée mais aussi d&#8217;avoir la liste des requêtes les plus consommatrices. Un fois ces requêtes identifiées on pourra les optimiser en:</p>
+
+<ul>
+<li>ajoutant des index</li>
+<li>ajoutant des hints pour l&#8217;optimiseur SQL (les hints sont tout à fait compatible avec des outils comme Hibernate)</li>
+<li>en repensant une partie du modèle de base de données pour l&#8217;optimiser</li>
+</ul>
+
+
+<p>Enfin une des dernières optimisations au niveau base de données est de bien préparer la base.
+Si le modèle a un impact très fort sur les performances, il ne faut pas négliger la configuration de la base.
+Il faut notamment travailler avec un DBA pour optimiser (pour Oracle) la taille des blocs, des redo-logs, des archives-logs.
+Attention toutefois à ne pas faire n&#8217;importe quoi, si vous ne maitrisez  pas ces paramètres, n&#8217;y touchez pas.</p>
+
+<h3>Optimisation des Objets/Mémoire/Threads</h3>
+
+<p>Ce paragraphe s&#8217;intéresse à l&#8217;étude et l&#8217;optimisation du code java.</p>
+
+<p>L&#8217;utilitaire jmap permet d&#8217;avoir plus d&#8217;information sur l&#8217;utilisation de la mémoire et des objets. Cet outil est utile pour monitorer la JVM quand elle est stressée de manière normale.</p>
+
+<ul>
+<li>jmap -d64 -heap <pid> > heap.txt
+
+<ul>
+<li>cette commande permet d&#8217;avoir un état détaillé de la mémoire. Cela vous permettra d&#8217;ajuster les paramètres mémoires de la JVM.</li>
+</ul>
+</li>
+<li>jmap -d64 -histo:live <pid> > histo.txt
+
+<ul>
+<li>cette commande permet d&#8217;avoir la liste de toutes les instances tournant dans la JVM. On pourra détecter un trop grand nombre d&#8217;instance pour un type d&#8217;objet.</li>
+</ul>
+</li>
+</ul>
+
+
+<p>Les applications JEE sont multi-threadés, les threads sont cachés par les APIs de haut niveau de la norme JEE (Servlet, EJB).
+Si c&#8217;est API sont mal utilisées, des problèmes de performance apparaissent (notamment des cas d&#8217;inter-blocage).
+Pour s&#8217;assurer que notre application n&#8217;est pas dans ce cas, il faut la soumettre à sa charge nominale grâce à des injecteurs ou des outils comme JMeter.
+Une fois que l&#8217;application est en cours de fonctionnement, on va faire des Threads Dump de manière régulière pour vérifier qu&#8217;aucun thread n&#8217;est bloqué.
+La résolution des cas d&#8217;inter-blocage en changeant l&#8217;implémentation d&#8217;une méthode a souvent des résultats spectaculaires.
+A noter que les threads dump en Java se font en envoyant SIGQUIT au process à l&#8217;aide de la commande kill -3 &lt;process_id>.
+Sous JBoss on peut faire ça via la console JMX sur le bean ServerInfo.</p>
+
+<p>Une des dernières techniques pour voir plus claire dans le fonctionnement d&#8217;une application. Personnellement j&#8217;ai rarement progressé en profilant une application.
+De nombreux outils existent pour profiler une application, cependant un profiler est livré avec le JDK: HPROF. Il peut fonctionner en mode classique (on enregistre tous les évènements) ou en mode sampling (on prend un photo de la JVM toutes les minutes par exemple).
+Si on travaille sur environnement stressé, il est préférable d&#8217;utiliser le mode Sampling.</p>
+
+<p>Voilà, c&#8217;était un petit aperçu des différentes techniques que j&#8217;utilise pour améliorer les performances de mes applications. Il en existe certainement bien d&#8217;autres mais celles-ci nous ont bien aidé pour avoir une application performante en production.</p>
+</div>
+
+
+    <footer>
+      <p class="meta">
+        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Eric Vidal</span></span>
+
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-12T00:00:00+01:00" pubdate data-updated="true">12/01/12</time>
+        
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/java/'>java</a>, <a class='category' href='/blog/categories/perf/'>perf</a>
+  
+</span>
+
+
+      </p>
+      
+        <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://evidal.github.io/blog/2012/01/12/Gestion-des-performances/" data-via="EricVidalPro" data-counturl="http://evidal.github.io/blog/2012/01/12/Gestion-des-performances/" >Tweet</a>
+  
+  
+  
+</div>
+
+      
+      
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+      </section>
+      
+      <ul class="pager">
+        
+        <li class="previous"><a class="basic-alignment left"
+          href="/blog/2011/07/07/Cloud-Synthese/" title="Previous Post:
+          Cloud Synth&egrave;se">&laquo; Cloud Synth&egrave;se</a></li>
+        
+        <li><a href="/blog/archives">Blog Archives</a></li>
+        
+        <li class="next"><a class="basic-alignment right" href="/blog/2012/02/20/Tunning-de-la-JVM/"
+          title="Next Post: Tunning de la JVM">Tunning de la JVM
+          &raquo;</a></li>
+        
+      </ul>
+    </footer>
+  </article>
+</div>
+
+<aside class="sidebar-nav span3">
+  
+    <section class="aside" >
+	<h4>&Agrave; propos</h4>
+	<img src="/images/evidal_200.png" class="picid"> Je suis architecte chez <a href="http://www.sicap.com">Sicap</a>. Passionné par mon métier et les nouvelles technologies, ce blog me sert de bloc-notes pour partager certaines découvertes.
+	<ul class="social">
+		<li><a title="Twitter" href="http://twitter.com/#!/EricVidalPro"><i class="icon-twitter"></i></a></li>
+        <li><a title="Linkedin" href="http://www.linkedin.com/pub/eric-vidal/4/582/99"><i class="icon-linkedin"></i></a></li>
+        <li><a title="Viadeo" href="http://www.viadeo.com/fr/profile/eric.vidal"><i class="icon-viadeo"></i></a></li>
+        <li><a title="Github" href="https://github.com/evidal"><i class="icon-github"></i></a></li>
+        <li><a title="RSS" href="/blog/eric-vidal.rss"><i class="icon-rss"></i></a></li>
+    </ul>
+</section>	<section class="aside">
+	<h4>R&eacute;cemment post&eacute;s</h4>
+  <ul id="recent_posts" class="nav nav-list">
+    
+      <li class="post">
+        <a href="/blog/2013/02/24/angular.js-et-yeoman/">Angular.js et Yeoman</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/24/mon-premier-sprite-en-HTML-5/">Mon premier sprite en HTML 5</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/18/elastic-search/">Elastic Search</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/24/sophisme-et-spring/">Sophisme et Spring</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/07/Groovy-2.0-Quoi-de-neuf-doc/">Groovy 2.0 : Quoi de neuf doc</a>
+      </li>
+    
+  </ul>
+</section>
+<section class="aside">
+	<h4>Tags</h4>
+	<div id="cloud">
+		
+	        <a href="/blog/categories/blog/" rel="1">blog</a>
+		
+	        <a href="/blog/categories/conf/" rel="4">conf</a>
+		
+	        <a href="/blog/categories/java/" rel="6">java</a>
+		
+	        <a href="/blog/categories/cloud/" rel="1">cloud</a>
+		
+	        <a href="/blog/categories/perf/" rel="3">perf</a>
+		
+	        <a href="/blog/categories/groovy/" rel="1">groovy</a>
+		
+	        <a href="/blog/categories/jee/" rel="1">jee</a>
+		
+	        <a href="/blog/categories/elastic search/" rel="1">elastic search</a>
+		
+	        <a href="/blog/categories/html5/" rel="1">html5</a>
+		
+	        <a href="/blog/categories/javascript/" rel="1">javascript</a>
+		
+	</div>
+</section>	
+  
+</aside>
+
+
+	    </div>
+	    <footer role="contentinfo" class="page-footer"><div class="footer">
+	<div class="container">
+	  Copyright &copy; 2013 - Eric Vidal -
+	  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+	</div>
+</div>
+</footer>
+	  </div>	  
+  </div>  
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'ericvidalblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://evidal.github.io/blog/2012/01/12/Gestion-des-performances/';
+        var disqus_url = 'http://evidal.github.io/blog/2012/01/12/Gestion-des-performances/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+<script type="text/javascript" src="/javascripts/jquery.tagcloud.js"></script>
+<script type="text/javascript">
+	$.fn.tagcloud.defaults = {
+	  size: {start: 10, end: 20, unit: 'pt'},
+	  color: {start: '#5C7270', end: '#FF7530'}
+	};
+
+	$(function () {
+		console.log("coucou")
+	  $('#cloud a').tagcloud();
+	});
+</script>
+
+
+
+</body>
+</html>
+<script language="javascript">
+	$.backstretch("http://unsplash.s3.amazonaws.com/batch%204/jet-sky.jpg");
+</script>

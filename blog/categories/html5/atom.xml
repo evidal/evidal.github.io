@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: html5 | Le Blog d'Eric Vidal]]></title>
+  <link href="http://evidal.github.io/blog/categories/html5/atom.xml" rel="self"/>
+  <link href="http://evidal.github.io/"/>
+  <updated>2013-09-20T10:37:31+02:00</updated>
+  <id>http://evidal.github.io/</id>
+  <author>
+    <name><![CDATA[Eric Vidal]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Mon premier sprite en HTML 5]]></title>
+    <link href="http://evidal.github.io/blog/2012/10/24/mon-premier-sprite-en-HTML-5/"/>
+    <updated>2012-10-24T00:00:00+02:00</updated>
+    <id>http://evidal.github.io/blog/2012/10/24/mon-premier-sprite-en-HTML-5</id>
+    <content type="html"><![CDATA[<p>Bon ça traîne depuis un petit moment sur mon disque mais voilà ma première utilisation du composant HTML5 canvas.</p>
+
+<p>C'est le petit Zangief qui a été mis à contribution.</p>
+
+<p>Le source est disponible sur GitHub sous mon projet <a href="https://github.com/evidal/HTML5tests">HTML5tests</a>.</p>
+
+<p>Le resultat de ce test est <a href="http://htmlpreview.github.com/?https://github.com/evidal/HTML5tests/blob/master/canvas.html">ici</a></p>
+
+<iframe src="http://htmlpreview.github.com/?https://github.com/evidal/HTML5tests/blob/master/canvas.html" width="100%" height="600px"></iframe>
+
+
+<p>Bizarrement je m'attendais à ce que ce soit beaucoup plus difficile pour avoir un résultat fluide. N'étant pas un artiste, ce qui a été le plus long a été de trouver les sprites. Du coup ça m'a donné plein d'idées et j'ai téléchargé tout un tas d'autres sprites (dispo dans mon projet GitHUB <a href="https://github.com/evidal/HTML5tests">HTML5tests</a>).</p>
+
+<p>Je ferai une mise à jour de l'article avec les différents liens qui m'ont permis d'atteindre ce résultat.</p>
+]]></content>
+  </entry>
+  
+</feed>
