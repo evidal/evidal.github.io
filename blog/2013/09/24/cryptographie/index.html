@@ -1,0 +1,562 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Cryptographie - Le Blog d'Eric Vidal</title>
+  <meta name="author" content="Eric Vidal">
+
+  
+  <meta name="description" content="">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Cardo" rel="stylesheet" type="text/css">
+
+  
+  <link rel="canonical" href="http://evidal.github.io/blog/2013/09/24/cryptographie">
+  <link href="/favicon.png" rel="icon">
+  
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link href="/stylesheets/elusive-webfont.css" rel="stylesheet">
+
+  
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/custom.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  <script src="/javascripts/libs/jquery.js"></script>
+  <script src="/javascripts/libs/modernizr-2.0.js"></script>
+  <script src="/javascripts/libs/bootstrap.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Le Blog d'Eric Vidal" type="application/atom+xml">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+  
+
+</head>
+
+<body   >
+  <div class="container-narrow">  
+	  <div class="container">
+	  	<div class="header">
+  <div class="container">
+    <img src="/images/coffee-cup-48.png" class="headerct">
+    <a class="headerct" href="/">Le Blog d'Eric Vidal</a>
+  </div>
+  <nav role="navigation"><div class="navbar navbar-inverse container">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <!-- <a class="brand" href="/">Le Blog d'Eric Vidal</a> -->
+
+      <div class="nav-collapse">
+        <ul class="nav">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/cv">CV</a></li>
+</ul>
+
+
+        <ul class="nav pull-right" data-subscription="rss">
+          <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS"><i class="icon-rss"></i></a></li>
+          
+        </ul>
+
+        
+          <form class="pull-right navbar-search" action="http://google.com/search" method="get">
+            <fieldset role="search">
+              <input type="hidden" name="q" value="site:evidal.github.io" />
+              <input class="search-query" type="text" name="q" results="0" placeholder="Search"/>
+            </fieldset>
+          </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+      <!-- <div class="">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/blog/archives">Archives</a></li>
+        </ul>
+        <h3 class="muted">
+          <img src="/images/coffee-cup-48.png" class="headerct">
+          <a class="headerct" href="/">Le Blog d'Eric Vidal</a>
+        </h3>
+      </div> -->
+</nav>
+</div>
+
+	    <div class="row">
+	      
+<div class="span9">
+
+  <article class="hentry" role="article">
+    
+  <header class="page-header">
+    
+      <h1 class="entry-title">Cryptographie</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-24T00:00:00+02:00" pubdate data-updated="true">24/09/13</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Cet article a pour but de présenter quelques éléments concernant la cryptographie, et notamment tous les mécanismes qui sont mis en place dans les cartes à puces et les systèmes qui y sont connectés. L&#8217;article est un peu long, la suite en suivant le lien.</p>
+
+<!--more-->
+
+
+<h2>Livres</h2>
+
+<p>Tout d&#8217;abord quelques bons livres pour s&#8217;initier à la cryptographie. L&#8217;<a href="http://www.amazon.fr/Histoire-codes-secrets-Simon-Singh/dp/2253150975">Histoire des codes secrets</a> de Simon Singh est un super bouquin de vulgarisation. L&#8217;auteur retrace de l&#8217;antiquité à nos jours  l&#8217;histoire des codes secrets.
+C&#8217;est passionnant et ça se lit très facilement (comme un roman).</p>
+
+<p>On m&#8217;a fortement recommandé de lire <a href="http://www.amazon.fr/Secrets-Lies-Digital-Security-Networked/dp/0471453803">Secrets and Lies: Digital Security in a Networked World</a> qui est un livre plus sérieux présentant les différentes solutions qu&#8217;on peut mettre en place pour protéger un système.</p>
+
+<h2>Terminologie</h2>
+
+<p>Parlons un peu terminologie. Dans le monde de la cryptographie, il y a un vocabulaire précis à utiliser.
+Tout d&#8217;abord on parle d&#8217;opération de <strong>Chiffrement (encryption)</strong> et <strong>Déchiffrement (decryption)</strong>. L&#8217;encodage et le décodage (par exemple passer une information en BASE64) ne sont pas des opérations cryptographiques.</p>
+
+<p>La science associée à la cryptographie est la <strong>cryptanalyse (cryptanalysis)</strong>. On dit du message original (celui à chiffrer) qu&#8217;il est un <strong>texte brut (plain text)</strong>. Le message obtenu suite à une opération de cryptographie est le texte chiffré (cyphertext). Pour réaliser le chiffrement d&#8217;un message en texte brut, on utilise une <strong>clé de chiffrement (key)</strong>. <strong>L&#8217;ensemble des clés (Key Space)</strong> est l&#8217;ensemble de toutes les clés possibles pour un algorithme de chiffrement donné. Par exemple, pour une clé de chiffrage 10 bits, la taille de l&#8217;ensemble des clés est de 2 puissances 10.</p>
+
+<p>Un <strong>vecteur d&#8217;initialisation (initialization vector)</strong> est une valeur aléatoire combinée avec des portions du message original permettant aux algorithmes de chiffrage d&#8217;éviter les répétitions (et donc d&#8217;être plus facile à casser). On peut parler aussi de <strong>Nonce</strong>.</p>
+
+<p>Un <strong>système cryptographique (Crypto System)</strong> est une combinaison d&#8217;algorithmes permettant de chiffrer/déchiffrer un message. Un <strong>processeur cryptographique (Crypto Processor)</strong> est un processeur permettant de supporter matériellement le processus de chiffrage/déchiffrage.</p>
+
+<h2>Buts d&#8217;un système de Cryptage</h2>
+
+<p>On met rarement en place un système de de cryptographie par plaisir. Un système de cryptage est nécessaire quand on veut implémenter un ou plus plusieurs des points suivants:</p>
+
+<ul>
+<li>la <strong>Confidentialité</strong>
+
+<ul>
+<li>si quelqu&#8217;un intercepte le message il ne peut rien en faire</li>
+</ul>
+</li>
+<li>L&#8217;<strong>Intégrité</strong>
+
+<ul>
+<li>On s&#8217;assure que le message reçu est conforme à l&#8217;aide d&#8217;un Hash</li>
+<li>Attention, le concept d&#8217;intégrité ne vaut pas une signature électronique</li>
+</ul>
+</li>
+<li>l&#8217;<strong>Authentification (certificate)</strong>
+
+<ul>
+<li>Le message est protégé par une mot de passe</li>
+<li>Le message est signé (Digital Signature)</li>
+</ul>
+</li>
+<li>La <strong>Non Répudiation (Identity)</strong>
+
+<ul>
+<li>On peut certifier la provenance du message et protéger des usurpations d&#8217;identités</li>
+<li>L&#8217;identité est garantie.</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Vulnérabilités</h2>
+
+<p>Un système de cryptographie doit être bâti d&#8217;après le <strong><a href="http://fr.wikipedia.org/wiki/Principe_de_Kerckhoffs">principe de Kerckhoffs</a></strong>,
+c&#8217;est à dire que la protection ne doit pas résider dans le secret de l&#8217;algorithme, mais plutôt dans la clé. Pour être réellement garanti,
+l&#8217;algorithme d&#8217;un système de cryptographie doit être public. La sécurité doit résider dans la clé plutôt que dans le secret de l&#8217;algorithme.</p>
+
+<p>De manière générale, développer son propre algorithme est une très mauvaise idée, et cela pour plusieurs raison. D&#8217;une part, on ne peut
+garantir à un tiers l’invulnérabilité  de l&#8217;algorithme. D&#8217;autre part si cela n&#8217;est pas son métier, il y a un risque réel pour créer un système
+inefficace.</p>
+
+<p>Il faut également faire attention à l&#8217;ensemble du système, pas seulement la clé et le choix d&#8217;un algorithme. C&#8217;est en effet le maillon le plus faible
+de la chaine qui fixe la sécurité globale du système. Si la carte qui implémente le décodage est sensible (par exemple aux surcharges électriques), on
+peut arriver a induire des comportements inattendus permettant de déchiffrer le message. Pour pallier à ces faiblesses techniques (qui sont découvertes
+au fil de l&#8217;eau), la meilleure solution est de changer régulièrement le système de cryptage. C&#8217;est pour cela par exemple qu&#8217;on change régulièrement de
+carte bleue.</p>
+
+<p>Actuellement on considère qu&#8217;une clé de 256 bits est suffisamment complexe pour être protégé pour la durée de vie de m&#8217;univers. En revanche des
+failles sont régulièrement découvertes sur les systèmes utilisant ces clés. Donc les &ldquo;pirates&rdquo; ont plus tendances à s&#8217;introduire sur le système recevant
+ou émettant le message plutôt que de l&#8217;intercepter.</p>
+
+<p>En France on peut utiliser les algorithmes symétriques DES, 3DES, AES. On est en revanche tenu de déclarer tout importation ou exportation de système cryptographique.</p>
+
+<h2>Les algorithmes symétriques</h2>
+
+<p>Ces algorithmes sont utilisés pour assurer la confidentialité d&#8217;un message et la vérification de l&#8217;intégrité des données. Le principe de ce genre
+d&#8217;algorithme est que la même clé est utilisé pour chiffrer et déchiffrer.</p>
+
+<p>Les 3 principaux algorithmes symétriques sont les suivants:</p>
+
+<ul>
+<li><a href="http://fr.wikipedia.org/wiki/Data_Encryption_Standard">DES</a> : Il a été créé dans les années 70 par IBM, il était prévu pour tenir 10 ans face aux Hackers. C&#8217;est un système de chiffrage 56 bits. Actuellement ce système de chiffrage est complétement dépassé et ce casse facilement avec des attaques de force brute (Brute Force, on essaye toutes les combinaisons)</li>
+<li><a href="http://fr.wikipedia.org/wiki/3DES">3DES</a> : C&#8217;est une variante de DES ou on applique 3 fois le chiffrage DES de différentes façon. Pourquoi 3 fois ? parce qu’apparemment  2 fois ne sert à rien. Ce type de chiffrage est très utilisé dans le monde bancaire. Ce système est actuellement cassé, mais l&#8217;opération reste compliquée à effectuer.</li>
+<li><a href="http://fr.wikipedia.org/wiki/Advanced_Encryption_Standard">AES</a> : il a était mis au point en 2000 et se base sur une clé pouvant aller de 128 à 256 bits.</li>
+</ul>
+
+
+<p>D&#8217;autres algorithmes existent mais sont moins utilisés: IDEA (très similaire à DES), Blowfish, RC4, RC5, CAST, SAFER, Twofish.</p>
+
+<p>Ce type d&#8217;algorithmes est utilisé pour chiffrer des messages par bloc. En général on prend un bloc faisant la taille de la clé et on complète
+avec un motif final pour compléter la fin du message. Il y a plusieurs façons d&#8217;appliquer le chiffrement:</p>
+
+<ul>
+<li>ECB (Electronic Code Book), chaque block est chiffré de manière indépendante, ce type d&#8217;application est de moins en moins utilisé, car on peut retrouver des patterns et donc plus facilement cassé le chiffrage</li>
+<li>CBC (Cipher Block Chaining) chaque block dépend du bloc précédent, un ou exclusif est appliqué entre le bloc courant et le bloc précédent. C&#8217;est plus sûr mais cela comporte pose problème en streaming. Si on perd un bloc, on ne peut plus déchiffrer le message, il faut donc mettre en place des trames de resynchronisation.
+
+<ul>
+<li>L&#8217;avantage de ce mode d&#8217;application, c&#8217;est qu&#8217;il est simple. Cela peut donc fonctionner sur des processeurs très faibles.</li>
+</ul>
+</li>
+<li>OFB (Output Feedback), c&#8217;est sur la clé qu&#8217;on fait un ou exclusif pour ajouter de la &ldquo;variabilité&rdquo;.</li>
+<li>CTR (Counter), on prend un nombre aléatoire qui permet de faire varier la clé à chaque chiffrement de bloc.</li>
+</ul>
+
+
+<p>Les algorithmes sont simples et facile à mettre en place mais ils comportent des problèmes quand on veut les utiliser à grand échelle.
+En effet pour 5 utilisateurs, on va avoir besoin de 10 clés pour assurer la confidentialité entre chaque personne. Mais si on passe à 10 utilisateurs,
+on va avoir besoin de 45 clés et ainsi de suite ( N * (N-1) / 2).</p>
+
+<p>Si on veut garantir un niveau de sécurité élevé tout évitant la génération d&#8217;un grand nombre de clé, il est nécessaire d&#8217;utiliser des algorithmes de
+chiffrement asymétrique.</p>
+
+<h2>Les algorithmes asymétriques</h2>
+
+<p>Ce type d&#8217;algorithme a donc été créé au départ pour limiter le nombre de clé à s&#8217;échanger entre utilisateurs. Il est basé sur une clé privée permettant
+de chiffrer un message et une clé publique (différente de la clé privée) que l&#8217;on donne aux autres utilisateurs. Cette clé publique permet uniquement de
+déchiffrer un message chiffré avec la clé privée de l&#8217;émetteur du message. La clé privée n&#8217;est jamais communiqué aux autres utilisateurs, elle reste secrète.</p>
+
+<p>Ce genre d&#8217;algorithmes est très compliqué et donc très lent. Par exemple un chiffrage RSA est 100 fois plus lents qu&#8217;un DES.
+De plus la sécurité de ce genre de chiffrage est basée sur la longueur de la clé. Actuellement RSA 128 bits est cassé et RSA 1024 est sur le point de
+l&#8217;être. Il faut donc viser au moins une clé 2048 bits pour être certain d&#8217;assures la confidentialité d&#8217;un message.</p>
+
+<p>L&#8217;avenir de RSA, le principal algorithme de chiffrage asymétrique est difficile à prédire même si pour l&#8217;instant il reste sûr. Un nouveau système est en train d&#8217;apparaitre. Il est basé sur des <a href="http://fr.wikipedia.org/wiki/Cryptographie_sur_les_courbes_elliptiques">courbes elliptiques</a> et il permet de réduire la taille des clés (courbes elliptiques 256 serait équivalent à RSA 4096).</p>
+
+<h2>PKI (Public Key Infrastructure)</h2>
+
+<p>Les PKI sont des systèmes permettant de s&#8217;assurer qu&#8217;une clé est bien distribué à la bonne personne, permettant d&#8217;éviter ainsi une
+attaque de type &ldquo;Man in the Middle&rdquo; Pour garantir la distribution des clés, on passe par des autorités de certification. Quand on
+reçoit une clé en provenance d&#8217;une autorité, on a la garantie que le message et la clé sont sûrs. La plus connue de ces autorités de
+certification est Verisign. De manière générale les autorités de certification sont basées sur un système de certification arborescent,
+et dans la plupart des cas, la NSA est haut.</p>
+
+<h2>Echanges de clés</h2>
+
+<p>Pour échanger de manière sûre des clés, des méthodes ont été définie, comme celle de <a href="http://fr.wikipedia.org/wiki/Diffie-Hellman">Diffie-Hellman</a>.
+Comment faire quand personne ne connait rien l&#8217;un de l&#8217;autre pour partager une clé. On va par exemple utiliser le RSA pour envoyer une clé symétrique
+le temps d&#8217;une transaction.</p>
+
+<h2>Intégrité (hash algorithms)</h2>
+
+<p>Pour vérifier l&#8217;intégrité des données, on utilise des fonctions de hachage. Ces fonctions sont appliquées sur le message en clair, cela permet
+de vérifier que pendant la transmission du message, le contenu n&#8217;a pas été altéré. On peut utiliser des algorithmes comme <a href="http://fr.wikipedia.org/wiki/SHA-1">SHA1</a> pour faire ce hachage. On peut aussi utiliser un algorithme de chiffrement pour calculer un HASH et chiffrer le message.</p>
+
+<p>Attention la fonction de HASH ne doit pas être bijective, sinon on peut retrouver le message originel. Il existe plusieurs méthodes, utilisable selon
+les cas :</p>
+
+<ul>
+<li>Message Digest avec SHA1 dans le mode asymétrique</li>
+<li>Message Authentication Code (MAC) dans le mode symétrique</li>
+</ul>
+
+
+<p>Les fonctions de hachage les plus connus sont</p>
+
+<ul>
+<li><a href="http://fr.wikipedia.org/wiki/SHA-1">SHA1</a></li>
+<li><a href="http://fr.wikipedia.org/wiki/MD5">MD5</a>, des dictionnaires sont disponibles depuis longtemps pour celle-ci</li>
+<li><a href="http://fr.wikipedia.org/wiki/HAVAL">HAVAL</a></li>
+<li><a href="http://fr.wikipedia.org/wiki/RIPEMD-160">RIPEMD-160</a></li>
+</ul>
+
+
+<h2>Méthodes d&#8217;autentification (Signature Digitale)</h2>
+
+<p>Les fonctions de chiffrement asymétrique sont utilisées également pour signer des documents. La clé privé étant unique, on peut la
+considérer comme un signature. Une personne ayant signé un document de sa clé, ne peut pas répudier sa décision.
+La signature électronique étant lié à ce qu&#8217;on signe, elle varie en fonction de ce qu&#8217;on signe.
+De manière pratique on va signer un document, ou simplement son HASH.</p>
+
+<p>Pour qu&#8217;une signature ait une valeur et qu&#8217;elle ne puisse pas être imitée, on va passer par un organisme de séquestre pour stocker
+les documents signés ainsi que les clés publiques. Les signatures électroniques sont basé sur l&#8217;algorithmes <a href="http://fr.wikipedia.org/wiki/Digital_Signature_Algorithm">DSA</a> qui a été introduit quand RSA était encore breveté.</p>
+
+<h2>Infrastructure des PKI (Certificates)</h2>
+
+<p>Les organismes de certifications sont décrits par la norme <a href="http://fr.wikipedia.org/wiki/X.509">X509</a>.
+Pour résumlé un PKI c&#8217;est:</p>
+
+<ul>
+<li>Séquestre (notarization)</li>
+<li>Time Stamping</li>
+<li>Non répudiation</li>
+<li>Privilege management</li>
+</ul>
+
+
+<p>Un certificat est un moyen de faire confiance à une clé publique. Le certificat n&#8217;est pas une signature. Le certificat n&#8217;est pas un système d&#8217;authentification. Les certificats sont statiques (ils servent à prouver la provenance d&#8217;une clé publique).</p>
+
+<p>e.g. HTTPS (SSL)
+La faiblesse de SSL est dans le fait qu&#8217;on identifie pas le client. Du coup on peut multiplier les attaques coté client pour récupérer les clés.</p>
+
+<h2>Les attaques</h2>
+
+<p>On peut attaquer un système en interne (e.g. une carte bleue, une carte SIM, etc.) en électronique pure. Il suffit de tester un composant en injectant différents signaux et voir comment le système se comporte. C&#8217;est pour cela que sur les puces assurant le chiffrement les pates ou les pistes de test ont disparues.
+Cela rend plus difficile l&#8217;envoie de signaux (rien n&#8217;empêche par la suite de &ldquo;strapper&rdquo; des pistes sciées sur une carte).
+Ces études sont assez compliquées à faire, seul des gouvernements ou des mafias très riches ont les moyens de se payer ce genre d&#8217;étude. Ces groupes
+d&#8217;études sont très ingénieux est ont de gros moyens, ils sont capables par exemple de lire la RAM au microscope électronique. C&#8217;est pour cela que
+l&#8217;élctronique d&#8217;un système de chiffrement est rendue compliquée:</p>
+
+<ul>
+<li>les éléments à l&#8217;intérieur des puces ne sont pas alignés pour éviter une lecture trop facile.</li>
+<li>on met des capteurs (lumière, active grid),</li>
+<li>on va cacher les éléments (couches, taille, pistes compliquées, bouclier, le bus de transport lui-même sera chiffré)</li>
+<li>on rend les choses compliquées (logique redondante)</li>
+</ul>
+
+
+<p>De manière externe on peut injecter des signaux pour provoquer un état imprévu sur le système. Par exemple, certaines puces sont sensibles à certaines
+longueurs d&#8217;onde de lumière. On peut aussi injecter des pics de voltage, sur certains vieux systèmes en envoyant des piques de 50V, on pouvait faire
+sauter des instructions aux puces. On peut également étudier la consommation électrique d&#8217;une puce pour savoir quelle opération elle est en train d&#8217;effectuer. Pour se protéger de ce genre d&#8217;attaque il faut:</p>
+
+<ul>
+<li>réduire le signal du processeur pour que les signaux soit difficile à prélever,</li>
+<li>ajouter du bruit pour rendre encore plus difficile le prélèvement des signaux,</li>
+<li>supprimer le timing pour être moins sensible à l&#8217;injection de signaux,</li>
+<li>modifier l&#8217;ordre des opérations pour une même action,</li>
+<li>mettre des capteurs de lumière, de tension, de température pour détecter les attaques,</li>
+<li>répéter les opérations pour éviter de se faire injecter des signaux 2 fois,</li>
+<li>détruire la puce si problème.</li>
+</ul>
+
+
+<p>J&#8217;espère que cet article aura été instructif et bon point d&#8217;entrée dans le monde de la cryptographie.</p>
+</div>
+
+
+    <footer>
+      <p class="meta">
+        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Eric Vidal</span></span>
+
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-24T00:00:00+02:00" pubdate data-updated="true">24/09/13</time>
+        
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cryptographie/'>cryptographie</a>
+  
+</span>
+
+
+      </p>
+      
+        <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://evidal.github.io/blog/2013/09/24/cryptographie/" data-via="EricVidalPro" data-counturl="http://evidal.github.io/blog/2013/09/24/cryptographie/" >Tweet</a>
+  
+  
+  
+</div>
+
+      
+      
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+      </section>
+      
+      <ul class="pager">
+        
+        <li class="previous"><a class="basic-alignment left"
+          href="/blog/2013/02/24/angular.js-et-yeoman/" title="Previous Post:
+          Angular.js et Yeoman">&laquo; Angular.js et Yeoman</a></li>
+        
+        <li><a href="/blog/archives">Blog Archives</a></li>
+        
+      </ul>
+    </footer>
+  </article>
+</div>
+
+<aside class="sidebar-nav span3">
+  
+    <section class="aside" >
+	<h4>&Agrave; propos</h4>
+	<img src="/images/evidal_200.png" class="picid"> Je suis architecte chez <a href="http://www.sicap.com">Sicap</a>. Passionné par mon métier et les nouvelles technologies, ce blog me sert de bloc-notes pour partager certaines découvertes.
+	<ul class="social">
+		<li><a title="Twitter" href="http://twitter.com/#!/EricVidalPro"><i class="icon-twitter"></i></a></li>
+        <li><a title="Linkedin" href="http://www.linkedin.com/pub/eric-vidal/4/582/99"><i class="icon-linkedin"></i></a></li>
+        <li><a title="Viadeo" href="http://www.viadeo.com/fr/profile/eric.vidal"><i class="icon-viadeo"></i></a></li>
+        <li><a title="Github" href="https://github.com/evidal"><i class="icon-github"></i></a></li>
+        <li><a title="RSS" href="/blog/eric-vidal.rss"><i class="icon-rss"></i></a></li>
+    </ul>
+</section>	<section class="aside">
+	<h4>R&eacute;cemment post&eacute;s</h4>
+  <ul id="recent_posts" class="nav nav-list">
+    
+      <li class="post">
+        <a href="/blog/2013/09/24/cryptographie/">Cryptographie</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/24/angular.js-et-yeoman/">Angular.js et Yeoman</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/24/mon-premier-sprite-en-HTML-5/">Mon premier sprite en HTML 5</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/18/elastic-search/">Elastic Search</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/24/sophisme-et-spring/">Sophisme et Spring</a>
+      </li>
+    
+  </ul>
+</section>
+<section class="aside">
+	<h4>Tags</h4>
+	<div id="cloud">
+		
+	        <a href="/blog/categories/blog/" rel="1">blog</a>
+		
+	        <a href="/blog/categories/conf/" rel="4">conf</a>
+		
+	        <a href="/blog/categories/java/" rel="6">java</a>
+		
+	        <a href="/blog/categories/cloud/" rel="1">cloud</a>
+		
+	        <a href="/blog/categories/perf/" rel="3">perf</a>
+		
+	        <a href="/blog/categories/groovy/" rel="1">groovy</a>
+		
+	        <a href="/blog/categories/jee/" rel="1">jee</a>
+		
+	        <a href="/blog/categories/elastic search/" rel="1">elastic search</a>
+		
+	        <a href="/blog/categories/html5/" rel="1">html5</a>
+		
+	        <a href="/blog/categories/javascript/" rel="1">javascript</a>
+		
+	        <a href="/blog/categories/cryptographie/" rel="1">cryptographie</a>
+		
+	</div>
+</section>	
+  
+</aside>
+
+
+	    </div>
+	    <footer role="contentinfo" class="page-footer"><div class="footer">
+	<div class="container">
+	  Copyright &copy; 2013 - Eric Vidal -
+	  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+	</div>
+</div>
+</footer>
+	  </div>	  
+  </div>  
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'ericvidalblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://evidal.github.io/blog/2013/09/24/cryptographie/';
+        var disqus_url = 'http://evidal.github.io/blog/2013/09/24/cryptographie/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+<script type="text/javascript" src="/javascripts/jquery.tagcloud.js"></script>
+<script type="text/javascript">
+	$.fn.tagcloud.defaults = {
+	  size: {start: 10, end: 20, unit: 'pt'},
+	  color: {start: '#5C7270', end: '#FF7530'}
+	};
+
+	$(function () {
+		console.log("coucou")
+	  $('#cloud a').tagcloud();
+	});
+</script>
+
+
+
+</body>
+</html>
+<script language="javascript">
+	$.backstretch("http://unsplash.s3.amazonaws.com/batch%204/jet-sky.jpg");
+</script>

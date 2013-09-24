@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Hibernate OGM - Le Blog d'Eric Vidal</title>
+  <title>Category: cryptographie - Le Blog d'Eric Vidal</title>
   <meta name="author" content="Eric Vidal">
 
   
-  <meta name="description" content="">
+  <meta name="description" content="Category: cryptographie">
   
 
   <meta name="HandheldFriendly" content="True">
@@ -20,7 +20,7 @@
   <link href="http://fonts.googleapis.com/css?family=Cardo" rel="stylesheet" type="text/css">
 
   
-  <link rel="canonical" href="http://evidal.github.io/blog/2011/06/30/Hibernate-OGM">
+  <link rel="canonical" href="http://evidal.github.ioblog/categories/cryptographie">
   <link href="/favicon.png" rel="icon">
   
   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
@@ -104,169 +104,37 @@
 	      
 <div class="span9">
 
-  <article class="hentry" role="article">
+  <article role="article">
     
-  <header class="page-header">
+    <header class="page-header">
+      <h1 class="entry-title">Category: Cryptographie</h1>
+      
+    </header>
     
-      <h1 class="entry-title">Hibernate OGM</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
+    <div id="blog-archives" class="category">
 
 
 
   
+  <h1>2013</h1>
 
+<article>
+  <div class="well">
 
-<time datetime="2011-06-30T00:00:00+02:00" pubdate data-updated="true">30/06/11</time>
-        
-         | <a href="#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
+<h2><a href="/blog/2013/09/24/cryptographie/">Cryptographie</a></h2>
+<time datetime="2013-09-24T00:00:00+02:00" pubdate><span class='month'>Sep</span> <span class='day'>24</span> <span class='year'>2013</span></time>
 
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/cryptographie/'>cryptographie</a></span>
+</footer>
 
-<div class="entry-content"><p><a href="http://blog.emmanuelbernard.com/">Emmanuel Bernard</a> était au Lyon JUG ce jeudi 23 juin, il nous a présenté Hibernate OGM (pour Object Grid Mapping), un nouveau sous-projet de l&#8217;équipe Hibernate dédié au NoSQL. En deuxième partie, un dialogue permettait de mieux connaître les solutions Hibernate.</p>
-
-<!--more-->
-
-
-<h2>Hibernate OGM</h2>
-
-<p>Le but d&#8217;Hibernate OGM et d&#8217;offrir une API standard pour fédérer les différents solution NoSQL.</p>
-
-<p>Premier problème, chaque solution NoSQL a son propre modèle de stockage de données:</p>
-
-<ul>
-<li>Stockage Clé-Valeur (Hashmap), on stocke une clé et une valeur <a href="http://project-voldemort.com/">Voldemort</a>, <a href="http://www.jboss.org/infinispan">Infinispan</a></li>
-<li>base de données orientées graphe <a href="http://neo4j.org/">Neo4j</a></li>
-<li>base de données orientée document <a href="http://couchdb.apache.org/">Couch DB</a>, <a href="http://www.mongodb.org/">Mongo DB</a></li>
-<li>base de données orientée Colonne  <a href="http://cassandra.apache.org/">Cassandra</a>, <a href="http://code.google.com/intl/fr/appengine/docs/python/gettingstarted/usingdatastore.html">Google Datastore</a></li>
-</ul>
-
-
-<p><img src="http://blog.xebia.fr/wp-content/uploads/2010/04/nosql.png" alt="Technos NoSQL" /></p>
-
-<p>Source <a href="http://blog.xebia.fr/2010/04/21/nosql-europe-tour-dhorizon-des-bases-de-donnees-nosql/">Xebia</a></p>
-
-<p>Deuxième problème, comme avant l&#8217;avènement de SQL, aucune solution NoSQL n&#8217;a le
-même système de requêtage, ni les mêmes capacités.</p>
-
-<p>Hibernate OGM a commencé il y a environ un an et Emmanuel y a bosser à temps partiel
-cette année, le temps de laisser mûrir les choses. Emmanuel c&#8217;est beaucoup appuyé
-sur Hibernate Core et Hibernate Search pour implémenter Hibernate OGM.
-Pour l&#8217;instant Hibernate OGM supporte:</p>
-
-<ul>
-<li><a href="http://www.jboss.org/infinispan">Infinispan</a></li>
-<li>CRUD d&#8217;objets</li>
-<li>requêtes Hibernate Search</li>
-</ul>
-
-
-<p>Il ne supporte pas encore:</p>
-
-<ul>
-<li>JP-QL</li>
-<li>autre chose qu&#8217;<a href="http://www.jboss.org/infinispan">Infinispan</a></li>
-</ul>
-
-
-<p>Une démo a été montrée, Emmanuel faisait tournée une série de tests en utilisant
-la base de données H2. Il faisait tournée la même démo mais en changeant la conf
-de son persistence.xml pour utiliser Hibernate OGM.
-Emmanuel a lancer un appel à tous les développeurs qui souhaitent proposer des
-améliorations ou des implémentations pour d&#8217;autre solution NoSQL.
-Le projet n&#8217;en est qu&#8217;à son début mais est à surveiller par toutes les entreprises
-qui souhaitent tester une solution NoSQL mais sans trop dépendre d&#8217;une solution
-particulière. Cela leur permettra éventuellement de revenir à du SQL standard.
-Pour l&#8217;instant je pense que l&#8217;approche est à surveiller pour voir comment elle va
-évoluer. Je me deamnde juste si dans le cadre de NoSQL, la persistence objet a du
-sens. En effet, vu la volumétrie des données qu&#8217;on est censée gérer dans des BBD
-de type NoSQL, est-ce quel le modèle JPA est le meilleur ?
-Je n&#8217;ai pas la réponse pour l&#8217;instant.</p>
-
-<p>Les slides de la présentation sont disponible <a href="http://emmanuelbernard.com/various/presentations/hibernate-ogm-concepts-1.1.pdf">ici</a></p>
-
-<h2>Hibernate</h2>
-
-<p>La deuxième partie de la conférence était un dialogue entre Emmanuel et le public
-à propose des différentes solutions Hibernate. J&#8217;ai découvert un module d&#8217;Hibernate
-que je ne connaissais pas Hibernate Envers et qui permet de versionné des entités.
-Très bon !</p>
-
-<p>Merci au Lyon JUG, c&#8217;était vraiment une bonne soirée.</p>
 </div>
 
+</article>
 
-    <footer>
-      <p class="meta">
-        
-  
-
-<span class="byline author vcard">Posted by <span class="fn">Eric Vidal</span></span>
-
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-30T00:00:00+02:00" pubdate data-updated="true">30/06/11</time>
-        
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/java/'>java</a>
-  
-</span>
-
-
-      </p>
-      
-        <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://evidal.github.io/blog/2011/06/30/Hibernate-OGM/" data-via="EricVidalPro" data-counturl="http://evidal.github.io/blog/2011/06/30/Hibernate-OGM/" >Tweet</a>
-  
-  
-  
 </div>
 
-      
-      
-      <section>
-        <h1>Comments</h1>
-        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-      </section>
-      
-      <ul class="pager">
-        
-        <li class="previous"><a class="basic-alignment left"
-          href="/blog/2011/05/03/Mix-IT/" title="Previous Post:
-          Mix-IT">&laquo; Mix-IT</a></li>
-        
-        <li><a href="/blog/archives">Blog Archives</a></li>
-        
-        <li class="next"><a class="basic-alignment right" href="/blog/2011/07/07/Cloud-Synthese/"
-          title="Next Post: Cloud Synth&egrave;se">Cloud Synth&egrave;se
-          &raquo;</a></li>
-        
-      </ul>
-    </footer>
+    
   </article>
 </div>
 
@@ -356,10 +224,7 @@ Très bon !</p>
       var disqus_shortname = 'ericvidalblog';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://evidal.github.io/blog/2011/06/30/Hibernate-OGM/';
-        var disqus_url = 'http://evidal.github.io/blog/2011/06/30/Hibernate-OGM/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
