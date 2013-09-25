@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Cryptographie"
+title: "Dossier Cryptographie"
 date: 2013-09-24
 comments: true
 categories: cryptographie

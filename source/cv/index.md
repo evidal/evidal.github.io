@@ -14,11 +14,17 @@ date: 2013-08-20 17:17
 ## Architecte / Framework Project Leader, [Sicap](www.sicap.com)
 #### Décembre 2008 à Aujourd’hui
 <br>
-- Encadrement technique de fournisseurs off-shore (dont 1 projet de 2000 jours/hommes)
-- Rédaction Technique des avant-ventes
-- Gestion de projets techniques SICAP (gestion de 1 à 4 développeurs)
-- Expertise technique Java et JEE, réalisation de plusieurs « Proof-Of-Concept » pour lancer de nouveaux produits
-- Choix et mise en place de plate-forme technique Java dans les équipes de développement et fournisseurs
+- Encadrement technique de fournisseurs off-shore (dont 1 projet de 2000 jours/hommes) sur plusieurs projets
+	- Device Management Center, un outil de configuration OTA des terminaux mobiles pour les opérateurs
+    - Mobile Message Gateway, une plateforme de gestion des SMS/MMS pour les opérateurs
+- Rédaction Technique, chiffrage et soutenance des avant-ventes,
+	- Lancement de nouveaux produits
+	- Etudes pour la personnalisation de nos produits
+- Gestion de projets techniques (gestion de 1 à 4 développeurs),
+- Rédaction technique pour le CIR
+- Expertise technique Java et JEE, réalisation de plusieurs "Proof-Of-Concept" pour lancer de nouveaux produits,
+- Choix et mise en place de plate-forme technique Java dans les équipes de développement et fournisseurs,
+- Gestion du support niveau 3 pendant 6 mois
 - Environnement multilingue et multiculturel (travail quotidien en anglais)
 <br>
 ## Chef de projet / Architecte – OSIATIS Lyon, [Osiatis](www.osiatis.fr)
@@ -197,5 +203,6 @@ Développement Visual C++
 
 # Centres d’Intérêt
 Rugby Vétéran
+
 Piano
 
