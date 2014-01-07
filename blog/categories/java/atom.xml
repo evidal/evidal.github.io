@@ -4,7 +4,7 @@
   <title><![CDATA[Category: java | Le Blog d'Eric Vidal]]></title>
   <link href="http://evidal.github.io/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://evidal.github.io/"/>
-  <updated>2013-11-27T14:59:05+01:00</updated>
+  <updated>2014-01-07T14:13:42+01:00</updated>
   <id>http://evidal.github.io/</id>
   <author>
     <name><![CDATA[Eric Vidal]]></name>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Sophisme et Spring]]></title>
-    <link href="http://evidal.github.io/blog/2012/07/24/sophisme-et-spring/"/>
+    <title type="html"><![CDATA[Pas de test en JEE]]></title>
+    <link href="http://evidal.github.io/blog/2012/07/24/excuse-test/"/>
     <updated>2012-07-24T00:00:00+02:00</updated>
-    <id>http://evidal.github.io/blog/2012/07/24/sophisme-et-spring</id>
+    <id>http://evidal.github.io/blog/2012/07/24/excuse-test</id>
     <content type="html"><![CDATA[<p>Une petite note en passant suite aux commentaires d'un fournisseur (qui m'énerve).</p>
 
 <p>Ce fournisseur donc aime bien travailler avec Spring, ils sont à l'aise avec et travaille plutôt bien dessus.
@@ -34,11 +34,9 @@ Une de leur mission et d'améliorer les tests unitaires qui sont pour l'instant 
 </ul>
 
 
-<p>AAaaaaah mais que ça me fatigue/énerve.</p>
+<p>&ndash;> On testera pas</p>
 
-<p>Disclaimer : Je considère que le système d'injection de Spring ne sert à rien dans un serveur d'application depuis JEE 1.5.
-Après pour les autres éléments &ldquo;Springuiens&rdquo;, c'est une autre histoire.
-D'autant plus que l'utilisation de JEE ou Spring n'est pas exclusive !</p>
+<p>AAaaaaah mais que ça me fatigue/énerve.</p>
 
 <p>Quand j'entends des arguments du genre Spring c'est mieux parce que c'est plus simple à tester, ça me fait juste bondir. C'est un argument moisi.
 Il serait beaucoup plus honnête et acceptable de dire &ldquo;je suis plus à l'aise avec Spring qu'avec JEE 1.5, alors s'il te plait laisse moi utiliser Spring&rdquo;.

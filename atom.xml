@@ -4,7 +4,7 @@
   <title><![CDATA[Le Blog d'Eric Vidal]]></title>
   <link href="http://evidal.github.io/atom.xml" rel="self"/>
   <link href="http://evidal.github.io/"/>
-  <updated>2013-11-27T14:59:05+01:00</updated>
+  <updated>2014-01-07T14:13:42+01:00</updated>
   <id>http://evidal.github.io/</id>
   <author>
     <name><![CDATA[Eric Vidal]]></name>
@@ -12,6 +12,129 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Atelier des Objets Connect&eacute;s]]></title>
+    <link href="http://evidal.github.io/blog/2013/12/27/atelier-objets-connectes/"/>
+    <updated>2013-12-27T00:00:00+01:00</updated>
+    <id>http://evidal.github.io/blog/2013/12/27/atelier-objets-connectes</id>
+    <content type="html"><![CDATA[<p>Le 12, 19 et 26 novembre j&#8217;ai un suivi une serie d&#8217;<a href="http://www.atelier-objets-connectes.org/">atelier sur les objets connectés</a> proposée par le <a href="http://liris.cnrs.fr/?set_language=fr">LIRIS</a> et le <a href="http://www.fablab-lyon.fr/">Fablab de lyon</a>. Ça fait longtemps que j&#8217;ai envie de manipuler des <a href="http://arduino.cc/">arduino</a>, des <a href="http://www.lego.com/fr-fr/mindstorms/">lego mindstoroms</a> ou de travailler sur un robot. Je m&#8217;étais d&#8217;ailleurs acheté un <a href="http://www.raspberrypi.org/">Raspberry Pi</a> dans ce but, mais faute de temps le Raspberry Pi est resté globalement dans sa boite.
+Cet atelier était donc la promesse de manipuler et de pratiquer sur ce genre de materiel.</p>
+
+<p><img src="http://evidal.github.io/images/posts/2013-12-27-atelier-objets-connectes/AtelierObjetsConnectes.jpg" alt="Atelier Objets Connectés" /></p>
+
+<p>Le compte rendu officiel est disponible <a href="http://liris.cnrs.fr/actualites/generales/le-liris-organise-un-atelier-objets-connectes-avec-le-fablab-de-lyon">ici</a>. Un <a href="https://www.facebook.com/groups/368433689954636/?fref=ts">groupe</a> Facebook a également était créé.</p>
+
+<p>Pour un compte-rendu plus détaillé, cliquez sur &ldquo;Lire la suite&rdquo; <!--more--></p>
+
+<h2>Première soirée</h2>
+
+<p>La première soirée a eu lieu à la <a href="http://www.la-cordee.net/la-cordee-liberte-guillotiere/">Cordée Liberté</a>, un espace de coworking qui nous était prété pour l&#8217;occasion. Le but de cette soirée était de faire connaissance avec les différentes personnes, les profils étaient en effet assez différents : des développeurs, des designers, des électroniciens et quelques curieux. Nous avons pu commencer à faire connaissance autour d&#8217;un petit apéro.</p>
+
+<p>Les organisateurs ont ensuite présenté le but de ces ateliers et le materiel à disposition. Il y avait une dizaine de <a href="http://education.lego.com/en-gb/lego-education-product-database/mindstorms-ev3/45544-lego-mindstorms-education-ev3-core-set">kit Lego Mindstorm Eduction</a> :</p>
+
+<p><img src="http://evidal.github.io/images/posts/2013-12-27-atelier-objets-connectes/kit_lego.jpg" alt="Kit Lego" /></p>
+
+<p>et de la même manière une dizaine de kits <a href="http://arduino.cc">Arduino Uno</a> :</p>
+
+<p><img src="http://evidal.github.io/images/posts/2013-12-27-atelier-objets-connectes/ArduinoUno.jpg" alt="Arduino Uno" /></p>
+
+<p>Une imprimante 3D était égelement disponible durant toutes les sessions. Mais je ne crois pas que quelqu&#8217;un l&#8217;ai utilisée, le problème étant le temps assez limité que nous avions pour réaliser nos idées et le temps que prend l&#8217;impression d&#8217;une pièce 3D.</p>
+
+<p>Les organisateurs ont demandé à l&#8217;assemblée si des personnes avaient des idées, quelques personnes ce sont manifestées et les groupes (une dizaine) ont commencé à se former. De mon coté pas d&#8217;idée précise si ce n&#8217;est que je voulais faire un robot. Au bout du compte en discutant avec d&#8217;autres participant, on a formé une équipe pour faire un robot facteur. L&#8217;idée est de développer un système à la Twitter mais de délivrer les messages de manière réelle. Le nom est trouvé RoboPost.</p>
+
+<p>Au niveau solution technique on est parti sur une solution en Lego. L&#8217;avantage c&#8217;est que tous les catpeurs et actionneurs dont nous avions besoin sont disponibles dans la boite. La seule complexité est de créer une connexion entre une application Web qui va servir pour poster les messages et le robot qui va les distribuer. Pour faciliter la distribution, nous choisissons également de faire simple en décidant que le robot va suivre un itinéraire determiné à l&#8217;avance (un circuit materialisé par une ligne). Les utilisateurs seront identifiés par des stations colorées sur le chemin du robot. Le message sera délivré sur l&#8217;écran de la brique EV3.</p>
+
+<p><img src="http://evidal.github.io/images/posts/2013-12-27-atelier-objets-connectes/CircuitMindstorm.png" alt="Kit Lego" /></p>
+
+<p>Du coup, notre expérimentation fonctionnera avec 4 personnes au plus. L&#8217;idée de départ est de mettre ça en place par exemple autour d&#8217;une table. Et pouruoi pas d&#8217;ajouter également la distribution d&#8217;objets physiques une fois que la premère étape fonctionne.</p>
+
+<h2>Deuxième soirée</h2>
+
+<p>Les équipes étant constituées, notre equipe c&#8217;est retrouvée sur le campus de Lyon 1 dans le batiment Nautibus. Les soirées étant assez courte (2 heures), nous avons du simplifier au maximum tout le fonctionnel qu&#8217;on avait pu imaginer. J&#8217;ai développé le site Web, 2 membres de l&#8217;équipe ont monté le robot et 2 autres se sont occupés de la communication entre le serveur Web et la brique Lego EV3, le cerveau du robot. C&#8217;est d&#8217;ailleurs cette dernière partie qui a le plus posée de problème puisque cela a été le point non-implémenté du projet. Notre équipe c&#8217;est séparée en ayant pas mal de boulot à faire à la maison pour avoir une version démontrable.</p>
+
+<h2>Troisième soirée</h2>
+
+<p>La troisème soirée, toujours sur le campus de Lyon 1, était dédiée à la finalisation des projets et à leur presentation. Notre équipe c&#8217;est concentrée sur la finalisation du robot, les points critiques étant d&#8217;avoir 2 capteurs optiques: l&#8217;un pour suivre le circuit sur et l&#8217;autre pour identifier les stations de couleurs. Au bout du compte nous avons réussi à mettre au point à la dernière minute un robot suiveur de ligne, capable de s&#8217;arréter aux stations colorées, d&#8217;afficher la couleur sur l&#8217;écran et d&#8217;émettre un son (la couleur). Nous n&#8217;étions pas peu fier ;&ndash;) La communication entre le serveur Web et la brique EV3 est elle restée théorique, faute de temps.</p>
+
+<iframe width="560" height="315" src="http://evidal.github.io//www.youtube.com/embed/rthzKnlowL4" frameborder="0" allowfullscreen></iframe>
+
+
+<p>Les équipes ont ensuite été invitées à présenter à l&#8217;assemblée les différents projets. Voila une petite liste des différents projets:</p>
+
+<ul>
+<li><p>Projet Smart Doudou</p>
+
+<ul>
+<li>C&#8217;est un doudou connecté ayant la forme d&#8217;un nounours permettant d&#8217;entendre et communiquer avec son enfant et de déclencher différentes actions comme allumer une veilleuse, déclencher des vibrations. Il y avait une application smartphone permettant d&#8217;assurer tout cette communication. Le tout était piloté par un Raspberry Pi car le Mindstorm a une API trop protégée et l&#8217;Arduino ne permettait pas assez de chose. La seule partie manquante était la communication audio avec le doudou via le Smartphone. C&#8217;était une belle réalisation.</li>
+</ul>
+</li>
+<li><p>Projet Robot Musical</p>
+
+<ul>
+<li>C&#8217;était un robot Mindstorm piloté avec une tablette pour avancer/reculer. Les notes étaient lues via 2 feuilles de papiers colorées placées sur les cotés du robot. La première donnait le rythme, l&#8217;autre la hauteur des notes.</li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="560" height="315" src="http://evidal.github.io//www.youtube.com/embed/UOxhIVVLBQ4" frameborder="0" allowfullscreen></iframe>
+
+
+<ul>
+<li><p>Notre projet RoboPost présenté dans cet article</p></li>
+<li><p>Projet de Robot Tourneur de Page</p>
+
+<ul>
+<li>Un mécanisme en Lego permettant de tourner les pages</li>
+</ul>
+</li>
+<li><p>Projet de Compteur connecté</p>
+
+<ul>
+<li>Un système en Lego Mindstorm permettant de compter des gens entrant dans une boite de nuit (modélisés pour la démo par des bonhommes Lego). Quand la jauge de la boite de nuit est atteinte, la porte se ferme automatiquement. Elle se rouvre quand les gens partent.</li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="560" height="315" src="http://evidal.github.io//www.youtube.com/embed/2ZhSBHE3o68" frameborder="0" allowfullscreen></iframe>
+
+
+<ul>
+<li><p>Projet de Prise intelligente</p>
+
+<ul>
+<li>Une réalisation à base d&#8217;Arduino et de Raspberry Pi. L&#8217;équipe avait commandé des pièces pour le projet mais n&#8217;avait rien reçu à temps (émeteur/récepteur 433 Mhz). La démo était donc faite avec un câble réseau. Le Raspberry Pi jouait le rôle de la centrale de la maison. Il commandait l&#8217;allumage d&#8217;une LED pilotée par l&#8217;Arduino distant. L&#8217;équipe souhaitait également brancher sur le même système des capteurs de température, de luminiosité, etc&hellip; Leur &ldquo;Reste à faire&rdquo; était assez important (ajouter des relais, émeteurs/récepteurs radio, Interface Web) mais la base était fonctionnelle.</li>
+</ul>
+</li>
+<li><p>Projet ANA</p>
+
+<ul>
+<li>Un système permettant de mesurer son exposition aux émissions électromagnétiques et restituer de manière visuelle ce qui est reçu par l&#8217;utilisateur. Le système était basé sur un Arduino.</li>
+</ul>
+</li>
+<li><p>Projet Musicolor</p>
+
+<ul>
+<li>Un circuit Arduino déclenchant des notes en fonction des couleurs détectées (rouge, vert, bleu). Comme la plupart des projets (Lego ou Arduino) basés sur la reconnaissance de couleurs, celle-ci est loin d&#8217;être parfaite.</li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="560" height="315" src="http://evidal.github.io//www.youtube.com/embed/cMz3axH-ld0" frameborder="0" allowfullscreen></iframe>
+
+
+<h2>La suite</h2>
+
+<p>C&#8217;était une série d&#8217;ateliers assez intéréssante bien que le temps ait globalement manqué. Nous aurions pu avoirdes projets plus aboutis ou de profiter des imprimantes 3D avec un peu plus de temps.</p>
+
+<p>Le LIRIS prévoie de relancer une série d&#8217;aterlier en 2014 sur un format plus long, j&#8217;espère avoir le temps d&#8217;y participer.</p>
+
+<p>Les sources de notre proto sont disponibles sur ce <a href="https://github.com/titimoby/RoboPoste">repo</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Elastic Search en production]]></title>
@@ -499,10 +622,10 @@ De notre coté nous avons sélectionner Elastic Serach pour plusierus fonctionna
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Sophisme et Spring]]></title>
-    <link href="http://evidal.github.io/blog/2012/07/24/sophisme-et-spring/"/>
+    <title type="html"><![CDATA[Pas de test en JEE]]></title>
+    <link href="http://evidal.github.io/blog/2012/07/24/excuse-test/"/>
     <updated>2012-07-24T00:00:00+02:00</updated>
-    <id>http://evidal.github.io/blog/2012/07/24/sophisme-et-spring</id>
+    <id>http://evidal.github.io/blog/2012/07/24/excuse-test</id>
     <content type="html"><![CDATA[<p>Une petite note en passant suite aux commentaires d&#8217;un fournisseur (qui m&#8217;énerve).</p>
 
 <p>Ce fournisseur donc aime bien travailler avec Spring, ils sont à l&#8217;aise avec et travaille plutôt bien dessus.
@@ -519,11 +642,9 @@ Une de leur mission et d&#8217;améliorer les tests unitaires qui sont pour l&#8
 </ul>
 
 
-<p>AAaaaaah mais que ça me fatigue/énerve.</p>
+<p>&ndash;> On testera pas</p>
 
-<p>Disclaimer : Je considère que le système d&#8217;injection de Spring ne sert à rien dans un serveur d&#8217;application depuis JEE 1.5.
-Après pour les autres éléments &ldquo;Springuiens&rdquo;, c&#8217;est une autre histoire.
-D&#8217;autant plus que l&#8217;utilisation de JEE ou Spring n&#8217;est pas exclusive !</p>
+<p>AAaaaaah mais que ça me fatigue/énerve.</p>
 
 <p>Quand j&#8217;entends des arguments du genre Spring c&#8217;est mieux parce que c&#8217;est plus simple à tester, ça me fait juste bondir. C&#8217;est un argument moisi.
 Il serait beaucoup plus honnête et acceptable de dire &ldquo;je suis plus à l&#8217;aise avec Spring qu&#8217;avec JEE 1.5, alors s&#8217;il te plait laisse moi utiliser Spring&rdquo;.
