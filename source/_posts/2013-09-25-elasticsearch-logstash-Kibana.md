@@ -3,7 +3,7 @@ layout: post
 title: "Combo Logstash, Elastic Search & Kibana, l'arme absolue des logs"
 date: 2013-09-25
 comments: true
-categories: elastic search
+categories: elasticsearch
 ---
 
 L'exploitation des logs sur les applications complexes est assez compliquée. Les applications que mon entreprise développe sont morcelées en plusieurs

@@ -94,6 +94,8 @@ a:visited.headerct {color: #E84627;}
 a:hover.headerct {color: #E84627;}
 a:active.headerct {color: #E84627;}
 
+
+article p a:link {border-bottom: 1px dotted;}
 a:link {color: #838383;}
 a:visited {color: #838383;}
 a:hover {color: #838383;}
@@ -115,9 +117,10 @@ body, li {
 }
 
 article {
-	background-image: url(/images/squairy_light_90.png);
+	background-image: url(/images/squairy_light.png);
 	padding-right: 10px;
 	padding-left: 10px;
+	padding-bottom: 10px;
 	margin-bottom: 20px;
 
 	-webkit-border-radius: 4px;

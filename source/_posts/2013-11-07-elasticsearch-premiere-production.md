@@ -3,10 +3,10 @@ layout: post
 title: "Elastic Search en production"
 date: 2013-11-05
 comments: true
-categories: elastic search
+categories: elasticsearch
 ---
 
-Ça y'est, j'ai mis mon premier cluster Elastic Search en production : plus d'un milliards de documents  et chaque jour environ 500000 nouveaux documents ajoutés. Ça tourne sur 3 nœuds identiques, chacune contient une instance Elastic Search et les applications l'alimentant et l'exploitant.
+Ça y'est, j'ai mis mon premier cluster Elastic Search en production : plus d'un milliards de documents  et chaque jour environ 500000 nouveaux documents ajoutés. Ça tourne sur 3 nœuds identiques, chacun contient une instance Elastic Search et les applications l'alimentant et l'exploitant.
 
 Avoir plusieurs instances d'un même système facilite la montée en charge car le système supporte les "scale out" pour absorber plus de données ou plus de charge.
 

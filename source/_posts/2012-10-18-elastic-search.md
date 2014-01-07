@@ -3,7 +3,7 @@ layout: post
 title: "Elastic Search"
 date: 2012-10-18
 comments: true
-categories: [conf, elastic search]
+categories: [conf, elasticsearch]
 ---
 
 Elastic Search est un moteur de recherche basé sur Lucene expérimenté par la société
