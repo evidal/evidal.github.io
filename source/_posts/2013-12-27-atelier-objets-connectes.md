@@ -27,7 +27,7 @@ et de la même manière une dizaine de kits [Arduino Uno](http://arduino.cc) :
 
 ![Arduino Uno](/images/posts/2013-12-27-atelier-objets-connectes/ArduinoUno.jpg)
 
-Une imprimante 3D était égelement disponible durant toutes les sessions. Mais je ne crois pas que quelqu'un l'ai utilisée, le problème étant le temps assez limité que nous avions pour réaliser nos idées et le temps que prend l'impression d'une pièce 3D.
+Une imprimante 3D était également disponible durant toutes les sessions. Mais je ne crois pas que quelqu'un l'ai utilisée, le problème étant le temps assez limité que nous avions pour réaliser nos idées et le temps que prend l'impression d'une pièce 3D.
 
 Les organisateurs ont demandé à l'assemblée si des personnes avaient des idées, quelques personnes ce sont manifestées et les groupes (une dizaine) ont commencé à se former. De mon coté pas d'idée précise si ce n'est que je voulais faire un robot. Au bout du compte en discutant avec d'autres participant, on a formé une équipe pour faire un robot facteur. L'idée est de développer un système à la Twitter mais de délivrer les messages de manière réelle. Le nom est trouvé RoboPost.
 
