@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Combo Logstash, Elastic Search & Kibana, l'arme absolue des logs - Le Blog d'Eric Vidal</title>
+  <title>Category: mobile - Le Blog d'Eric Vidal</title>
   <meta name="author" content="Eric Vidal">
 
   
-  <meta name="description" content="">
+  <meta name="description" content="Category: mobile">
   
 
   <meta name="HandheldFriendly" content="True">
@@ -20,7 +20,7 @@
   <link href="http://fonts.googleapis.com/css?family=Cardo" rel="stylesheet" type="text/css">
 
   
-  <link rel="canonical" href="http://evidal.github.io/blog/2013/09/25/elasticsearch-logstash-Kibana">
+  <link rel="canonical" href="http://evidal.github.ioblog/categories/mobile">
   <link href="/favicon.png" rel="icon">
   
   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
@@ -116,129 +116,37 @@
 	      
 <div class="span9">
 
-  <article class="hentry" role="article">
+  <article role="article">
     
-  <header class="page-header">
+    <header class="page-header">
+      <h1 class="entry-title">Category: Mobile</h1>
+      
+    </header>
     
-      <h1 class="entry-title">Combo Logstash, Elastic Search & Kibana, L'arme Absolue Des Logs</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
+    <div id="blog-archives" class="category">
 
 
 
   
+  <h1>2014</h1>
 
+<article>
+  <div class="well">
 
-<time datetime="2013-09-25T00:00:00+02:00" pubdate data-updated="true">25/09/13</time>
-        
-         | <a href="#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
+<h2><a href="/blog/2014/04/03/cordova-phonegap/">Cordova & Phonegap</a></h2>
+<time datetime="2014-04-03T00:00:00+02:00" pubdate><span class='month'>Apr</span> <span class='day'>03</span> <span class='year'>2014</span></time>
 
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/html5/'>html5</a>, <a class='category' href='/blog/categories/mobile/'>mobile</a></span>
+</footer>
 
-<div class="entry-content"><p>L&#8217;exploitation des logs sur les applications complexes est assez compliquée. Les applications que mon entreprise développe sont morcelées en plusieurs
-couches: Front-End, Back-Enf, Back-Office, Front-Office, Connecteurs, etc&hellip; Chaque application génère ses lots de logs, qu&#8217;ils soient purement techniques
-ou bien à but &ldquo;business&rdquo;, dans mon cas des CDR ayant une certaine valeur pour la facturation de nos clients.</p>
-
-<p>Comment avec tous ces logs donner une vision cohérente et syntétique de ce qu&#8217;il se passe sur la plateforme ? Comment archiver ces logs efficacement
-pour les 5 prochaines années tout en générant des centaines de milliers de logs ?</p>
-
-<p>La réponse est en utilisant le combo <a href="http://www.elasticsearch.org/">Elastic Search</a>, <a href="http://logstash.net/">Logstash</a> et <a href="http://www.elasticsearch.org/overview/kibana/">kibana 3</a>. <a href="http://logstash.net/">Logstash</a> est une sorte de super ETL permettant de spécifier des entrées, des transformations
-et des sorties. La configuration est assez simple et en deux temps 3 mouvements on est capable de configurer un ETL capable de lire tous les fichiers
-d&#8217;un repertoire, de les parser intelligemment et de les injecter dans un index <a href="http://www.elasticsearch.org/">Elastic Search</a>. Globalement pour
-une ligne de log, on va se retrouver avec un document Elastic Search. La ligne de texte originale est conservée, et plusieurs champs sont créés,
-correspondant aux directives que vous configurez dans le fichier de conf Logstash.</p>
-
-<p>Dans mon cas j&#8217;ai utilisé une entrée de type file permettant d&#8217;explorer un repertoire et tout ses sous-repertoires. J&#8217;ai chainé cette entrée avec un
-filtre grok qui permet de parser la ligne de log. J&#8217;ai d&#8217;ailleurs utilisé <a href="http://grokdebug.herokuapp.com/">Grok Debugger</a> un outil permettant de tester
-des directives sur des logs réels. Si les patterns préprogrammés de GRok sont insuffisant, on peut facielement définir des expressions régulières
-permettant d&#8217;étendre les possibilités de Grok. Enfin les logs sont indéxés par Elastic Search, on peut choisir d&#8217;utiliser l&#8217;Elastic Search embarqué
-dans Logstash ou de pointer vers un Elastic Search distant (la solution que j&#8217;ai choisi).</p>
-
-<p>On va configurer Elastic Search pour créer un index par mois (ou par jour pour les très gros producteurs de logs). Cela permet de supprimer les documents par lot le moment venu sans &ldquo;casser&rdquo; les index Elastic Search existant. <a href="http://www.elasticsearch.org/">Elastic Search</a> de par son design permet un accès ultra-rapide à n&#8217;importe quelle ligne de log avec la puissance de son module de requêtage et de filtrage.</p>
-
-<p>Enfin <a href="http://www.elasticsearch.org/overview/kibana/">kibana 3</a> (récemment intégré à Elastic Search) permet d&#8217;avoir une visualisation des données de log
-et de composer des &ldquo;Dashboards&rdquo; super complet. Par exemple, j&#8217;ai réalisé ce dashboard très facilement à partir des logs de nos applications.</p>
-
-<p><img src="/images/posts/2013-09-25-elasticsearch-logstash-Kibana/kibana.png" alt="Dashboard Kibana MMG" /></p>
-
-<p>Et voilà ! On quelque chose de complet et complétement présentable très rapidement. Le temps de découvrir Kibana et de comprendre comment cela
-fonctionnait, j&#8217;ai mis 1 heure. Et tout est connecté, c&#8217;est à dire qu&#8217;on peut modifier les dates en temps réel (zoomer, dé-zoomer, passer en mode temps-réel, etc&hellip;) et tous les graphes se mettent à jour instantanément. C&#8217;est très bluffant.</p>
-
-<p>Bref je recommande vivement l&#8217;utilisation de ce combo qu&#8217;on peut considérer comme l&#8217;arme absolue pour la gestion des logs d&#8217;applications.</p>
 </div>
 
+</article>
 
-    <footer>
-      <p class="meta">
-        
-  
-
-<span class="byline author vcard">Posted by <span class="fn">Eric Vidal</span></span>
-
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-25T00:00:00+02:00" pubdate data-updated="true">25/09/13</time>
-        
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/elasticsearch/'>elasticsearch</a>
-  
-</span>
-
-
-      </p>
-      
-        <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://evidal.github.io/blog/2013/09/25/elasticsearch-logstash-Kibana/" data-via="EricVidalPro" data-counturl="http://evidal.github.io/blog/2013/09/25/elasticsearch-logstash-Kibana/" >Tweet</a>
-  
-  
-  
 </div>
 
-      
-      
-      <section>
-        <h1>Comments</h1>
-        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-      </section>
-      
-      <ul class="pager">
-        
-        <li class="previous"><a class="basic-alignment left"
-          href="/blog/2013/09/24/cryptographie/" title="Previous Post:
-          Dossier Cryptographie">&laquo; Dossier Cryptographie</a></li>
-        
-        <li><a href="/blog/archives">Blog Archives</a></li>
-        
-        <li class="next"><a class="basic-alignment right" href="/blog/2013/11/05/elasticsearch-premiere-production/"
-          title="Next Post: Elastic Search en production">Elastic Search en production
-          &raquo;</a></li>
-        
-      </ul>
-    </footer>
+    
   </article>
 </div>
 
@@ -332,10 +240,7 @@ fonctionnait, j&#8217;ai mis 1 heure. Et tout est connecté, c&#8217;est à dire
       var disqus_shortname = 'ericvidalblog';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://evidal.github.io/blog/2013/09/25/elasticsearch-logstash-Kibana/';
-        var disqus_url = 'http://evidal.github.io/blog/2013/09/25/elasticsearch-logstash-Kibana/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -121,6 +121,329 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2014/04/03/cordova-phonegap/">Cordova & Phonegap</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-03T00:00:00+02:00" pubdate data-updated="true">03/04/14</time>
+        
+         | <a href="/blog/2014/04/03/cordova-phonegap/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Dans le cadre d&#8217;un projet, j&#8217;ai développé une petite appli mobile en utilisant <a href="http://cordova.apache.org/">Cordova</a>.
+C&#8217;est un outil permettant de créer des applications mobiles multi-support en HTML5 et Javascript.</p>
+
+<p>Le résultat est packagé comme une application mobile standard, par exemple un .apk pour une application Android.
+Une fois lancée Cordova fourni un conteneur Web et un &ldquo;bridge&rdquo; qui abstrait les fonctionnalités de l&#8217;OS mobile (Caméra, Contacts, Accéléromètre, etc.)
+De nombreux plugins existent et permettent d&#8217;étendre les fonctionnalités de base du framework.</p>
+
+<p>Cordova est issu du Projet <a href="http://phonegap.com/">PhoneGap</a> initié par Adobe. Adobe a ensuite donné la base de code PhoneGap à la fondation Apache qui a créé Cordova. PhoneGap existe encore comme une distribution de Cordova et comme support d&#8217;outils Adobe générant des applications mobiles.</p>
+
+<p>Voilà un petit How-to sur comment mettre en place son environnement de développement Cordova/Android.
+Attention, tout environnement pas complétement mal installé sera non fonctionnel et les messages d&#8217;erreurs ne sont pas forcément très explicites.</p>
+
+<h2>Java Development Kit</h2>
+
+<p>Ma configuration utilise le JDK 7, je n&#8217;ai pas testé avec le 8.</p>
+
+<ul>
+<li>Téléchargez le pack adapté <a href="le%20http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">ici</a></li>
+<li>Positionnez les variables d&#8217;environement
+
+<ul>
+<li>JAVA_HOME
+
+<ul>
+<li>sous Linux, <code>export JAVA_HOME="/path/to/jdk"</code></li>
+<li>sous Windows, positionnez JAVA_HOME=&ldquo;c:\path\to\jdk&rdquo;
+
+<ul>
+<li>dans les variables d&#8217;environnement &ldquo;Start Menu > Computer > Advanced System Settings > Environment Variable&rdquo;</li>
+<li>ou dans un cmd.exe, <code>set JAVA_HOME="c:\path\to\jdk"</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PATH
+
+<ul>
+<li>Sous Linux, <code>export PATH=$PATH:$JAVA_HOME/bin</code></li>
+<li>sous Windows, ajoutez %JAVA_HOME%\bin au Path
+
+<ul>
+<li>dans les variables d&#8217;environnement &ldquo;Start Menu > Computer > Advanced System Settings > Environment Variable&rdquo;</li>
+<li>ou dans un cmd.exe, <code>set Path=%Path%;%JAVA_HOME\bin</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Ant</h2>
+
+<p>Ant est une des dépendances</p>
+
+<ul>
+<li>Téléchargez la dernière version de ant <a href="https://ant.apache.org/bindownload.cgi">ici</a></li>
+<li>Mettez en place la variable d&#8217;environnement ANT_HOME
+
+<ul>
+<li>sous Linux, <code>export ANT_HOME="/path/to/ant"</code></li>
+<li>sous Windows, positionnez ANT_HOME=&ldquo;c:\path\to\ant&rdquo;
+
+<ul>
+<li>dans les variables d&#8217;environnement &ldquo;Start Menu > Computer > Advanced System Settings > Environment Variable&rdquo;</li>
+<li>ou dans un cmd.exe, <code>set JAVA_HOME="c:\path\to\ant"</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PATH
+
+<ul>
+<li>Sous Linux, <code>export PATH=$PATH:$ANT_HOME/bin</code></li>
+<li>sous Windows, ajoutez %ANT_HOME%\bin au Path
+
+<ul>
+<li>dans les variables d&#8217;environnement &ldquo;Start Menu > Computer > Advanced System Settings > Environment Variable&rdquo;</li>
+<li>ou dans un cmd.exe, <code>set Path=%Path%;%ANT_HOME\bin</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Android SDK</h2>
+
+<p>Mon but était de faire des applications Android. Si vous avez besoin de générer des applications pour d&#8217;autres plateformes, vous devez installer le SDK pour chaque plateforme visée.</p>
+
+<ul>
+<li>Téléchargez la dernière version du SDK <a href="https://developer.android.com/sdk/index.html">ici</a></li>
+<li>Mettez en place ANDROID_HOME, attention c&#8217;est bien le SDK qu&#8217;il faut référencer et pas le répertoire contenant Eclipse et le SDK
+
+<ul>
+<li>sous Linux, <code>export ANDROID_HOME="/path/to/android/sdk"</code></li>
+<li>sous Windows dans les variables d&#8217;environnement &ldquo;Démarrer>Computer>Advanced System Settings>Environment Variable&rdquo; ou <code>set ANDROID_HOME="c:\path\to\android\sdk"</code></li>
+</ul>
+</li>
+<li>PATH
+
+<ul>
+<li>Sous Linux,
+
+<ul>
+<li><code>
+export PATH=$PATH:$ANDROID_HOME/tools
+</code>
+<code>
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+</code></li>
+</ul>
+</li>
+<li>sous Windows, ajoutez %ANDROID_HOME%\tools et %ANDROID_HOME%\platform-tools au Path
+
+<ul>
+<li>Vous connaissez la manip maintenant :)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Node.js</h2>
+
+<p>Il faut la toute dernière version disponible de node.js. Si vous l&#8217;avez déjà, il faut impérativement le mettre à jour.</p>
+
+<ul>
+<li>Installation de node JS.
+
+<ul>
+<li>sous Windows, il faut télécharger un <em>installer</em> (ici)[<a href="http://nodejs.org/download/">http://nodejs.org/download/</a>]</li>
+<li>Sous un Linux, selon votre distrib, faites
+
+<ul>
+<li> sous Ubuntu, <code>sudo apt-get install nodejs</code></li>
+<li>Sous Fedora/Red Hat/CentOS, <code>sudo yum install nodejs npm</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Cordova</h2>
+
+<h3>Installation</h3>
+
+<ul>
+<li>Installation de Cordova (enlever sudo sous Windows :) )</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo npm install -g cordova</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Utilisation</h3>
+
+<p>Créez une application</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cordova create myapp vidal.myapp MyApp
+</span><span class='line'>cd myapp</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Le projet généré est organisé comme ceci:</p>
+
+<ul>
+<li><strong>config.xml</strong> contient la configuration,</li>
+<li><strong>hooks</strong> est un répertoire pour stocker des commandes customisées Cordova (je ne l&#8217;utilise pas),</li>
+<li><strong>merges</strong> est un répertoire que je ne l&#8217;utilise pas,</li>
+<li><strong>platforms</strong> est le répertoire qui contient la partie générée spécifique à chaque plateforme. Il faudra aller y faire un tour pour mettre en place les éléments relatifs à un OS (e.g. authorization, rotation lock, &hellip;),
+
+<ul>
+<li><em>nom de la plateforme</em>, il y a un sous répertoire par plateforme,</li>
+</ul>
+</li>
+<li><strong>plugins</strong> est le répertoire contenant les plugins installés,
+
+<ul>
+<li><em>nom du plugin</em>, il y a un sous répertoire par plugin,</li>
+</ul>
+</li>
+<li><strong>www</strong> est le répertoire qui nous intéresse le plus. C&#8217;est lui qui est considéré comme la racine de votre application. Il contient donc un <em>index.html</em> et toutes les ressources nécessaires à votre application (autres pages html, javascript, images, &hellip;).</li>
+</ul>
+
+
+<p>Comme indiqué plus haut, plusieurs plateformes sont disponibles. Pour avoir la liste, lancez la commande suivante :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cordova platform list</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Pour faire un projet Android, on va ajouter la plateforme Android au projet.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cordova platform add android</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Pour accéder aux informations du téléphone comme son identifiant, on peut par exemple utiliser le plugin Device:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cordova plugin add org.apache.cordova.device</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Un fois ce plugin installé, on aura accès au runtime à un objet javascript <em>device</em> contenant les informations du téléphone.
+De nombreux plugins existent au sein du projet Cordova:</p>
+
+<ul>
+<li>Accelerometer</li>
+<li>Camera</li>
+<li>Capture</li>
+<li>Compass</li>
+<li>Connection</li>
+<li>Contacts</li>
+<li>Device</li>
+<li>Events</li>
+<li>File</li>
+<li>Geolocation</li>
+<li>Globalization</li>
+<li>Media</li>
+<li>Notification</li>
+<li>Splashscreen</li>
+<li>Storage</li>
+</ul>
+
+
+<p>Pendant le développement, on peut mocker certains appels à la couche physique comme ceci:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
+</span><span class='line'>    document.addEventListener('deviceready', this.splash, false);
+</span><span class='line'>} else {
+</span><span class='line'>    this.splash();
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Pour faire des tests durant le développement de l&#8217;application j&#8217;ai essayé plusieurs techniques:</p>
+
+<ul>
+<li>Utiliser le site local
+
+<ul>
+<li>C&#8217;est finalement la manière la plus pratique de fonctionner. Par contre tous les appels à la couche physique ne fonctionnent pas. Il faut donc les mocker.</li>
+</ul>
+</li>
+<li>Utiliser la commande <code>cordova serve</code>
+
+<ul>
+<li>ça ne fonctionne pas. Le fichier cordova.js par en boucle infini dans le navigateur.</li>
+</ul>
+</li>
+<li>Utiliser l&#8217;émulateur <a href="http://ripple.incubator.apache.org/">Ripple</a>
+
+<ul>
+<li>ça n&#8217;a pas fonctionné mais le projet semble prometteur</li>
+</ul>
+</li>
+<li>Utiliser la commande <code>cordova run android</code> avec l&#8217;émulateur de l&#8217;Android SDK
+
+<ul>
+<li>ça marche très mal, pas spécifiquement à cause de Cordova mais plutôt à cause des ressources consommées par l&#8217;émulateur Android</li>
+</ul>
+</li>
+<li>Utiliser la commande <code>cordova run android</code> avec un téléphone branché sur le port USB
+
+<ul>
+<li>Finalement c&#8217;est une des solutions les plus rapides à mettre en place.</li>
+<li>à noter la commande <code>adb logcat</code> à lancer pour avoir les logs du téléphone et comprendre ce qui se passe.</li>
+</ul>
+</li>
+</ul>
+
+
+<p>Pour réaliser mon application, j&#8217;étais parti sur l&#8217;utilisation de Boostrap mais le résultat graphique ne faisait pas &ldquo;application mobile&rdquo;. J&#8217;ai donc utilisé <a href="http://jquerymobile.com/">Jquery Mobile</a> qui a un rendu très satisfaisant.</p>
+
+<p>Le résultat final est très bon, rapide et facile à faire par rapport à un développement Android classique.
+Avec cette méthode, nous pensons sortir plus facilement des applications au sein de mon entreprise.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2013/12/27/atelier-objets-connectes/">Atelier Des Objets Connect&eacute;s</a></h1>
     
     
@@ -372,6 +695,44 @@ fonctionnait, j&#8217;ai mis 1 heure. Et tout est connecté, c&#8217;est à dire
     <footer>
       <a rel="full-article" href="/blog/2013/09/24/cryptographie/">Lire la suite&rarr;</a>
     </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/19/lyon-jug-jee8-avatar/">Lyon Jug Jee8 Avatar</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-19T00:00:00+01:00" pubdate data-updated="true">19/03/13</time>
+        
+         | <a href="/blog/2013/03/19/lyon-jug-jee8-avatar/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">
+</div>
+  
   
 
 
@@ -666,143 +1027,6 @@ Il serait beaucoup plus honnête et acceptable de dire &ldquo;je suis plus à l&
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2012/06/07/Groovy-2.0-Quoi-de-neuf-doc/">Groovy 2.0 : Quoi De Neuf Doc</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-07T00:00:00+02:00" pubdate data-updated="true">07/06/12</time>
-        
-         | <a href="/blog/2012/06/07/Groovy-2.0-Quoi-de-neuf-doc/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>J&#8217;ai assisté le 16 juin dernier à la présentation Groovy 2.0 par
-<a href="http://glaforge.appspot.com/">Guillaume Laforge</a> au
-<a href="http://www.lyonjug.org/">Lyon JUG</a>.
-J&#8217;ai découvert <a href="http://groovy.codehaus.org/">Groovy</a> il n&#8217;y a pas si longtemps,
-c&#8217;était il y a un peu plus de 2 ans. Le but de son utilisation dans notre
-application était d&#8217;écrire des règles évaluées à la volée. Finalement une autre
-solution a été choisie par l&#8217;équipe mais j&#8217;ai beaucoup aimé la simplicité du
-langage.
-Depuis ce premier contact, je l&#8217;utilise régulièrement pour la manipulation de
-fichier (un peu comme un super script), comme support via grails pour des démos
-ou POC et aussi pour ce blog qui est développé avec
-<a href="http://gaelyk.appspot.com/">Gaelyk</a>. C&#8217;est donc un langage que j&#8217;apprécie.</p>
-
-<p>La présentation de <a href="http://glaforge.appspot.com/">Guillaume Laforge</a> se déroulait en 2 temps:</p>
-
-<ul>
-<li>un rappel des fonctionnalité actuelles de Groovy 1.8</li>
-<li>une présentation des nouveautés Groovy 2.0</li>
-</ul>
-
-
-<p>Cette présentation est accessible sur Slideshare
-<a href="http://www.slideshare.net/glaforge/groovy-20-devoxx-france-2012">ici</a>.</p>
-
-<p>Honnêtement le rappel des fonctionnalités était salutaire. Comme j&#8217;utilise
-Groovy comme un meilleur <a href="http://java.com/fr/">Java</a>, il y a certains aspects
-du langage que je n&#8217;utilise pas comme GPars (un équivalent de <a href="http://akka.io/">AKKA</a>)
-ou trop partiellement comme le commande chain ou je me limite par reflexe.
-La présentation m&#8217;a clairement montré que j&#8217;avais besoin de me plonger
-sérieusement dans la doc de Groovy pour en exploiter toutes ces facets
-(ou du moins mieux les connaitre).</p>
-
-<p>Concernant la version 2.0 de Groovy, les évolutions concerne moins le langage
-que la plate-forme. Cette nouvelle version est modulaire, c&#8217;est à dire qu&#8217;au lieu
-d&#8217;avoir un groovy-all.jar (qui existe encore), on peut prendre d&#8217;autres jars qui
-sont des sous modules de Groovy. Le but de cette modularité est de faciliter
-l&#8217;utilisation de groovy dans des applications mobiles par exemple, car on va
-réduire la taille de l&#8217;application.
-Le reste des évolutions concerne l&#8217;adaptation de Groovy aux nouvelles
-fonctionnalités de Java 7 permettant d&#8217;intégrer les nouveautés du langage Java
-(<a href="http://openjdk.java.net/projects/coin/">projet Coin</a>) et d&#8217;améliorer les
-performances de Groovy. Les performances sont maintenant très proches de Java.
-Enfin le compilateur Groovy a été amélioré pour être plus râleur et signaler
-les erreurs de compilations qui n&#8217;apparaissaient avant qu&#8217;à l&#8217;exécution. Il
-permet également maintenant de faire de compilation statique du code.</p>
-
-<p>J&#8217;ai beaucoup aimé cette session et je vais essayer d&#8217;appliquer tout ça notamment
-en refondant ce site. Sa vitesse ne me satisfait pas pour l&#8217;instant. Quand à Groovy
-le langage est clairement facile et puissant. Sa syntaxe proche de Java fait qu&#8217;il
-est très simple à apprendre et petit à petit, avec l&#8217;experience, on incorpore
-les spécificités du langage : closure, GDK, JSon, parsers&hellip; Je n&#8217;ai jamais fait de
-Scala (qui a le même âge que Groovy) ou de Clojure (plus jeune) mais quand je lis
-des sources de ces langages, leur lecture ne me semble pas simple. Avec Groovy,
-même quand j&#8217;ignorais les rudiments du langage, le lecture des exemples était
-facile pour moi.</p>
-
-<p>Bref, vive Groovy !</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2012/04/28/Mix-IT-2012/">Mix-IT 2012</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-04-28T00:00:00+02:00" pubdate data-updated="true">28/04/12</time>
-        
-         | <a href="/blog/2012/04/28/Mix-IT-2012/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>J&#8217;étais avant-hier à Mix-IT 2012 er j&#8217;ai passé un très bon moment. Bravo à l&#8217;organisation pour avoir fait intervenir des speakers de qualité dans un cadre agréable pour seulement 30€. J&#8217;ai participé aux keynotes de bienvenu et à 6 conférences : Social Architecture, Lean Startup, lightning talks, Development Process at Google, Phone Gap et Zero MQ. Je n&#8217;ai malheureusement pas pu assister à la keynote finale de Pamela Fox.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/04/28/Mix-IT-2012/">Lire la suite&rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="/blog/page/2/">&larr; Older</a></li>
@@ -828,6 +1052,10 @@ facile pour moi.</p>
   <ul id="recent_posts" class="nav nav-list">
     
       <li class="post">
+        <a href="/blog/2014/04/03/cordova-phonegap/">Cordova & Phonegap</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/27/atelier-objets-connectes/">Atelier des Objets Connect&eacute;s</a>
       </li>
     
@@ -841,10 +1069,6 @@ facile pour moi.</p>
     
       <li class="post">
         <a href="/blog/2013/09/24/cryptographie/">Dossier Cryptographie</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/24/angular.js-et-yeoman/">Angular.js et Yeoman</a>
       </li>
     
   </ul>
@@ -869,13 +1093,15 @@ facile pour moi.</p>
 		
 	        <a href="/blog/categories/elasticsearch/" rel="3">elasticsearch</a>
 		
-	        <a href="/blog/categories/html5/" rel="1">html5</a>
+	        <a href="/blog/categories/html5/" rel="2">html5</a>
 		
 	        <a href="/blog/categories/javascript/" rel="1">javascript</a>
 		
 	        <a href="/blog/categories/cryptographie/" rel="1">cryptographie</a>
 		
 	        <a href="/blog/categories/objets/" rel="1">objets</a>
+		
+	        <a href="/blog/categories/mobile/" rel="1">mobile</a>
 		
 	</div>
 </section>	

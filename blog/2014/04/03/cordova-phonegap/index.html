@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Cordova & Phonegap - Le Blog d'Eric Vidal</title>
+  <meta name="author" content="Eric Vidal">
+
+  
+  <meta name="description" content="">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Cardo" rel="stylesheet" type="text/css">
+
+  
+  <link rel="canonical" href="http://evidal.github.io/blog/2014/04/03/cordova-phonegap">
+  <link href="/favicon.png" rel="icon">
+  
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link href="/stylesheets/elusive-webfont.css" rel="stylesheet">
+
+  
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/custom.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  <script src="/javascripts/libs/jquery.js"></script>
+  <script src="/javascripts/libs/modernizr-2.0.js"></script>
+  <script src="/javascripts/libs/bootstrap.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Le Blog d'Eric Vidal" type="application/atom+xml">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-28850873-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <div class="container-narrow">  
+	  <div class="container">
+	  	<div class="header">
+  <div class="container">
+    <img src="/images/coffee-cup-48.png" class="headerct">
+    <a class="headerct" href="/">Le Blog d'Eric Vidal</a>
+  </div>
+  <nav role="navigation"><div class="navbar navbar-inverse container">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <!-- <a class="brand" href="/">Le Blog d'Eric Vidal</a> -->
+
+      <div class="nav-collapse">
+        <ul class="nav">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/cv">CV</a></li>
+</ul>
+
+
+        <ul class="nav pull-right" data-subscription="rss">
+          <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS"><i class="icon-rss"></i></a></li>
+          
+        </ul>
+
+        
+          <form class="pull-right navbar-search" action="http://google.com/search" method="get">
+            <fieldset role="search">
+              <input type="hidden" name="q" value="site:www.eric-vidal.com" />
+              <input class="search-query" type="text" name="q" results="0" placeholder="Search"/>
+            </fieldset>
+          </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+      <!-- <div class="">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/blog/archives">Archives</a></li>
+        </ul>
+        <h3 class="muted">
+          <img src="/images/coffee-cup-48.png" class="headerct">
+          <a class="headerct" href="/">Le Blog d'Eric Vidal</a>
+        </h3>
+      </div> -->
+</nav>
+</div>
+
+	    <div class="row">
+	      
+<div class="span9">
+
+  <article class="hentry" role="article">
+    
+  <header class="page-header">
+    
+      <h1 class="entry-title">Cordova & Phonegap</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-03T00:00:00+02:00" pubdate data-updated="true">03/04/14</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Dans le cadre d&#8217;un projet, j&#8217;ai développé une petite appli mobile en utilisant <a href="http://cordova.apache.org/">Cordova</a>.
+C&#8217;est un outil permettant de créer des applications mobiles multi-support en HTML5 et Javascript.</p>
+
+<p>Le résultat est packagé comme une application mobile standard, par exemple un .apk pour une application Android.
+Une fois lancée Cordova fourni un conteneur Web et un &ldquo;bridge&rdquo; qui abstrait les fonctionnalités de l&#8217;OS mobile (Caméra, Contacts, Accéléromètre, etc.)
+De nombreux plugins existent et permettent d&#8217;étendre les fonctionnalités de base du framework.</p>
+
+<p>Cordova est issu du Projet <a href="http://phonegap.com/">PhoneGap</a> initié par Adobe. Adobe a ensuite donné la base de code PhoneGap à la fondation Apache qui a créé Cordova. PhoneGap existe encore comme une distribution de Cordova et comme support d&#8217;outils Adobe générant des applications mobiles.</p>
+
+<p>Voilà un petit How-to sur comment mettre en place son environnement de développement Cordova/Android.
+Attention, tout environnement pas complétement mal installé sera non fonctionnel et les messages d&#8217;erreurs ne sont pas forcément très explicites.</p>
+
+<h2>Java Development Kit</h2>
+
+<p>Ma configuration utilise le JDK 7, je n&#8217;ai pas testé avec le 8.</p>
+
+<ul>
+<li>Téléchargez le pack adapté <a href="le%20http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">ici</a></li>
+<li>Positionnez les variables d&#8217;environement
+
+<ul>
+<li>JAVA_HOME
+
+<ul>
+<li>sous Linux, <code>export JAVA_HOME="/path/to/jdk"</code></li>
+<li>sous Windows, positionnez JAVA_HOME=&ldquo;c:\path\to\jdk&rdquo;
+
+<ul>
+<li>dans les variables d&#8217;environnement &ldquo;Start Menu > Computer > Advanced System Settings > Environment Variable&rdquo;</li>
+<li>ou dans un cmd.exe, <code>set JAVA_HOME="c:\path\to\jdk"</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PATH
+
+<ul>
+<li>Sous Linux, <code>export PATH=$PATH:$JAVA_HOME/bin</code></li>
+<li>sous Windows, ajoutez %JAVA_HOME%\bin au Path
+
+<ul>
+<li>dans les variables d&#8217;environnement &ldquo;Start Menu > Computer > Advanced System Settings > Environment Variable&rdquo;</li>
+<li>ou dans un cmd.exe, <code>set Path=%Path%;%JAVA_HOME\bin</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Ant</h2>
+
+<p>Ant est une des dépendances</p>
+
+<ul>
+<li>Téléchargez la dernière version de ant <a href="https://ant.apache.org/bindownload.cgi">ici</a></li>
+<li>Mettez en place la variable d&#8217;environnement ANT_HOME
+
+<ul>
+<li>sous Linux, <code>export ANT_HOME="/path/to/ant"</code></li>
+<li>sous Windows, positionnez ANT_HOME=&ldquo;c:\path\to\ant&rdquo;
+
+<ul>
+<li>dans les variables d&#8217;environnement &ldquo;Start Menu > Computer > Advanced System Settings > Environment Variable&rdquo;</li>
+<li>ou dans un cmd.exe, <code>set JAVA_HOME="c:\path\to\ant"</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PATH
+
+<ul>
+<li>Sous Linux, <code>export PATH=$PATH:$ANT_HOME/bin</code></li>
+<li>sous Windows, ajoutez %ANT_HOME%\bin au Path
+
+<ul>
+<li>dans les variables d&#8217;environnement &ldquo;Start Menu > Computer > Advanced System Settings > Environment Variable&rdquo;</li>
+<li>ou dans un cmd.exe, <code>set Path=%Path%;%ANT_HOME\bin</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Android SDK</h2>
+
+<p>Mon but était de faire des applications Android. Si vous avez besoin de générer des applications pour d&#8217;autres plateformes, vous devez installer le SDK pour chaque plateforme visée.</p>
+
+<ul>
+<li>Téléchargez la dernière version du SDK <a href="https://developer.android.com/sdk/index.html">ici</a></li>
+<li>Mettez en place ANDROID_HOME, attention c&#8217;est bien le SDK qu&#8217;il faut référencer et pas le répertoire contenant Eclipse et le SDK
+
+<ul>
+<li>sous Linux, <code>export ANDROID_HOME="/path/to/android/sdk"</code></li>
+<li>sous Windows dans les variables d&#8217;environnement &ldquo;Démarrer>Computer>Advanced System Settings>Environment Variable&rdquo; ou <code>set ANDROID_HOME="c:\path\to\android\sdk"</code></li>
+</ul>
+</li>
+<li>PATH
+
+<ul>
+<li>Sous Linux,
+
+<ul>
+<li><code>
+export PATH=$PATH:$ANDROID_HOME/tools
+</code>
+<code>
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+</code></li>
+</ul>
+</li>
+<li>sous Windows, ajoutez %ANDROID_HOME%\tools et %ANDROID_HOME%\platform-tools au Path
+
+<ul>
+<li>Vous connaissez la manip maintenant :)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Node.js</h2>
+
+<p>Il faut la toute dernière version disponible de node.js. Si vous l&#8217;avez déjà, il faut impérativement le mettre à jour.</p>
+
+<ul>
+<li>Installation de node JS.
+
+<ul>
+<li>sous Windows, il faut télécharger un <em>installer</em> (ici)[<a href="http://nodejs.org/download/">http://nodejs.org/download/</a>]</li>
+<li>Sous un Linux, selon votre distrib, faites
+
+<ul>
+<li> sous Ubuntu, <code>sudo apt-get install nodejs</code></li>
+<li>Sous Fedora/Red Hat/CentOS, <code>sudo yum install nodejs npm</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Cordova</h2>
+
+<h3>Installation</h3>
+
+<ul>
+<li>Installation de Cordova (enlever sudo sous Windows :) )</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo npm install -g cordova</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Utilisation</h3>
+
+<p>Créez une application</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cordova create myapp vidal.myapp MyApp
+</span><span class='line'>cd myapp</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Le projet généré est organisé comme ceci:</p>
+
+<ul>
+<li><strong>config.xml</strong> contient la configuration,</li>
+<li><strong>hooks</strong> est un répertoire pour stocker des commandes customisées Cordova (je ne l&#8217;utilise pas),</li>
+<li><strong>merges</strong> est un répertoire que je ne l&#8217;utilise pas,</li>
+<li><strong>platforms</strong> est le répertoire qui contient la partie générée spécifique à chaque plateforme. Il faudra aller y faire un tour pour mettre en place les éléments relatifs à un OS (e.g. authorization, rotation lock, &hellip;),
+
+<ul>
+<li><em>nom de la plateforme</em>, il y a un sous répertoire par plateforme,</li>
+</ul>
+</li>
+<li><strong>plugins</strong> est le répertoire contenant les plugins installés,
+
+<ul>
+<li><em>nom du plugin</em>, il y a un sous répertoire par plugin,</li>
+</ul>
+</li>
+<li><strong>www</strong> est le répertoire qui nous intéresse le plus. C&#8217;est lui qui est considéré comme la racine de votre application. Il contient donc un <em>index.html</em> et toutes les ressources nécessaires à votre application (autres pages html, javascript, images, &hellip;).</li>
+</ul>
+
+
+<p>Comme indiqué plus haut, plusieurs plateformes sont disponibles. Pour avoir la liste, lancez la commande suivante :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cordova platform list</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Pour faire un projet Android, on va ajouter la plateforme Android au projet.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cordova platform add android</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Pour accéder aux informations du téléphone comme son identifiant, on peut par exemple utiliser le plugin Device:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cordova plugin add org.apache.cordova.device</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Un fois ce plugin installé, on aura accès au runtime à un objet javascript <em>device</em> contenant les informations du téléphone.
+De nombreux plugins existent au sein du projet Cordova:</p>
+
+<ul>
+<li>Accelerometer</li>
+<li>Camera</li>
+<li>Capture</li>
+<li>Compass</li>
+<li>Connection</li>
+<li>Contacts</li>
+<li>Device</li>
+<li>Events</li>
+<li>File</li>
+<li>Geolocation</li>
+<li>Globalization</li>
+<li>Media</li>
+<li>Notification</li>
+<li>Splashscreen</li>
+<li>Storage</li>
+</ul>
+
+
+<p>Pendant le développement, on peut mocker certains appels à la couche physique comme ceci:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
+</span><span class='line'>    document.addEventListener('deviceready', this.splash, false);
+</span><span class='line'>} else {
+</span><span class='line'>    this.splash();
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Pour faire des tests durant le développement de l&#8217;application j&#8217;ai essayé plusieurs techniques:</p>
+
+<ul>
+<li>Utiliser le site local
+
+<ul>
+<li>C&#8217;est finalement la manière la plus pratique de fonctionner. Par contre tous les appels à la couche physique ne fonctionnent pas. Il faut donc les mocker.</li>
+</ul>
+</li>
+<li>Utiliser la commande <code>cordova serve</code>
+
+<ul>
+<li>ça ne fonctionne pas. Le fichier cordova.js par en boucle infini dans le navigateur.</li>
+</ul>
+</li>
+<li>Utiliser l&#8217;émulateur <a href="http://ripple.incubator.apache.org/">Ripple</a>
+
+<ul>
+<li>ça n&#8217;a pas fonctionné mais le projet semble prometteur</li>
+</ul>
+</li>
+<li>Utiliser la commande <code>cordova run android</code> avec l&#8217;émulateur de l&#8217;Android SDK
+
+<ul>
+<li>ça marche très mal, pas spécifiquement à cause de Cordova mais plutôt à cause des ressources consommées par l&#8217;émulateur Android</li>
+</ul>
+</li>
+<li>Utiliser la commande <code>cordova run android</code> avec un téléphone branché sur le port USB
+
+<ul>
+<li>Finalement c&#8217;est une des solutions les plus rapides à mettre en place.</li>
+<li>à noter la commande <code>adb logcat</code> à lancer pour avoir les logs du téléphone et comprendre ce qui se passe.</li>
+</ul>
+</li>
+</ul>
+
+
+<p>Pour réaliser mon application, j&#8217;étais parti sur l&#8217;utilisation de Boostrap mais le résultat graphique ne faisait pas &ldquo;application mobile&rdquo;. J&#8217;ai donc utilisé <a href="http://jquerymobile.com/">Jquery Mobile</a> qui a un rendu très satisfaisant.</p>
+
+<p>Le résultat final est très bon, rapide et facile à faire par rapport à un développement Android classique.
+Avec cette méthode, nous pensons sortir plus facilement des applications au sein de mon entreprise.</p>
+</div>
+
+
+    <footer>
+      <p class="meta">
+        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Eric Vidal</span></span>
+
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-03T00:00:00+02:00" pubdate data-updated="true">03/04/14</time>
+        
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/html5/'>html5</a>, <a class='category' href='/blog/categories/mobile/'>mobile</a>
+  
+</span>
+
+
+      </p>
+      
+        <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://evidal.github.io/blog/2014/04/03/cordova-phonegap/" data-via="EricVidalPro" data-counturl="http://evidal.github.io/blog/2014/04/03/cordova-phonegap/" >Tweet</a>
+  
+  
+  
+</div>
+
+      
+      
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+      </section>
+      
+      <ul class="pager">
+        
+        <li class="previous"><a class="basic-alignment left"
+          href="/blog/2013/12/27/atelier-objets-connectes/" title="Previous Post:
+          Atelier des Objets Connect&eacute;s">&laquo; Atelier des Objets Connect&eacute;s</a></li>
+        
+        <li><a href="/blog/archives">Blog Archives</a></li>
+        
+      </ul>
+    </footer>
+  </article>
+</div>
+
+<aside class="sidebar-nav span3">
+  
+    <section class="aside" >
+	<h4>&Agrave; propos</h4>
+	<img src="/images/evidal_200.png" class="picid"> Je suis architecte chez <a href="http://www.sicap.com">Sicap</a>. Passionné par mon métier et les nouvelles technologies, ce blog me sert de bloc-notes pour partager certaines découvertes.
+	<ul class="social">
+		<li><a title="Twitter" href="http://twitter.com/#!/EricVidalPro"><i class="icon-twitter"></i></a></li>
+        <li><a title="Linkedin" href="http://www.linkedin.com/pub/eric-vidal/4/582/99"><i class="icon-linkedin"></i></a></li>
+        <li><a title="Viadeo" href="http://www.viadeo.com/fr/profile/eric.vidal"><i class="icon-viadeo"></i></a></li>
+        <li><a title="Github" href="https://github.com/evidal"><i class="icon-github"></i></a></li>
+        <li><a title="RSS" href="/blog/eric-vidal.rss"><i class="icon-rss"></i></a></li>
+    </ul>
+</section>	<section class="aside">
+	<h4>R&eacute;cemment post&eacute;s</h4>
+  <ul id="recent_posts" class="nav nav-list">
+    
+      <li class="post">
+        <a href="/blog/2014/04/03/cordova-phonegap/">Cordova & Phonegap</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/27/atelier-objets-connectes/">Atelier des Objets Connect&eacute;s</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/05/elasticsearch-premiere-production/">Elastic Search en production</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/25/elasticsearch-logstash-Kibana/">Combo Logstash, Elastic Search & Kibana, l'arme absolue des logs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/24/cryptographie/">Dossier Cryptographie</a>
+      </li>
+    
+  </ul>
+</section>
+<section class="aside">
+	<h4>Tags</h4>
+	<div id="cloud">
+		
+	        <a href="/blog/categories/blog/" rel="1">blog</a>
+		
+	        <a href="/blog/categories/conf/" rel="5">conf</a>
+		
+	        <a href="/blog/categories/java/" rel="6">java</a>
+		
+	        <a href="/blog/categories/cloud/" rel="1">cloud</a>
+		
+	        <a href="/blog/categories/perf/" rel="3">perf</a>
+		
+	        <a href="/blog/categories/groovy/" rel="1">groovy</a>
+		
+	        <a href="/blog/categories/jee/" rel="1">jee</a>
+		
+	        <a href="/blog/categories/elasticsearch/" rel="3">elasticsearch</a>
+		
+	        <a href="/blog/categories/html5/" rel="2">html5</a>
+		
+	        <a href="/blog/categories/javascript/" rel="1">javascript</a>
+		
+	        <a href="/blog/categories/cryptographie/" rel="1">cryptographie</a>
+		
+	        <a href="/blog/categories/objets/" rel="1">objets</a>
+		
+	        <a href="/blog/categories/mobile/" rel="1">mobile</a>
+		
+	</div>
+</section>	
+  
+</aside>
+
+
+	    </div>
+	    <footer role="contentinfo" class="page-footer"><div class="footer">
+	<div class="container">
+	  Copyright &copy; 2014 - Eric Vidal -
+	  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+	</div>
+</div>
+</footer>
+	  </div>	  
+  </div>  
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'ericvidalblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://evidal.github.io/blog/2014/04/03/cordova-phonegap/';
+        var disqus_url = 'http://evidal.github.io/blog/2014/04/03/cordova-phonegap/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+<script type="text/javascript" src="/javascripts/jquery.tagcloud.js"></script>
+<script type="text/javascript">
+	$.fn.tagcloud.defaults = {
+	  size: {start: 10, end: 20, unit: 'pt'},
+	  color: {start: '#5C7270', end: '#FF7530'}
+	};
+
+	$(function () {
+		console.log("coucou")
+	  $('#cloud a').tagcloud();
+	});
+</script>
+
+
+
+</body>
+</html>
+<script language="javascript">
+	$.backstretch("http://unsplash.s3.amazonaws.com/batch%204/jet-sky.jpg");
+</script>

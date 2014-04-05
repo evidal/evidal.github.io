@@ -4,7 +4,7 @@
   <title><![CDATA[Le Blog d'Eric Vidal]]></title>
   <link href="http://evidal.github.io/atom.xml" rel="self"/>
   <link href="http://evidal.github.io/"/>
-  <updated>2014-01-07T15:01:51+01:00</updated>
+  <updated>2014-04-05T09:17:03+02:00</updated>
   <id>http://evidal.github.io/</id>
   <author>
     <name><![CDATA[Eric Vidal]]></name>
@@ -12,6 +12,300 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Cordova & Phonegap]]></title>
+    <link href="http://evidal.github.io/blog/2014/04/03/cordova-phonegap/"/>
+    <updated>2014-04-03T00:00:00+02:00</updated>
+    <id>http://evidal.github.io/blog/2014/04/03/cordova-phonegap</id>
+    <content type="html"><![CDATA[<p>Dans le cadre d&#8217;un projet, j&#8217;ai développé une petite appli mobile en utilisant <a href="http://cordova.apache.org/">Cordova</a>.
+C&#8217;est un outil permettant de créer des applications mobiles multi-support en HTML5 et Javascript.</p>
+
+<p>Le résultat est packagé comme une application mobile standard, par exemple un .apk pour une application Android.
+Une fois lancée Cordova fourni un conteneur Web et un &ldquo;bridge&rdquo; qui abstrait les fonctionnalités de l&#8217;OS mobile (Caméra, Contacts, Accéléromètre, etc.)
+De nombreux plugins existent et permettent d&#8217;étendre les fonctionnalités de base du framework.</p>
+
+<p>Cordova est issu du Projet <a href="http://phonegap.com/">PhoneGap</a> initié par Adobe. Adobe a ensuite donné la base de code PhoneGap à la fondation Apache qui a créé Cordova. PhoneGap existe encore comme une distribution de Cordova et comme support d&#8217;outils Adobe générant des applications mobiles.</p>
+
+<p>Voilà un petit How-to sur comment mettre en place son environnement de développement Cordova/Android.
+Attention, tout environnement pas complétement mal installé sera non fonctionnel et les messages d&#8217;erreurs ne sont pas forcément très explicites.</p>
+
+<h2>Java Development Kit</h2>
+
+<p>Ma configuration utilise le JDK 7, je n&#8217;ai pas testé avec le 8.</p>
+
+<ul>
+<li>Téléchargez le pack adapté <a href="le%20http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">ici</a></li>
+<li>Positionnez les variables d&#8217;environement
+
+<ul>
+<li>JAVA_HOME
+
+<ul>
+<li>sous Linux, <code>export JAVA_HOME="/path/to/jdk"</code></li>
+<li>sous Windows, positionnez JAVA_HOME=&ldquo;c:\path\to\jdk&rdquo;
+
+<ul>
+<li>dans les variables d&#8217;environnement &ldquo;Start Menu > Computer > Advanced System Settings > Environment Variable&rdquo;</li>
+<li>ou dans un cmd.exe, <code>set JAVA_HOME="c:\path\to\jdk"</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PATH
+
+<ul>
+<li>Sous Linux, <code>export PATH=$PATH:$JAVA_HOME/bin</code></li>
+<li>sous Windows, ajoutez %JAVA_HOME%\bin au Path
+
+<ul>
+<li>dans les variables d&#8217;environnement &ldquo;Start Menu > Computer > Advanced System Settings > Environment Variable&rdquo;</li>
+<li>ou dans un cmd.exe, <code>set Path=%Path%;%JAVA_HOME\bin</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Ant</h2>
+
+<p>Ant est une des dépendances</p>
+
+<ul>
+<li>Téléchargez la dernière version de ant <a href="https://ant.apache.org/bindownload.cgi">ici</a></li>
+<li>Mettez en place la variable d&#8217;environnement ANT_HOME
+
+<ul>
+<li>sous Linux, <code>export ANT_HOME="/path/to/ant"</code></li>
+<li>sous Windows, positionnez ANT_HOME=&ldquo;c:\path\to\ant&rdquo;
+
+<ul>
+<li>dans les variables d&#8217;environnement &ldquo;Start Menu > Computer > Advanced System Settings > Environment Variable&rdquo;</li>
+<li>ou dans un cmd.exe, <code>set JAVA_HOME="c:\path\to\ant"</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PATH
+
+<ul>
+<li>Sous Linux, <code>export PATH=$PATH:$ANT_HOME/bin</code></li>
+<li>sous Windows, ajoutez %ANT_HOME%\bin au Path
+
+<ul>
+<li>dans les variables d&#8217;environnement &ldquo;Start Menu > Computer > Advanced System Settings > Environment Variable&rdquo;</li>
+<li>ou dans un cmd.exe, <code>set Path=%Path%;%ANT_HOME\bin</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Android SDK</h2>
+
+<p>Mon but était de faire des applications Android. Si vous avez besoin de générer des applications pour d&#8217;autres plateformes, vous devez installer le SDK pour chaque plateforme visée.</p>
+
+<ul>
+<li>Téléchargez la dernière version du SDK <a href="https://developer.android.com/sdk/index.html">ici</a></li>
+<li>Mettez en place ANDROID_HOME, attention c&#8217;est bien le SDK qu&#8217;il faut référencer et pas le répertoire contenant Eclipse et le SDK
+
+<ul>
+<li>sous Linux, <code>export ANDROID_HOME="/path/to/android/sdk"</code></li>
+<li>sous Windows dans les variables d&#8217;environnement &ldquo;Démarrer>Computer>Advanced System Settings>Environment Variable&rdquo; ou <code>set ANDROID_HOME="c:\path\to\android\sdk"</code></li>
+</ul>
+</li>
+<li>PATH
+
+<ul>
+<li>Sous Linux,
+
+<ul>
+<li><code>
+export PATH=$PATH:$ANDROID_HOME/tools
+</code>
+<code>
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+</code></li>
+</ul>
+</li>
+<li>sous Windows, ajoutez %ANDROID_HOME%\tools et %ANDROID_HOME%\platform-tools au Path
+
+<ul>
+<li>Vous connaissez la manip maintenant :)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Node.js</h2>
+
+<p>Il faut la toute dernière version disponible de node.js. Si vous l&#8217;avez déjà, il faut impérativement le mettre à jour.</p>
+
+<ul>
+<li>Installation de node JS.
+
+<ul>
+<li>sous Windows, il faut télécharger un <em>installer</em> (ici)[<a href="http://nodejs.org/download/">http://nodejs.org/download/</a>]</li>
+<li>Sous un Linux, selon votre distrib, faites
+
+<ul>
+<li> sous Ubuntu, <code>sudo apt-get install nodejs</code></li>
+<li>Sous Fedora/Red Hat/CentOS, <code>sudo yum install nodejs npm</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Cordova</h2>
+
+<h3>Installation</h3>
+
+<ul>
+<li>Installation de Cordova (enlever sudo sous Windows :) )</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo npm install -g cordova</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Utilisation</h3>
+
+<p>Créez une application</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cordova create myapp vidal.myapp MyApp
+</span><span class='line'>cd myapp</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Le projet généré est organisé comme ceci:</p>
+
+<ul>
+<li><strong>config.xml</strong> contient la configuration,</li>
+<li><strong>hooks</strong> est un répertoire pour stocker des commandes customisées Cordova (je ne l&#8217;utilise pas),</li>
+<li><strong>merges</strong> est un répertoire que je ne l&#8217;utilise pas,</li>
+<li><strong>platforms</strong> est le répertoire qui contient la partie générée spécifique à chaque plateforme. Il faudra aller y faire un tour pour mettre en place les éléments relatifs à un OS (e.g. authorization, rotation lock, &hellip;),
+
+<ul>
+<li><em>nom de la plateforme</em>, il y a un sous répertoire par plateforme,</li>
+</ul>
+</li>
+<li><strong>plugins</strong> est le répertoire contenant les plugins installés,
+
+<ul>
+<li><em>nom du plugin</em>, il y a un sous répertoire par plugin,</li>
+</ul>
+</li>
+<li><strong>www</strong> est le répertoire qui nous intéresse le plus. C&#8217;est lui qui est considéré comme la racine de votre application. Il contient donc un <em>index.html</em> et toutes les ressources nécessaires à votre application (autres pages html, javascript, images, &hellip;).</li>
+</ul>
+
+
+<p>Comme indiqué plus haut, plusieurs plateformes sont disponibles. Pour avoir la liste, lancez la commande suivante :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cordova platform list</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Pour faire un projet Android, on va ajouter la plateforme Android au projet.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cordova platform add android</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Pour accéder aux informations du téléphone comme son identifiant, on peut par exemple utiliser le plugin Device:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cordova plugin add org.apache.cordova.device</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Un fois ce plugin installé, on aura accès au runtime à un objet javascript <em>device</em> contenant les informations du téléphone.
+De nombreux plugins existent au sein du projet Cordova:</p>
+
+<ul>
+<li>Accelerometer</li>
+<li>Camera</li>
+<li>Capture</li>
+<li>Compass</li>
+<li>Connection</li>
+<li>Contacts</li>
+<li>Device</li>
+<li>Events</li>
+<li>File</li>
+<li>Geolocation</li>
+<li>Globalization</li>
+<li>Media</li>
+<li>Notification</li>
+<li>Splashscreen</li>
+<li>Storage</li>
+</ul>
+
+
+<p>Pendant le développement, on peut mocker certains appels à la couche physique comme ceci:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
+</span><span class='line'>    document.addEventListener('deviceready', this.splash, false);
+</span><span class='line'>} else {
+</span><span class='line'>    this.splash();
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Pour faire des tests durant le développement de l&#8217;application j&#8217;ai essayé plusieurs techniques:</p>
+
+<ul>
+<li>Utiliser le site local
+
+<ul>
+<li>C&#8217;est finalement la manière la plus pratique de fonctionner. Par contre tous les appels à la couche physique ne fonctionnent pas. Il faut donc les mocker.</li>
+</ul>
+</li>
+<li>Utiliser la commande <code>cordova serve</code>
+
+<ul>
+<li>ça ne fonctionne pas. Le fichier cordova.js par en boucle infini dans le navigateur.</li>
+</ul>
+</li>
+<li>Utiliser l&#8217;émulateur <a href="http://ripple.incubator.apache.org/">Ripple</a>
+
+<ul>
+<li>ça n&#8217;a pas fonctionné mais le projet semble prometteur</li>
+</ul>
+</li>
+<li>Utiliser la commande <code>cordova run android</code> avec l&#8217;émulateur de l&#8217;Android SDK
+
+<ul>
+<li>ça marche très mal, pas spécifiquement à cause de Cordova mais plutôt à cause des ressources consommées par l&#8217;émulateur Android</li>
+</ul>
+</li>
+<li>Utiliser la commande <code>cordova run android</code> avec un téléphone branché sur le port USB
+
+<ul>
+<li>Finalement c&#8217;est une des solutions les plus rapides à mettre en place.</li>
+<li>à noter la commande <code>adb logcat</code> à lancer pour avoir les logs du téléphone et comprendre ce qui se passe.</li>
+</ul>
+</li>
+</ul>
+
+
+<p>Pour réaliser mon application, j&#8217;étais parti sur l&#8217;utilisation de Boostrap mais le résultat graphique ne faisait pas &ldquo;application mobile&rdquo;. J&#8217;ai donc utilisé <a href="http://jquerymobile.com/">Jquery Mobile</a> qui a un rendu très satisfaisant.</p>
+
+<p>Le résultat final est très bon, rapide et facile à faire par rapport à un développement Android classique.
+Avec cette méthode, nous pensons sortir plus facilement des applications au sein de mon entreprise.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Atelier des Objets Connect&eacute;s]]></title>
@@ -482,6 +776,15 @@ sauter des instructions aux puces. On peut également étudier la consommation �
 
 
 <p>J&#8217;espère que cet article aura été instructif et bon point d&#8217;entrée dans le monde de la cryptographie.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Lyon Jug Jee8 Avatar]]></title>
+    <link href="http://evidal.github.io/blog/2013/03/19/lyon-jug-jee8-avatar/"/>
+    <updated>2013-03-19T00:00:00+01:00</updated>
+    <id>http://evidal.github.io/blog/2013/03/19/lyon-jug-jee8-avatar</id>
+    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
