@@ -4,7 +4,7 @@
   <title><![CDATA[Le Blog d'Eric Vidal]]></title>
   <link href="http://evidal.github.io/atom.xml" rel="self"/>
   <link href="http://evidal.github.io/"/>
-  <updated>2014-04-05T09:17:03+02:00</updated>
+  <updated>2014-05-11T17:36:10+02:00</updated>
   <id>http://evidal.github.io/</id>
   <author>
     <name><![CDATA[Eric Vidal]]></name>
@@ -12,6 +12,112 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mix-it 2014]]></title>
+    <link href="http://evidal.github.io/blog/2014/05/02/mixit14/"/>
+    <updated>2014-05-02T00:00:00+02:00</updated>
+    <id>http://evidal.github.io/blog/2014/05/02/mixit14</id>
+    <content type="html"><![CDATA[<p>Cette année, pas de vacances, j&#8217;ai donc pu me rendre à <a href="http://www.mix-it.fr/">Mix-It</a>. J&#8217;avais loupé la conférence de l&#8217;an dernier et j&#8217;attendais donc cette édition avec beaucoup d&#8217;impatience. Je vais parler ici des ateliers/sessions que j&#8217;ai bien aimé.</p>
+
+<p><img src="http://evidal.github.io/images/posts/2014-05-02-mixit14/mixit.png" alt="MixIt14" /></p>
+
+<h2>Lightning Talks</h2>
+
+<p>Je les ai trouvés plutôt bons et assez riches en comparaison du temps qui leur était imparti.</p>
+
+<p><a href="http://www.mix-it.fr/lightning/541/es6-en-pratique">ES6 en pratique</a> nous rappelait que Javascript évoluait et que de nouvelles
+fonctionnalités étaient disponibles dés maintenant. Une invitation à regarder ce qu&#8217;il se passe au niveau de l&#8217;évolution du
+langage.</p>
+
+<p><a href="http://www.mix-it.fr/lightning/544/de-l-architecture-dans-les-css">De l&#8217;architecture dans les CSS</a> nous expliquait comment un site comme <a href="http://www.lesfurets.com/">www.lesfurets.com</a> organisait les CSS avec Grunt.</p>
+
+<p><a href="http://www.mix-it.fr/lightning/543/blogger-chaque-jour-pour-etre-riche-et-celebre">Blogger chaque jour pour être riche et célèbre</a> expliquait la démarche de David Gageot qui s&#8217;était mis à bloguer tous les jours depuis quelques temps. Les slides de sa présentation sont disponibles <a href="http://blog.javabien.net/2014/04/29/lightning-talk-at-mix-it/">ici</a>.</p>
+
+<p><a href="http://www.mix-it.fr/lightning/560/5-apprentissages-pour-le-programmeur-debutant">5 apprentissages pour le programmeur débutant</a> était un rappel pour les programmeurs débutants (ou pas) sur 5 bonnes pratiques. Un petit rappel ne fait jamais de mal. Les slides sont <a href="http://blog.ninja-squad.com/2014/05/02/mix-it-lightning-talk/">ici</a>.</p>
+
+<p><a href="http://www.mix-it.fr/lightning/545/-restful-really-">#Restful, really ?</a> expliquait quelles devaient être les caractéristiques d&#8217;une vraie API REST. Un bon rappel également. Les slides sont <a href="http://fr.slideshare.net/xcarpentier1/restful-really">ici</a>.</p>
+
+<h2>Natural Course of Refactoring – a refactoring work</h2>
+
+<p>Une présentation faite par <a href="https://twitter.com/ms_bnsit_pl">Mariusz Sieraczkiewicz</a>. Le but de sa présentation était de montrer
+la démarche pour &ldquo;refactorer&rdquo; son code avec quelques astuces. L&#8217;horaire n&#8217;était pas facile (après déjeuner) mais il a su tenir la
+salle notamment avec une comparaison osée (refactoring is like sex). Il donne également des pistes pour trouver quels sont les
+portions de code à &ldquo;refactorer&rdquo;. Sa présentation est <a href="http://fr.slideshare.net/BNSIT/natural-course-of-refactoring-mixit-lyon">ici</a>.</p>
+
+<p>Ce que je retiendrai, c&#8217;est que le refactoring doit être un travail de tous les jours. Qu&#8217;avec un certain nombre de bonnes
+habitudes (voir dans les slides) on peut maintenir du code dans des conditions opérationnelles. Enfin, il ne faut pas se lancer
+dans un refactoring complet de tout (trop risqué) mais avoir une approche accès sur l&#8217;efficacité et les &ldquo;quick wins&rdquo;.</p>
+
+<h2>Jeu vidéo: le cousin un peu étrange de l&#8217;IT.</h2>
+
+<p>C&#8217;était une bonne surprise. J&#8217;avais prévu à l&#8217;origine d&#8217;aller à l&#8217;atelier <a href="http://www.mix-it.fr/session/388/application-web-moderne-en-java-the-codestory-way">Application Web Moderne en Java. The CodeStory Way</a> mais faute de place, j&#8217;ai dû me rabattre sur autre chose. Je suis bien tombé.
+<a href="https://twitter.com/on_code/">Laurent Victorino</a> est donc un développeur de jeu vidéo qui montrait dans sa <a href="https://speakerdeck.com/lvictorino/mix-it14-jeu-video-le-cousin-un-peu-etrange-de-lit">présentation</a> les préjugès que peuvent avoir les développeurs de jeux vidéo par rapport aux développeurs classiques et inversement. C&#8217;est d&#8217;autant plus intéressant que le speaker a eu une courte exprience en SSII et peu donc comparer les 2 mondes.</p>
+
+<p>Cette présentation m&#8217;a beaucoup plue car comme la plupart des développeurs (enfin je pense), je me suis posé la question de devenir développeur de jeux vidéos ou non. Et finalement j&#8217;ai choisi le développement d&#8217;applications plutot que le développement de jeux. Le speaker a insisté sur le fait que le développement d&#8217;un jeu n&#8217;était pas si compliqué et qu&#8217;il suffisait d&#8217;y consacrer un peu de temps. Un atelier <a href="http://www.mix-it.fr/session/542/unity3d-from-zero-to-hero-basic-session-">Unity3D from zero to hero (Basic session)</a> était d&#8217;ailleurs proposé&hellip; mais j&#8217;ai loupé le début de 20 minutes.</p>
+
+<h2>Machine learning et régulation numérique</h2>
+
+<p>Bonne conférence de <a href="https://twitter.com/glaforge">Guillaume Laforge</a> et <a href="http://www.mix-it.fr/profile/didier.girard">Didier Girard</a> sur le machine Learning. Le plus de leur présentation était de ne pas parler framework mais plutôt d&#8217;algorithmes et de possiblités. Ce que je retiens de leur <a href="http://glaforge.appspot.com/article/machine-learning-a-mix-it-2014">présentation</a> c&#8217;est qu&#8217;il faut stocker le maximum de données possibles, avoir du flair et travailler sur de vraies données.</p>
+
+<p>Ils ont alerté également l&#8217;assemblée d&#8217;être vigilant. Pour eux les développeurs qui font du Big Data ont un peu la même responsabilité que les physiciens qui ont conçu la bombe atomique, c&#8217;est à dire un grand pouvoir. Pour eux il faut avancer sur le sujet de manière éthique et ne pas hésiter à refuser de développer un système qui pourrait être illégal ou non-éthique.</p>
+
+<h2>AngularJS from scratch</h2>
+
+<p>C&#8217;était un très bon atelier et très bien préparé. La pari était de redévelopper un morceau d&#8217;Angular JS en 2 heures. Le challenge semble grand et pourtant on y est arrivé dans le temps imparti. Le gros point fort de cet atelier est qu&#8217;il est accessible et qu&#8217;il permet de démystifier Angular.js en montrant quels sont en fait les simples trucs derrière la magie d&#8217;Angular.</p>
+
+<p>Très très très instructif.</p>
+
+<h2>Open-Sourcing <a href="http://spring.io">http://spring.io</a></h2>
+
+<p>Une très bonne session et une bonne démarche. <a href="https://twitter.com/brianclozel">Brian Clozel</a> nous montrait comment
+<a href="http://spring.io/">Spring</a> a développé son site web avec&hellip; Spring. Et le résultat est disponible sur Github sous le nom de
+projet <a href="https://github.com/spring-io/sagan">Sagan</a>. Ce qui est intéressant c&#8217;est de voir les technos qui sont poussées par Spring
+(gradle, springboot, &hellip;). J&#8217;ai trouvé intéréssant le fait de marquer la différence entre la partie purement HTML avec ses outils
+(node, npm, bower, gulp, cram) et la partie traditionnelle java.</p>
+
+<p>Autre point intéressant, c&#8217;est l&#8217;utilisation d&#8217;Elastic Search comme moteur de recherche, ce qui montre à quel point cette solution
+s&#8217;est démocratisée.</p>
+
+<h2>Les communautés et le monde IT sous d&#8217;autres cieux</h2>
+
+<p>J&#8217;ai bien aimé cette keynote par <a href="https://twitter.com/horalass">Horacio Lassey-Assiakoley</a> qui nous a un peu expliqué comment sont
+organisées les communautés de développement en Afrique Noire. Ce qu&#8217;il faut retenir c&#8217;est qu&#8217;il existe en Afrique Noire des
+développeurs aussi motivé que chez nous.</p>
+
+<h2>Programming Diversity</h2>
+
+<p>La dernière keynote, <a href="http://www.mix-it.fr/session/509/programming-diversity-">Programming Diversity</a> par
+<a href="https://twitter.com/ashedryden">Ashe Dryden</a> était importante, je pense. Combien de fois, dans notre milieu très masculin,
+j&#8217;ai entendu des remarques ouvertement sexistes sur les capacités des développeuses ou ingénieures. Il est donc important de
+répéter ce genre de message jusqu&#8217;à ce qu&#8217;il devienne évident à tout notre corporation. Pour le coté &ldquo;racial&rdquo;, j&#8217;ai l&#8217;impression
+que nous sommes moins concernés si je considère mes propres experiences professionnelles où la diversité est réelle.</p>
+
+<h2>Mix It Party</h2>
+
+<iframe width="560" height="315" src="http://evidal.github.io//www.youtube.com/embed/R7yfISlGLNU" frameborder="0" allowfullscreen></iframe>
+
+
+<p>En marge des conférences, la soirée Mix It était une vraie résussite (I&rsquo;m on a boat :&ndash;) ). Je pensais rester une petite heure et
+je suis parti après minuit en ayant rencontré plein de monde. A refaire.</p>
+
+<h2>All in all</h2>
+
+<p>Le programme étant riche, il a fallu faire des choix. Cependant, j&#8217;ai eu de très bon échos des conférences suivantes:</p>
+
+<ul>
+<li><a href="https://speakerdeck.com/sdeleuze/reactive-applications-with-spring-angulardart-and-websocket">Applications réactives avec Spring4 et AngularDart</a> par <a href="https://twitter.com/sdeleuze">Sébastien Deleuze</a></li>
+<li><a href="http://fr.slideshare.net/svenpeters/how-to-do-kickass-software-development">How To Do Kick-Ass Software Development</a> par <a href="https://twitter.com/svenpet">Sven Peters</a></li>
+<li><a href="https://speakerdeck.com/garann/how-to-rewrite-your-js-app-at-least-10-times">How to rewrite your JavaScript app ten times</a> par <a href="http://www.mix-it.fr/profile/garann">Garann Means</a></li>
+</ul>
+
+
+<p>Mix It c&#8217;est aussi l&#8217;occasion de croiser d&#8217;anciens collègues ou de faire des rencontres.</p>
+
+<p>Nous avons la chance d&#8217;avoir ce genre de conférence à Lyon, donc merci aux organisateurs.
+J&#8217;y retournerai l&#8217;année prochaine.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Cordova & Phonegap]]></title>

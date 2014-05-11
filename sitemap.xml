@@ -2,55 +2,55 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://evidal.github.io/blog/2011/03/16/Yet-another-developers-blog/</loc>
-        <lastmod>2014-01-07T14:12:14+01:00</lastmod>
+        <lastmod>2014-05-08T07:04:43+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/blog/2011/05/03/Mix-IT/</loc>
-        <lastmod>2013-09-12T09:32:34+02:00</lastmod>
+        <lastmod>2014-05-08T07:04:43+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/blog/2011/06/30/Hibernate-OGM/</loc>
-        <lastmod>2013-09-12T09:32:34+02:00</lastmod>
+        <lastmod>2014-05-08T07:04:43+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/blog/2011/07/07/Cloud-Synthese/</loc>
-        <lastmod>2013-09-12T09:32:34+02:00</lastmod>
+        <lastmod>2014-05-08T07:04:43+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/blog/2012/01/12/Gestion-des-performances/</loc>
-        <lastmod>2013-09-12T09:32:34+02:00</lastmod>
+        <lastmod>2014-05-08T07:04:43+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/blog/2012/02/20/Tunning-de-la-JVM/</loc>
-        <lastmod>2013-09-12T09:32:34+02:00</lastmod>
+        <lastmod>2014-05-08T07:04:43+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/blog/2012/02/21/Maitriser-sa-production/</loc>
-        <lastmod>2013-09-12T09:32:34+02:00</lastmod>
+        <lastmod>2014-05-08T07:04:43+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/blog/2012/04/28/Mix-IT-2012/</loc>
-        <lastmod>2013-09-12T09:32:34+02:00</lastmod>
+        <lastmod>2014-05-08T07:04:43+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/blog/2012/06/07/Groovy-2.0-Quoi-de-neuf-doc/</loc>
-        <lastmod>2013-09-12T09:32:34+02:00</lastmod>
+        <lastmod>2014-05-08T07:04:43+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/blog/2012/07/24/excuse-test/</loc>
-        <lastmod>2014-01-04T13:57:49+01:00</lastmod>
+        <lastmod>2014-05-08T07:04:43+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/blog/2012/10/18/elastic-search/</loc>
-        <lastmod>2014-01-07T14:12:03+01:00</lastmod>
+        <lastmod>2014-05-08T07:04:43+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/blog/2012/10/24/mon-premier-sprite-en-HTML-5/</loc>
-        <lastmod>2013-09-12T10:01:53+02:00</lastmod>
+        <lastmod>2014-05-08T07:04:43+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/blog/2013/02/24/angular.js-et-yeoman/</loc>
-        <lastmod>2013-09-12T09:32:34+02:00</lastmod>
+        <lastmod>2014-05-08T07:04:43+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/blog/2013/03/19/lyon-jug-jee8-avatar/</loc>
@@ -58,35 +58,39 @@
     </url>
     <url>
         <loc>http://evidal.github.io/blog/2013/09/24/cryptographie/</loc>
-        <lastmod>2013-09-25T17:44:20+02:00</lastmod>
+        <lastmod>2014-05-08T07:04:43+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/blog/2013/09/25/elasticsearch-logstash-Kibana/</loc>
-        <lastmod>2014-01-07T14:10:31+01:00</lastmod>
+        <lastmod>2014-05-08T07:04:43+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/blog/2013/11/05/elasticsearch-premiere-production/</loc>
-        <lastmod>2014-01-07T14:10:27+01:00</lastmod>
+        <lastmod>2014-05-08T07:04:43+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/blog/2013/12/27/atelier-objets-connectes/</loc>
-        <lastmod>2014-01-07T15:01:39+01:00</lastmod>
+        <lastmod>2014-05-08T07:04:43+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/blog/2014/04/03/cordova-phonegap/</loc>
-        <lastmod>2014-04-05T09:10:59+02:00</lastmod>
+        <lastmod>2014-05-08T07:04:43+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://evidal.github.io/blog/2014/05/02/mixit14/</loc>
+        <lastmod>2014-05-11T17:33:41+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/blog/archives/</loc>
-        <lastmod>2014-04-05T09:10:59+02:00</lastmod>
+        <lastmod>2014-05-11T17:33:41+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/cv/</loc>
-        <lastmod>2013-09-25T18:34:59+02:00</lastmod>
+        <lastmod>2014-05-08T07:04:43+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/</loc>
-        <lastmod>2014-04-05T09:10:59+02:00</lastmod>
+        <lastmod>2014-05-11T17:33:41+02:00</lastmod>
     </url>
     <url>
         <loc>http://evidal.github.io/robots.txt</loc>

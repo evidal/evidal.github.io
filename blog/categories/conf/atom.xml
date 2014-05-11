@@ -4,7 +4,7 @@
   <title><![CDATA[Category: conf | Le Blog d'Eric Vidal]]></title>
   <link href="http://evidal.github.io/blog/categories/conf/atom.xml" rel="self"/>
   <link href="http://evidal.github.io/"/>
-  <updated>2014-04-05T09:17:03+02:00</updated>
+  <updated>2014-05-11T17:36:10+02:00</updated>
   <id>http://evidal.github.io/</id>
   <author>
     <name><![CDATA[Eric Vidal]]></name>
@@ -12,6 +12,112 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mix-it 2014]]></title>
+    <link href="http://evidal.github.io/blog/2014/05/02/mixit14/"/>
+    <updated>2014-05-02T00:00:00+02:00</updated>
+    <id>http://evidal.github.io/blog/2014/05/02/mixit14</id>
+    <content type="html"><![CDATA[<p>Cette année, pas de vacances, j'ai donc pu me rendre à <a href="http://www.mix-it.fr/">Mix-It</a>. J'avais loupé la conférence de l'an dernier et j'attendais donc cette édition avec beaucoup d'impatience. Je vais parler ici des ateliers/sessions que j'ai bien aimé.</p>
+
+<p><img src="/images/posts/2014-05-02-mixit14/mixit.png" alt="MixIt14" /></p>
+
+<h2>Lightning Talks</h2>
+
+<p>Je les ai trouvés plutôt bons et assez riches en comparaison du temps qui leur était imparti.</p>
+
+<p><a href="http://www.mix-it.fr/lightning/541/es6-en-pratique">ES6 en pratique</a> nous rappelait que Javascript évoluait et que de nouvelles
+fonctionnalités étaient disponibles dés maintenant. Une invitation à regarder ce qu'il se passe au niveau de l'évolution du
+langage.</p>
+
+<p><a href="http://www.mix-it.fr/lightning/544/de-l-architecture-dans-les-css">De l'architecture dans les CSS</a> nous expliquait comment un site comme <a href="http://www.lesfurets.com/">www.lesfurets.com</a> organisait les CSS avec Grunt.</p>
+
+<p><a href="http://www.mix-it.fr/lightning/543/blogger-chaque-jour-pour-etre-riche-et-celebre">Blogger chaque jour pour être riche et célèbre</a> expliquait la démarche de David Gageot qui s'était mis à bloguer tous les jours depuis quelques temps. Les slides de sa présentation sont disponibles <a href="http://blog.javabien.net/2014/04/29/lightning-talk-at-mix-it/">ici</a>.</p>
+
+<p><a href="http://www.mix-it.fr/lightning/560/5-apprentissages-pour-le-programmeur-debutant">5 apprentissages pour le programmeur débutant</a> était un rappel pour les programmeurs débutants (ou pas) sur 5 bonnes pratiques. Un petit rappel ne fait jamais de mal. Les slides sont <a href="http://blog.ninja-squad.com/2014/05/02/mix-it-lightning-talk/">ici</a>.</p>
+
+<p><a href="http://www.mix-it.fr/lightning/545/-restful-really-">#Restful, really ?</a> expliquait quelles devaient être les caractéristiques d'une vraie API REST. Un bon rappel également. Les slides sont <a href="http://fr.slideshare.net/xcarpentier1/restful-really">ici</a>.</p>
+
+<h2>Natural Course of Refactoring – a refactoring work</h2>
+
+<p>Une présentation faite par <a href="https://twitter.com/ms_bnsit_pl">Mariusz Sieraczkiewicz</a>. Le but de sa présentation était de montrer
+la démarche pour &ldquo;refactorer&rdquo; son code avec quelques astuces. L'horaire n'était pas facile (après déjeuner) mais il a su tenir la
+salle notamment avec une comparaison osée (refactoring is like sex). Il donne également des pistes pour trouver quels sont les
+portions de code à &ldquo;refactorer&rdquo;. Sa présentation est <a href="http://fr.slideshare.net/BNSIT/natural-course-of-refactoring-mixit-lyon">ici</a>.</p>
+
+<p>Ce que je retiendrai, c'est que le refactoring doit être un travail de tous les jours. Qu'avec un certain nombre de bonnes
+habitudes (voir dans les slides) on peut maintenir du code dans des conditions opérationnelles. Enfin, il ne faut pas se lancer
+dans un refactoring complet de tout (trop risqué) mais avoir une approche accès sur l'efficacité et les &ldquo;quick wins&rdquo;.</p>
+
+<h2>Jeu vidéo: le cousin un peu étrange de l'IT.</h2>
+
+<p>C'était une bonne surprise. J'avais prévu à l'origine d'aller à l'atelier <a href="http://www.mix-it.fr/session/388/application-web-moderne-en-java-the-codestory-way">Application Web Moderne en Java. The CodeStory Way</a> mais faute de place, j'ai dû me rabattre sur autre chose. Je suis bien tombé.
+<a href="https://twitter.com/on_code/">Laurent Victorino</a> est donc un développeur de jeu vidéo qui montrait dans sa <a href="https://speakerdeck.com/lvictorino/mix-it14-jeu-video-le-cousin-un-peu-etrange-de-lit">présentation</a> les préjugès que peuvent avoir les développeurs de jeux vidéo par rapport aux développeurs classiques et inversement. C'est d'autant plus intéressant que le speaker a eu une courte exprience en SSII et peu donc comparer les 2 mondes.</p>
+
+<p>Cette présentation m'a beaucoup plue car comme la plupart des développeurs (enfin je pense), je me suis posé la question de devenir développeur de jeux vidéos ou non. Et finalement j'ai choisi le développement d'applications plutot que le développement de jeux. Le speaker a insisté sur le fait que le développement d'un jeu n'était pas si compliqué et qu'il suffisait d'y consacrer un peu de temps. Un atelier <a href="http://www.mix-it.fr/session/542/unity3d-from-zero-to-hero-basic-session-">Unity3D from zero to hero (Basic session)</a> était d'ailleurs proposé&hellip; mais j'ai loupé le début de 20 minutes.</p>
+
+<h2>Machine learning et régulation numérique</h2>
+
+<p>Bonne conférence de <a href="https://twitter.com/glaforge">Guillaume Laforge</a> et <a href="http://www.mix-it.fr/profile/didier.girard">Didier Girard</a> sur le machine Learning. Le plus de leur présentation était de ne pas parler framework mais plutôt d'algorithmes et de possiblités. Ce que je retiens de leur <a href="http://glaforge.appspot.com/article/machine-learning-a-mix-it-2014">présentation</a> c'est qu'il faut stocker le maximum de données possibles, avoir du flair et travailler sur de vraies données.</p>
+
+<p>Ils ont alerté également l'assemblée d'être vigilant. Pour eux les développeurs qui font du Big Data ont un peu la même responsabilité que les physiciens qui ont conçu la bombe atomique, c'est à dire un grand pouvoir. Pour eux il faut avancer sur le sujet de manière éthique et ne pas hésiter à refuser de développer un système qui pourrait être illégal ou non-éthique.</p>
+
+<h2>AngularJS from scratch</h2>
+
+<p>C'était un très bon atelier et très bien préparé. La pari était de redévelopper un morceau d'Angular JS en 2 heures. Le challenge semble grand et pourtant on y est arrivé dans le temps imparti. Le gros point fort de cet atelier est qu'il est accessible et qu'il permet de démystifier Angular.js en montrant quels sont en fait les simples trucs derrière la magie d'Angular.</p>
+
+<p>Très très très instructif.</p>
+
+<h2>Open-Sourcing <a href="http://spring.io">http://spring.io</a></h2>
+
+<p>Une très bonne session et une bonne démarche. <a href="https://twitter.com/brianclozel">Brian Clozel</a> nous montrait comment
+<a href="http://spring.io/">Spring</a> a développé son site web avec&hellip; Spring. Et le résultat est disponible sur Github sous le nom de
+projet <a href="https://github.com/spring-io/sagan">Sagan</a>. Ce qui est intéressant c'est de voir les technos qui sont poussées par Spring
+(gradle, springboot, &hellip;). J'ai trouvé intéréssant le fait de marquer la différence entre la partie purement HTML avec ses outils
+(node, npm, bower, gulp, cram) et la partie traditionnelle java.</p>
+
+<p>Autre point intéressant, c'est l'utilisation d'Elastic Search comme moteur de recherche, ce qui montre à quel point cette solution
+s'est démocratisée.</p>
+
+<h2>Les communautés et le monde IT sous d'autres cieux</h2>
+
+<p>J'ai bien aimé cette keynote par <a href="https://twitter.com/horalass">Horacio Lassey-Assiakoley</a> qui nous a un peu expliqué comment sont
+organisées les communautés de développement en Afrique Noire. Ce qu'il faut retenir c'est qu'il existe en Afrique Noire des
+développeurs aussi motivé que chez nous.</p>
+
+<h2>Programming Diversity</h2>
+
+<p>La dernière keynote, <a href="http://www.mix-it.fr/session/509/programming-diversity-">Programming Diversity</a> par
+<a href="https://twitter.com/ashedryden">Ashe Dryden</a> était importante, je pense. Combien de fois, dans notre milieu très masculin,
+j'ai entendu des remarques ouvertement sexistes sur les capacités des développeuses ou ingénieures. Il est donc important de
+répéter ce genre de message jusqu'à ce qu'il devienne évident à tout notre corporation. Pour le coté &ldquo;racial&rdquo;, j'ai l'impression
+que nous sommes moins concernés si je considère mes propres experiences professionnelles où la diversité est réelle.</p>
+
+<h2>Mix It Party</h2>
+
+<iframe width="560" height="315" src="http://evidal.github.io//www.youtube.com/embed/R7yfISlGLNU" frameborder="0" allowfullscreen></iframe>
+
+
+<p>En marge des conférences, la soirée Mix It était une vraie résussite (I&rsquo;m on a boat :&ndash;) ). Je pensais rester une petite heure et
+je suis parti après minuit en ayant rencontré plein de monde. A refaire.</p>
+
+<h2>All in all</h2>
+
+<p>Le programme étant riche, il a fallu faire des choix. Cependant, j'ai eu de très bon échos des conférences suivantes:</p>
+
+<ul>
+<li><a href="https://speakerdeck.com/sdeleuze/reactive-applications-with-spring-angulardart-and-websocket">Applications réactives avec Spring4 et AngularDart</a> par <a href="https://twitter.com/sdeleuze">Sébastien Deleuze</a></li>
+<li><a href="http://fr.slideshare.net/svenpeters/how-to-do-kickass-software-development">How To Do Kick-Ass Software Development</a> par <a href="https://twitter.com/svenpet">Sven Peters</a></li>
+<li><a href="https://speakerdeck.com/garann/how-to-rewrite-your-js-app-at-least-10-times">How to rewrite your JavaScript app ten times</a> par <a href="http://www.mix-it.fr/profile/garann">Garann Means</a></li>
+</ul>
+
+
+<p>Mix It c'est aussi l'occasion de croiser d'anciens collègues ou de faire des rencontres.</p>
+
+<p>Nous avons la chance d'avoir ce genre de conférence à Lyon, donc merci aux organisateurs.
+J'y retournerai l'année prochaine.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Atelier des Objets Connect&eacute;s]]></title>
@@ -295,369 +401,6 @@ De notre coté nous avons sélectionner Elastic Serach pour plusierus fonctionna
 <p>Dernière présentation pour moi : ZeroMQ avec le retour de la vengeance de Pieter Hintjens. Là encore, c'était une présentation un petit peu déroutante. Il a expliqué ce qu'on pouvait faire avec ZeroMQ mais sans vraiment présenter d'applications, ce qui a perdu je pense une partie de l'auditoire. Etant dans le monde Télécom, et donc sensible aux questions de messaging, j'ai pu y voir un interet. Zero MQ est donc pour Pieter l'aboutissement de que l'on peut faire dans le monde du messaging. Un système très light écrit en C permettant de supporter des millions de messages secondes. Il est particulièrement adapté aux applications financières traitant un grand nombre de données en temps réel ou aux applications télécoms donc. J'ai demandé quel était la différence avec AMQP et Zero MQ et&hellip; il m'a demandé d'allé voir sur Internet. Ce que j'ai fait. Ce que je comprends c'est que si AMQP a une approche classique centralisée, ZeroMQ permet d'avoir une approche décentralisée pour la distribution des messages. Bon ça reste un peu obscure, je pense que pour comprendre il va falloir y mettre les mains dedans.</p>
 
 <p>Très bonne journée, ambiance détendue, j'y retournerai l'année prochaine.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Mix-IT]]></title>
-    <link href="http://evidal.github.io/blog/2011/05/03/Mix-IT/"/>
-    <updated>2011-05-03T00:00:00+02:00</updated>
-    <id>http://evidal.github.io/blog/2011/05/03/Mix-IT</id>
-    <content type="html"><![CDATA[<p>J'ai assisté le 5 avril à la Conférence <a href="http://www.mix-it.fr/">Mix-it</a> avec l'aimable participation de mon employeur.
-Pour une première, j'ai trouvé que c'était plutôt réussi, les sujets étaient nombreux et variés.
-Un petit bémol sur le manque de Clim': Ça sentait &ldquo;l'homme&rdquo; en fin de journée.</p>
-
-<p>5 tracks étaient accessibles:</p>
-
-<ul>
-<li>Techy : Java et son écosystème,</li>
-<li>Agility : Agilité pour débutants et passionnés,</li>
-<li>Trendy : Tendances novatrices et avant-gardistes,</li>
-<li>Mixy : Le meilleur de l’agilité et des technologies Java,</li>
-<li>Gamy : Echanges autour de jeux agiles et de coding dojos</li>
-</ul>
-
-
-<p>J'ai participé aux sessions suivantes:</p>
-
-<ul>
-<li>Let&rsquo;s make this test suite run faster</li>
-<li>HTML 5</li>
-<li>Clojure</li>
-<li>Apache Mahout</li>
-<li>ASGI &amp; Flex</li>
-</ul>
-
-
-<p>Voilà les notes (complétés) que j'ai prises, la suite après le break (attention, c'est long).</p>
-
-<!--more-->
-
-
-<h2>Let&rsquo;s make this test suite run faster</h2>
-
-<p>Une présentation assez intéréssante pour les équipes qui ont des builds interminables (plus d'un heure tests compris).
-Le speaker <a href="http://blog.javabien.net/">David Gageot</a> était assez pertinent est a présenté 3 stratégies combinables ont été présentées sur le mode le bon, la brute, le truand : The Cheater (le tricheur), The Lazy (le fainéant), The Brave (le brave).</p>
-
-<ul>
-<li>Stratégie du Cheater
-
-<ul>
-<li>Acheter une machine plus puissante</li>
-<li>Utilisez les nouvelle options de Maven MultiCore support (-T 4, -T 1C)</li>
-<li>Utilisez des outils comme SureFire sur Ant pour distribuer les test</li>
-<li>Stratégie du Lazy</li>
-<li>Nettoyer les tests inutiles (ça enlève du temps de test),</li>
-<li>Nettoyer le code mort et les tests associés (ça enlève également du temps de test)</li>
-<li>Ne pas utiliser les vrais IO pour les test (Réseau, Sytème de fichiers, base de données)
-
-<ul>
-<li>utilisation d'une base en mémoire comme H2</li>
-<li>utiliser Apache Virtual File System pour simuler un file system</li>
-<li>utiliser un serveur Smtp light comme Subetha</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Stratégie du Brave
-
-<ul>
-<li>Restructurer tous les tests pour
-
-<ul>
-<li>éviter de tester plusieurs fois la même fonctionnalité</li>
-<li>éviter de tester les couches basses (persistence, frameworks, etc…)</li>
-<li>mettre le plus de test du coté unitaire pour éviter de surcharger les tests d'intégration</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<p>J'ai trouvé une version de la présentation ici :
-<a href="http://www.slideshare.net/dgageot/lets-make-this-test-suite-run-faster-paris-jug-2011">http://www.slideshare.net/dgageot/lets-make-this-test-suite-run-faster-paris-jug-2011</a></p>
-
-<p>J'ai beaucoup aimé cette présentation car elle donnait des solutions pragmatiques à des problèmes qu'on rencontre tous les jours.</p>
-
-<h2>HTML 5</h2>
-
-<p>Une des grosses présentations (pour moi) de Mix-It donnée par Alain Duval et Cédric Beurtheret.
-Je m'intéresse depuis peu de temps à HTML 5, pendant longtemps les frameworks java ont cherché à tous prix à masquer le HTML.
-Avec les possibilités redécouvertes de Javascript, et les nouvelles API ajoutées aux différentes normes, il va falloir se remettre très sérieusement à HTML.
-Voilà un petit résumé de la présentation :</p>
-
-<ul>
-<li>HTML 4 est vieux, il a été livré en 1998 !</li>
-<li>Le travail sur HTML 5 a commencé en  2004, la release finale est prévue entre 2012-2014</li>
-<li>3 consortiums bossent sur le sujet : W3C, IETF, WHATWG</li>
-<li>La plupart des dernières version des navigateurs commence a supporté des éléments de HTML 5 (pour voir comment se comporte le votre, allez sur <a href="http://html5test.com/">http://html5test.com/</a>)</li>
-<li>HTML 5 cen'est pas seulement le HTML, c'est aussi tout un tas d'évolutions et d'APIs qui ont été ajoutées.</li>
-</ul>
-
-
-<h4>Les évolutions en détails</h4>
-
-<ul>
-<li>Des headers plus simples
-
-<ul>
-<li>doctype, charset</li>
-</ul>
-</li>
-<li>Des nouveaux tags pour une approche plus sémantique des pages
-
-<ul>
-<li>article, aside, header, footer, nav, etc&hellip;</li>
-<li>C'est particulièrement intéressant pour l'accessibilité des sites WEB (malvoyants)</li>
-</ul>
-</li>
-<li>le querySelector
-
-<ul>
-<li>Je le vois comme un standardisation de la sélection d'éléments avec Jquery</li>
-</ul>
-</li>
-</ul>
-
-
-<p><img src="http://blog.referencementschool.com/wp-content/uploads/2009/07/html5_structure.png" alt="..." /></p>
-
-<ul>
-<li>Les formulaires HTML 5 sont enrichis
-
-<ul>
-<li>de nouveau type de champs (Number, Phone, URL, email, Date, Color Picker, Slider), les navigateurs ne râlent pas mais n'implémentent pas encore ces types de champs.</li>
-<li>de nouveau attributs (PlaceHolder, AutoComplete, AutoFocus,&hellip;)</li>
-<li>de la validation coté client</li>
-</ul>
-</li>
-<li>Widget
-
-<ul>
-<li>Des Applications WEB disponibles comme de vrais applications</li>
-</ul>
-</li>
-<li>Les Canvas (attention les yeux)
-
-<ul>
-<li>Je crois qu'on peut oublier Flash, VML ou Silverlight</li>
-<li>On peut rendre de la 2D, de la 3D en utilisant Javascript
-
-<ul>
-<li>comme exemple célèbre, Google a porté Quake 2 avec cette technologie</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Support du SVG natif</li>
-<li>Tags Audio et Video
-
-<ul>
-<li>Sans plugin, sans flash</li>
-<li>les formats audios supportés : AAC, MP3, OGG VORBIS</li>
-<li>les formats vidéo supportés : H264, VPM, OGG THEORA (pas encore validé)</li>
-</ul>
-</li>
-<li>Des évolutions sur les APIs Javascript
-
-<ul>
-<li>Drag &amp; Drop, Geolocation, Web Socket (Full duplex connection), Offline Web</li>
-</ul>
-</li>
-<li>Web Workers
-
-<ul>
-<li>C'est un genre de Thread dans un navigateur</li>
-</ul>
-</li>
-<li>Cross Window Messaging, API pour communiquer entre différentes fenêtres</li>
-<li>Web Storage, de nouveaux espaces pour stocker des informations offline de manière plus ou moins structurée
-
-<ul>
-<li>Session (hashmap) durée de vie Session,</li>
-<li>Local (hashmap persisted) durée de vie du cache du navigateur,</li>
-<li>Database (Real SQL database persisted) durée de vie du cache du navigateur,</li>
-<li>Ces storages sont accessibles uniquement par les sites qui les ont créés, mais à mon avis la sécurité de ces espaces sera faible. Il faudra donc faire attention à ce que l'on stocke dans ces espaces.</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>Focus sur Device API</h4>
-
-<p>Device API m'intéresse particulièrement. Elle a juste été évoquée mais j'ai eu la chance de pouvoir discuter avec Cédric Beurtheret qui m'a donné plus de détails et des liens pour creuser.
-La Device API est une initiative qui permet d'accéder à des informations sur la machine sur laquelle est vue le site.
-Une initiative parallèle a été démarré par un autre consortium <a href="http://www.wacapps.net">WAC</a> mais les APIs définis coté HTML 5 et WAC vont convergés.
-Device API est clairement une des specs les moins avancés de HTML 5, mais elle clairement prometteuse pour les développeurs d'application mobile.
-C'est particulièrement intéressant quand on tourne sur un téléphone Mobile car cette Device API exposera tout un tas d'information et d'actions à propos du Device (téléphone):</p>
-
-<ul>
-<li>Application Launcher (pour lancer des applications à partir d'un site Web)</li>
-<li>Contacts (accès et gestion)</li>
-<li>Calendar (accès et gestion)</li>
-<li>Tasks (accès et gestion)</li>
-<li>Camera (accès et gestion)</li>
-<li>Messaging : SMS, MMS, Email (accès et gestion)</li>
-<li>Communication Logs (accès et gestion)</li>
-<li>File System (Accès)</li>
-<li>Gallery (accès et gestion)</li>
-<li>System Information &amp; Event (accès statistiques CPU, network, etc.)</li>
-<li>User Interface (Gestion)</li>
-<li>Permissions (pour autoriser/bloquer un site WEB souhaitant utiliser les Device API)
-Quelques navigateurs mobiles en mode pre-release supportent ces fonctionnalités : Webkit, Opera et Obigo.</li>
-</ul>
-
-
-<p>Quelques liens:</p>
-
-<ul>
-<li>Une version de la présentation : <a href="http://www.slideshare.net/normandyjug/html5-jug">http://www.slideshare.net/normandyjug/html5-jug</a></li>
-<li>Les specs : <a href="http://dev.w3.org/html5/spec/Overview.html">http://dev.w3.org/html5/spec/Overview.html</a></li>
-<li>Sur Device API :
-
-<ul>
-<li><a href="http://www.wacapps.net">http://www.wacapps.net</a></li>
-<li><a href="http://www.w3.org/2009/dap/">http://www.w3.org/2009/dap/</a> (Device API)</li>
-</ul>
-</li>
-<li>Quelques démos
-
-<ul>
-<li><a href="http://html5demos.com/">http://html5demos.com/</a></li>
-<li><a href="http://mrdoob.com/">http://mrdoob.com/</a> (Canvas Demos)</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>Clojure</h2>
-
-<p>Bon pour être honnête j'ai pas été très convaincu. Je n'avais jamais regardé à quoi ressemblait Clojure, donc je suis vraiment arrivé &ldquo;vierge&rdquo; sur le sujet.
-Et là le choc, Clojure est un langage LISP. La dernière fois que j'ai fait du LISP, c'était à la FAC. Je me souviens que la principale difficulté du langage était de s'y retrouver dans les parenthèses.
-Bon ben là c'est un peu pareil. En plus la présentation était juste après le déjeuner, ça n'a pas aidé.
-En gros, voilà les buts de Coljure:</p>
-
-<ul>
-<li>Réduire la complexité</li>
-<li>faire des applications concurrentes</li>
-<li>être expressif</li>
-<li>d'être un langage généraliste</li>
-<li>d'être compatible avec le Byte Code</li>
-<li>faire de la programmation fonctionnelle</li>
-<li>gérer les états</li>
-<li>Syntaxe LISP :&lsquo;(</li>
-</ul>
-
-
-<p>Quelques exemples :</p>
-
-<ul>
-<li>(def a (/ 1.0 3.0))</li>
-<li>(def b (/ 3.0 1.0))</li>
-<li>(* a b)</li>
-<li>(def c (* a a a a a a a a a a))</li>
-<li>(def d (* b b b b b b b b b b))</li>
-<li>(* c d)</li>
-<li>(defn plusn [x]   (fn [y] (+ x y)))</li>
-<li>(def plus5 (plusn 5))</li>
-<li>(plus5 3)</li>
-</ul>
-
-
-<p>Je n'en dis pas plus, je n'ai pas accroché. Par contre j'ajouterai qu'il y a une tendance dans l'univers Java pour utilser la JVM différement.
-De nombreux langages bytecode compatible apparaissent : Jython, Groovy, Scala, Clojure, Ceylon, &hellip;
-Cela est dû en fait à une longue pause de 5 ans au niveau de la syntaxe Java, du coup d'autres langages ont voulu prendre le relais.
-Il faut dire que certains aspects de Java font assez vieillots (je pense à la lecture d'un fichier texte en JAVA par rapport à son équivalent en Groovy).</p>
-
-<p>Pour revenir à Clojure, pour en savoir plus ilfaut aller voir: <a href="http://clojure.org/">http://clojure.org/</a></p>
-
-<h2>Apache Mahout</h2>
-
-<p>Apache Mahout est un nouveau projet Apache, très jeune mais prometteur. Il propose de mettre à disposition des algorithmes puissants d'analyse sur de très gros volumes de données.
-Pour se faire, il utilise la méthode MapReduce (la version Hadoop) pour traiter les très gros volumes de données.
-Grace à ce système on va pouvoir par exemple:</p>
-
-<ul>
-<li>Recommander
-
-<ul>
-<li>sur Amazon, ce genre d'outil permet de proposer des articles similaires ou ayant été acheté par le même type d'utilisateurs</li>
-</ul>
-</li>
-<li>Classifier
-
-<ul>
-<li>Classer des documents à partir d'un échantillon déja classer</li>
-<li>détections de SPAM sur Gmail par exemple</li>
-<li>détections de document suspect (ou hors sujet)</li>
-</ul>
-</li>
-<li>Rassembler
-
-<ul>
-<li>Trouver des groupes de documents dans un vaste ensemble de documents</li>
-<li>Trouver les tendances, les idées directrices dans un ensemble de documents (comme dans Google News par exemple)</li>
-<li>Trouver des comportements typiques d'utilisateurs</li>
-</ul>
-</li>
-<li>Pattern Mining, evolutionary algorithm</li>
-</ul>
-
-
-<p>Si on va faire un tour sur le site de Apache Mahout, on verra que de nombreux algorithmes sont déjà disponibles (et qu'il grossit):</p>
-
-<ul>
-<li>Classification : Logisitc Regression, Bayesian, Support Vector Machines, Perceptron an Winnow, Neural Network, &hellip;</li>
-<li>Clustering : Canopy, K-Means, Fuzzy K-Means, Expectation Maximization, Mean Shift Clustering, Hierachical Clustering, &hellip;</li>
-<li>Pattern : FP Growth Alorithm</li>
-<li>Regression : Locally Weighted Linear Regression</li>
-<li>Dimension Reduction : Singular Value Decomposition, Principal Components Analysis, Independent Component Analysis, &hellip;</li>
-<li>Evolutionary Algorithms</li>
-<li>Recommenders / Collaborative Filtering</li>
-</ul>
-
-
-<p>Pour plus d'informations:</p>
-
-<ul>
-<li><a href="http://www.slideshare.net/mfiguiere/mixit-apr-2011-intelligence-collective-et-apache-mahout">http://www.slideshare.net/mfiguiere/mixit-apr-2011-intelligence-collective-et-apache-mahout</a></li>
-<li><a href="http://mahout.apache.org/">http://mahout.apache.org/</a></li>
-</ul>
-
-
-<h2>OSGI and Flex</h2>
-
-<p>C'est un peu l'erreur de casting cette journée. Je pensais qu'on allait avoir une vue d'ensemble de ces technologies, en fait il fallait venir en connaissant déjà Flex ou OSGI.
-C'était une session très technique avec des réponses à des problèmes précis.</p>
-
-<p>Voilà ce qu'il faut retenir:</p>
-
-<ul>
-<li>Le but du mariage entre OSGI et Flex est de modulariser l'application</li>
-<li>Flex normalement utilise HTTP ou SOAP pour échanger avec la partie serveur</li>
-<li>Avec OSGI, on va pouvoir avoir plus d'interaction avec des objets distants ou travailler en mode Producer/Consumer (Topic)</li>
-<li>Plusieurs Frameworks sont disponibles pour faciliter l'interaction avec le serveur
-
-<ul>
-<li>AMF 3</li>
-<li>GraniteDS</li>
-<li>Spring Flex</li>
-</ul>
-</li>
-<li>Le code source était assez compliqué pour les néophytes comme moi sur Flex et OSGI></li>
-<li>Par contre la démo était assez bluffante:
-
-<ul>
-<li>quand le speaker ajouter des JAR sur le serveur, de nouvelles portion d'écran apparaissaient sur la GUI.</li>
-<li>Différentes version d'un portlet pouvait également cohabiter sur la GUI</li>
-</ul>
-</li>
-</ul>
-
-
-<p>Plus d'informations sur
-<a href="http://www.slideshare.net/ougf/ougf-osgi-flex-5395089">http://www.slideshare.net/ougf/ougf-osgi-flex-5395089</a></p>
 ]]></content>
   </entry>
   
