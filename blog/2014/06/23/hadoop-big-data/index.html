@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Elastic Search en production - Le Blog d'Eric Vidal</title>
+  <title>Introduction &agrave; Hadoop - Le Blog d'Eric Vidal</title>
   <meta name="author" content="Eric Vidal">
 
   
@@ -20,7 +20,7 @@
   <link href="http://fonts.googleapis.com/css?family=Cardo" rel="stylesheet" type="text/css">
 
   
-  <link rel="canonical" href="http://evidal.github.io/blog/2013/11/05/elasticsearch-premiere-production">
+  <link rel="canonical" href="http://evidal.github.io/blog/2014/06/23/hadoop-big-data">
   <link href="/favicon.png" rel="icon">
   
   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
@@ -120,7 +120,7 @@
     
   <header class="page-header">
     
-      <h1 class="entry-title">Elastic Search en Production</h1>
+      <h1 class="entry-title">Introduction &agrave; Hadoop</h1>
     
     
       <p class="meta">
@@ -136,7 +136,7 @@
   
 
 
-<time datetime="2013-11-05T00:00:00+01:00" pubdate data-updated="true">05/11/13</time>
+<time datetime="2014-06-23T00:00:00+02:00" pubdate data-updated="true">23/06/14</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -145,25 +145,93 @@
   </header>
 
 
-<div class="entry-content"><p>Ça y&#8217;est, j&#8217;ai mis mon premier cluster Elastic Search en production : plus d&#8217;un milliards de documents  et chaque jour environ 500000 nouveaux documents ajoutés. Ça tourne sur 3 nœuds identiques, chacun contient une instance Elastic Search et les applications l&#8217;alimentant et l&#8217;exploitant.</p>
+<div class="entry-content"><p><a href="http://hadoop.apache.org/">Hadoop</a> est un système permettant de gérer des très gros volumes de données aussi bien au niveau de leur
+stockage qu&#8217;au niveau de leur traitement. Pour mettre les choses au clair tout de suite, Hadoop est une solution à oublier en
+dessous d&#8217;une grosse dizaine de serveurs. Hadoop est un système taillé pour gérer des centaines voir des milliers de serveurs. Il faut donc dégainer cette solution quand c&#8217;est nécéssaire. Google utilise par exemple ce type de technologie pour gérer les gros
+traitements sur son cluster de serveurs. C&#8217;est d&#8217;ailleurs Google qui est à l&#8217;origine des concepts fondateurs d&#8217;Hadoop.</p>
 
-<p>Avoir plusieurs instances d&#8217;un même système facilite la montée en charge car le système supporte les &ldquo;scale out&rdquo; pour absorber plus de données ou plus de charge.</p>
+<!--more-->
 
-<p>Le paramétrage d&#8217;un Elastic Search en production doit être optimisé sous peine d&#8217;avoir de gros problèmes. Je recommande fortement le visionnage de ce <a href="http://www.elasticsearch.org/webinars/elasticsearch-pre-flight-checklist/">webinar</a> qui permet d&#8217;avoir une idée de tout ce qu&#8217;il faut faire (et de comprendre) pour configurer un Elastic Search en production.</p>
 
-<p>Ce qu&#8217;il faut retenir:</p>
+<p>Hadoop n&#8217;est pas monobloc, c&#8217;est plutot un ensemble de composants spécialisés.</p>
+
+<h1>HDFS</h1>
+
+<p>Hadoop Distributed File System (HDFS) est l&#8217;implémentation open source des concepts introduits par le Google File System.
+C&#8217;est un système de fichier ditribué, taillé pour les gros volumes de données. HDFS est capable de gérer des volumes de
+plusieurs péta octets. Les blocs de données sont proportionnelles à la volumétrie potentielle et sont fixés par défaut à
+64 méga octets.</p>
+
+<p><img src="/images/posts/2014-06-15-hadoop-big-data/hdfsarchitecture.gif" alt="HDFS Architecture" />
+(source <a href="http://hadoop.apache.org/docs/r1.2.1/hdfs_design.html">http://hadoop.apache.org/docs/r1.2.1/hdfs_design.html</a>)</p>
+
+<p>Le Namenode est le serveur du cluster Hadoop s&#8217;occupant des méta-données du file system (Nom, réplication, emplacement, etc&hellip;)</p>
+
+<p>Les serveurs de données eux stockent les blocs des fichiers.</p>
+
+<h1>Map Reduce</h1>
+
+<p>Map Reduce est un modèle de programmation permettant de distribuer l&#8217;éxécution d&#8217;une tache sur plusieurs serveurs (e.g. un tri, une
+indexation, un calcul, etc.) Le &ldquo;travail&rdquo; de Map Reduce va être de découper, trier et rassembler les données à différents moment de
+l&#8217;éxécution d&#8217;une tâche.</p>
+
+<p>On peut schématiser l&#8217;éxection d&#8217;un batch Map Reduce avec le schéma suivant:</p>
+
+<p><img src="/images/posts/2014-06-15-hadoop-big-data/MapReduce.png" alt="HDFS Architecture" /></p>
 
 <ul>
-<li>Bien dimensionner la mémoire, 1 Go (le réglage par défaut) n&#8217;est pas suffisant</li>
-<li>Ne pas allouer plus de 32 Go de Heap Size, le format des pointeurs de la JVM change après cette valeur. Il vaut mieux ajouter un serveur si on est limite au niveau mémoire</li>
-<li>Penser à prévoir le double de mémoire physique par rapport au Heap alloué (e.g. si on met 32 Go de Heap, le serveur va en consommer 64 Go physique). Cela est dû à Elastic Search qui utilise massivement le cache du système de fichier.</li>
-<li>Prévoir des disques rapides, les &ldquo;disk arrays&rdquo; ne sont pas vraiment utiles.</li>
-<li>Préparer le système pour que l&#8217;utilisateur qui lance le process Elastic Search puisse ouvrir le maximum de fichier.
+<li>Les données stockées dans des blocs HDFS vont être tronçonnées en InputSplit.
 
 <ul>
-<li>Editer <em>/etc/security/limits.conf</em> pour ajouter</li>
+<li>e.g. des lignes d&#8217;un fichier de log</li>
 </ul>
 </li>
+<li>Les records readers vont assigner une clé k1 et une valeur v1 pour toute donnée lue.
+
+<ul>
+<li>e.g. le numéro de la ligne comme clé, la ligne compléte en valeur</li>
+</ul>
+</li>
+<li>Le fonction de Mapping va lire et transformer cette première entrée en une autre paire clé-valeur (k2, v2).
+
+<ul>
+<li>e.g. La ligne de log est analysée, on met en clé le nom d&#8217;un utilisateur et en valeur 1, représentant un login par exemple</li>
+</ul>
+</li>
+<li>La fonction de partition va déterminer en fonction de la clé k2 vers quel Reducer la clé va être routée</li>
+<li>La fonction de Shuffle and Sort rassemble par clé k2 toutes les valeurs v2 émises pas les Mappers
+
+<ul>
+<li>e.g. On se retrouve à cette étape avec le nom d&#8217;un utilisateur et une liste de 1 correspondant à toutes les occurences de connections</li>
+</ul>
+</li>
+<li>Le Reducer va transformer une clé k2 et sa liste de valeur v2 en une nouvelle clé k3 et une nouvelle valeur v3.
+
+<ul>
+<li>e.g. Le reducer va sommer toutes les valeurs pour un utilisateur en comptant toutes les valeurs de la liste. Par exemple evidal c&#8217;est connecté 3 fois.</li>
+</ul>
+</li>
+<li>Le traitement étant terminé, on peut procéder à l&#8217;écriture des fichiers.</li>
+</ul>
+
+
+<p>Implémentez un job Map Reduce pour Hadoop consiste en l&#8217;assemblage de Mapper, Reducer, Reader, Writer, Partionner.</p>
+
+<p>Des implémentations de certaines de ces classes sont déjà fournies pour des tâches simples (e.g. identités).</p>
+
+<p>L&#8217;assemblage se fait via une une classe Java qui va positionner via des setters les éléménts à utiliser.
+On livre sur le cluster un jar contenant les classes nécéssaires à l&#8217;éxécution d&#8217;un job.</p>
+
+<p>Pour l&#8217;éxécution, Hadoop va instancier une JVM sur les différents noeuds et éxécuter le job qu&#8217;on a livré.<br/>
+En développement, un mode classique (lancé de manière transparente) permet d&#8217;éxécuter un job Map Reduce en dehors d&#8217;un cluster Hadoop.<br/>
+Pour les test unitaire, on peut utiliser des outils comme <a href="http://mrunit.apache.org/">MRUnit</a>.</p>
+
+<h1>Hive, Impala, Pig &amp; Oozie</h1>
+
+<p>Map Reduce, c&#8217;est bien mais ça peut devenir un peu fastidieux s&#8217;il faut écrire des jointures. D&#8217;autant plus que ce n&#8217;est pas vraiment passionnant à coder. Des outils de plus haut niveau ont été développés pour travailler plus facilement qu&#8217;avec Map Reduce.</p>
+
+<ul>
+<li><a href="http://hive.apache.org/">Hive</a> est un langage très similaire au SQL. Tout d&#8217;abord on mappe les données d&#8217;un fichier pour exposer son contenu comme une table. Une fois que l&#8217;on a déclaré plusieurs tables, on peut écrire des requêtes pour interroger le cluster Hadoop comme un base de données relationnelle. Ca semble trivial, mais il faut toujours penser que ce système est fait pour gérer de très gros volumes de données, pas des volumétries standards.</li>
 </ul>
 
 
@@ -171,46 +239,61 @@
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># Ensure ElasticSearch can open files and lock memory!
-</span><span class='line'>elasticsearch   soft    nofile          65536
-</span><span class='line'>elasticsearch   hard    nofile          65536
-</span><span class='line'>elasticsearch   -       memlock         unlimited</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>SELECT stock.product, SUM(orders.purchases)
+</span><span class='line'>FROM stock JOIN orders
+</span><span class='line'>ON (stock.id = orders.stock_id)
+</span><span class='line'>WHERE orders.quarter = 'Q1'
+</span><span class='line'>GROUP BY stock.product;</span></code></pre></td></tr></table></div></figure>
 
-
-<p></p>
 
 <ul>
-<li><ul>
-<li>Ensuite dans le .bash_profile de l&#8217;utilisateur ajouter la ligne</li>
-</ul>
-</li>
+<li><a href="http://pig.apache.org/">Pig</a> est un autre système permettant d&#8217;écrire des jobs Map Reduce de manière plus simple. Pig prend plus la forme d&#8217;un script, on indique quelles données charger et les opérations à faire avec.</li>
 </ul>
 
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ulimit –n 65536</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>stock = LOAD '/user/fred/stock' AS (id, item);
+</span><span class='line'>orders = LOAD '/user/fred/orders' AS (id, cost);
+</span><span class='line'>grpd = GROUP orders BY id;
+</span><span class='line'>totals = FOREACH grpd GENERATE group,
+</span><span class='line'>SUM(orders.cost) AS t;
+</span><span class='line'>result = JOIN stock BY id, totals BY group;
+</span><span class='line'>DUMP result;</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
-<li>Toujours installer la dernière version de Java et d&#8217;Elastic Search, de gros porblèmes sont survenus avec des versions pas à jour de Java.</li>
-<li>Attention avec le service Wrapper fourni <a href="https://github.com/elasticsearch/elasticsearch-servicewrapper">ici</a>. Son usage est réservé aux personnes payant la licence pour le composant <a href="http://wrapper.tanukisoftware.com/doc/english/download.jsp">Service Wrapper de Tanuki Software</a>.</li>
-<li>Dans conf/elasticsearch.yml
+<li><a href="http://www.cloudera.com/content/cloudera/en/products-and-services/cdh/impala.html">Impala</a> ressemble à Hive du point de vue syntaxique. La grosse différence entre les 2 est qu&#8217;Impala ne va pas générer un job Map Reduce, mais va utiliser d&#8217;autres algorithmes pour éxécuter la requête et donner une réponse très rapidement.</li>
+</ul>
+
+
+<p>Oozie est un système permettant d&#8217;écrire plusieurs tâches qui vont s&#8217;enchainer. Par exemlple commencer par un job Hive, suivi d&#8217;un job Map Reduce classique et enfin d&#8217;un autre job Hive. Cela permet de créer des chaines de traitement plus complexes.</p>
+
+<h1>Distribution</h1>
+
+<p>Si Hadoop est disponible sur le site du projet Apache, des distributions sont également disponibles chez des éditeurs:</p>
 
 <ul>
-<li>Décommentez <em>cluster.name</em> et fixez la même valeur sur l&#8217;ensemble des serveurs,</li>
-<li>Décommentez <em>node.name</em> et fixez une valeur différente pour chaque nœud,</li>
-<li>Mettre à jour les chemins <em>path.data</em> et <em>path.logs</em> pour les faire pointer en dehors du repertoire d&#8217;installation d&#8217;Elastic Search. Cela permet de bien gérer les montées de versions et de créer des partitions adaptées.</li>
-<li>Décommentez <em>discovery.zen.ping.multicast.enabled</em> et mettre à <em>false</em></li>
-<li>Décommentez <em>discovery.zen.ping.unicast.hosts</em> et mettre la liste des membres du cluster</li>
-<li>Fixez <em>gateway.recover_after_nodes</em> au nombre de noeuds du cluster</li>
-<li>Fixez <em>discovery.zen.minimum_master_nodes</em> à (nombre de nodes/2)+1</li>
-</ul>
-</li>
-<li>Mettez en variable d&#8217;environnement de l&#8217;utilisateur la variable <em>ES_HEAP_SIZE</em> et fixez la à la taille coulue (e.g. export ES_HEAP_SIZE=16g)</li>
+<li><a href="http://www.cloudera.com/content/cloudera/en/home.html">Cloudera</a></li>
+<li><a href="Horton%20Works">Horton Works</a></li>
+<li><a href="http://www.mapr.com/">MapR</a></li>
 </ul>
 
 
-<p>Avec tout ça vous devriez avoir le début d&#8217;un cluster qui fonctionne bien.</p>
+<p>Le gros avantage de passer par une distribution commerciale est que l&#8217;on peut acheter du support. Parfois, ces distributions assemblent des versions différentes des composants core pour avoir un fonctionnement plus cohérent.</p>
+
+<p>Enfin, sur leurs sites, des machines virtuelles (e.g. chez <a href="http://www.cloudera.com/content/support/en/downloads/quickstart_vms/cdh-5-0-x.html">Cloudera</a>) sont disponibles pour tester, ce qui est un gros gain de temps.</p>
+
+<h1>Conclusion</h1>
+
+<p>Hadoop n&#8217;est pas la solution que l&#8217;on va sortir à tout bout de champ. Le but est de manipuler de très très gros volumes de données.
+C&#8217;est clairement un outil qui va devenir de plus en plus utile avec l&#8217;explosion des données récoltées par les objets connectées ou toutes les traces que nous laissons sur Internet.</p>
 </div>
 
 
@@ -233,12 +316,12 @@
   
 
 
-<time datetime="2013-11-05T00:00:00+01:00" pubdate data-updated="true">05/11/13</time>
+<time datetime="2014-06-23T00:00:00+02:00" pubdate data-updated="true">23/06/14</time>
         
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/elasticsearch/'>elasticsearch</a>
+    <a class='category' href='/blog/categories/big/'>big</a>, <a class='category' href='/blog/categories/data/'>data</a>
   
 </span>
 
@@ -247,7 +330,7 @@
       
         <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://evidal.github.io/blog/2013/11/05/elasticsearch-premiere-production/" data-via="EricVidalPro" data-counturl="http://evidal.github.io/blog/2013/11/05/elasticsearch-premiere-production/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://evidal.github.io/blog/2014/06/23/hadoop-big-data/" data-via="EricVidalPro" data-counturl="http://evidal.github.io/blog/2014/06/23/hadoop-big-data/" >Tweet</a>
   
   
   
@@ -264,14 +347,10 @@
       <ul class="pager">
         
         <li class="previous"><a class="basic-alignment left"
-          href="/blog/2013/09/25/elasticsearch-logstash-Kibana/" title="Previous Post:
-          Combo Logstash, Elastic Search & Kibana, l'arme absolue des logs">&laquo; Combo Logstash, Elastic Search & Kibana, l'arme absolue des logs</a></li>
+          href="/blog/2014/05/02/mixit14/" title="Previous Post:
+          Mix-it 2014">&laquo; Mix-it 2014</a></li>
         
         <li><a href="/blog/archives">Blog Archives</a></li>
-        
-        <li class="next"><a class="basic-alignment right" href="/blog/2013/12/27/atelier-objets-connectes/"
-          title="Next Post: Atelier des Objets Connect&eacute;s">Atelier des Objets Connect&eacute;s
-          &raquo;</a></li>
         
       </ul>
     </footer>
@@ -373,8 +452,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://evidal.github.io/blog/2013/11/05/elasticsearch-premiere-production/';
-        var disqus_url = 'http://evidal.github.io/blog/2013/11/05/elasticsearch-premiere-production/';
+        var disqus_identifier = 'http://evidal.github.io/blog/2014/06/23/hadoop-big-data/';
+        var disqus_url = 'http://evidal.github.io/blog/2014/06/23/hadoop-big-data/';
         var disqus_script = 'embed.js';
       
     (function () {

@@ -121,6 +121,52 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2014/06/23/hadoop-big-data/">Introduction &agrave; Hadoop</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-23T00:00:00+02:00" pubdate data-updated="true">23/06/14</time>
+        
+         | <a href="/blog/2014/06/23/hadoop-big-data/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://hadoop.apache.org/">Hadoop</a> est un système permettant de gérer des très gros volumes de données aussi bien au niveau de leur
+stockage qu&#8217;au niveau de leur traitement. Pour mettre les choses au clair tout de suite, Hadoop est une solution à oublier en
+dessous d&#8217;une grosse dizaine de serveurs. Hadoop est un système taillé pour gérer des centaines voir des milliers de serveurs. Il faut donc dégainer cette solution quand c&#8217;est nécéssaire. Google utilise par exemple ce type de technologie pour gérer les gros
+traitements sur son cluster de serveurs. C&#8217;est d&#8217;ailleurs Google qui est à l&#8217;origine des concepts fondateurs d&#8217;Hadoop.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/06/23/hadoop-big-data/">Lire la suite&rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2014/05/02/mixit14/">Mix-it 2014</a></h1>
     
     
@@ -983,119 +1029,6 @@ fonctionnait, j&#8217;ai mis 1 heure. Et tout est connecté, c&#8217;est à dire
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/18/elastic-search/">Elastic Search</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-18T00:00:00+02:00" pubdate data-updated="true">18/10/12</time>
-        
-         | <a href="/blog/2012/10/18/elastic-search/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Elastic Search est un moteur de recherche basé sur Lucene expérimenté par la société
-dans laquelle je travaille depuis un certain temps. Ce moteur était présenté
-dans le cadre du Lyon JUG par <a href="http://dev.david.pilato.fr/">David Pilato</a> et <a href="https://twitter.com/tlrx">Tanguy Leroux</a>.</p>
-
-<p>L&#8217;interview pre-JUG par les Duchess est disponible <a href="http://www.duchess-france.org/rencontre-avec-david-pilato-sur-elastic-search/">ici</a>.
-La présentation elle même est disponible <a href="http://t.co/piqUOkTE">ici</a>.</p>
-
-<p>Je ne vais pas réexpliquer le fonctionnement d&#8217;Elastic Search car de nombreux articles le font déjà (et notamment la présentation de David Pilato).
-De notre coté nous avons sélectionner Elastic Serach pour plusierus fonctionnalités importantes pour nous:</p>
-
-<ul>
-<li>Nos logicielles sont déployés sur des clusters pour avoir un fonctionnement Actif-Actif. C&#8217;est une des fonctionnalités de base d&#8217;Elastic Search.</li>
-<li>Nous manipulons des données très volumineuses en terme de nombre (plusieurs dizaines, voir centaines de millions). Elastic Serach est &ldquo;taillé&rdquo; pour ce volume.</li>
-<li>La navigation par &ldquo;Facet&rdquo; qui nous est nécéssaire</li>
-</ul>
-
-
-<p>Cependant nous en sommes encore au stade de l&#8217;étude et nous n&#8217;avons pas encore de vrai déploiement utilisant cette technologie.</p>
-
-<p>Voilà quelques points importants que j&#8217;ai noté pour mémoire:</p>
-
-<ul>
-<li>Sécurisation,
-
-<ul>
-<li>pour l’instant Elastic Search n’est pas sécurisé. Il est possible qu’il le devienne mais pas dans les toutes prochaines versions.</li>
-<li>1ère stratégie : mettre un apache devant et « jouer » avec les règles d&#8217;un firewall (DMZ)
-<strong> ajouter une couche http authent pour l&#8217;accès
-</strong> utiliser des filtres pour restreindre l’utilisation de certaines commande (comme DELETE, PUT)
-** en séparant les index, on peut spécifier des chemins d’accès à des données et gérer des profils</li>
-<li>2ème stratégie, utiliser le plugin suivant <a href="https://github.com/sonian/elasticsearch-jetty">https://github.com/sonian/elasticsearch-jetty</a> (solution recommandé uniquement par 1 des speakers)</li>
-</ul>
-</li>
-<li>Cluster et déploiement
-
-<ul>
-<li>Les préconisation de déploiement sont de 1 shard par serveur (1 shard = 1 instance de Lucene) + 1 replica</li>
-<li>/!\ on ne peut pas changer le nombre de shards une fois qu’un index est crée</li>
-<li>Les intervenants recommandent de bien dimensionner son cluster dès le départ, rajouter un nouveau membre au cluster est assez lourd en terme de consommation sur des indexes volumineux</li>
-<li>Il est préférable d’effectuer les montées de version à froid (même si des procédures à chaud existent)</li>
-<li>D’après le concepteur d’Elastic Search si une requête met plus de 100ms, c’est que la plate-forme est sous dimmensionné.</li>
-</ul>
-</li>
-<li>Il existe une JDBC River qui permet automatiquement d’indexer une table au fil de l’eau
-
-<ul>
-<li><a href="https://github.com/jprante/elasticsearch-river-jdbc">https://github.com/jprante/elasticsearch-river-jdbc</a></li>
-</ul>
-</li>
-<li>Un projet d’indexation de Log existe déjà
-
-<ul>
-<li><a href="http://logstash.net/">http://logstash.net/</a></li>
-</ul>
-</li>
-<li>Déploiement de références
-
-<ul>
-<li>Des déploiements existent avec 25 noeuds indexant plus d’1 milliard de documents</li>
-<li>Le premier intervenant (David Pilato) a travaillé sur un projet indexant 500.000 documents des douanes françaises. Le projet tournait sur 3 serveurs low end (CPU 2 cores, mémoire 4GB)</li>
-<li>Le deuxième (Tanguy Leroux) a travaillé pour un assureur pour indexer 20.000.000 documents (chaque document était l’équivalent d’une page word). Le projet tournait sur 4 serveurs low end (CPU 2 cores, mémoire 4GB)</li>
-</ul>
-</li>
-<li>Utiliser Elastic Search comme un entrepot de données
-
-<ul>
-<li>le créateur le déconseille pour l&#8217;instant mais ce sera peut-être possible à l&#8217;avenir.</li>
-<li>Un des intervenant a indiqué qu&#8217;il connaissait un projet utilisant Elastic Search comme base de données principale. Mais dans ce cas il fallait faire une croix sur les transactions et autres fonctionnalités d&#8217;une base de données.</li>
-</ul>
-</li>
-</ul>
-
-
-<p>Session très intéréssante et speakers disponibles pour répondre aux questions !</p>
-
-<p>Merci le Lyon JUG.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="/blog/page/2/">&larr; Older</a></li>
@@ -1121,6 +1054,10 @@ De notre coté nous avons sélectionner Elastic Serach pour plusierus fonctionna
   <ul id="recent_posts" class="nav nav-list">
     
       <li class="post">
+        <a href="/blog/2014/06/23/hadoop-big-data/">Introduction &agrave; Hadoop</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/02/mixit14/">Mix-it 2014</a>
       </li>
     
@@ -1134,10 +1071,6 @@ De notre coté nous avons sélectionner Elastic Serach pour plusierus fonctionna
     
       <li class="post">
         <a href="/blog/2013/11/05/elasticsearch-premiere-production/">Elastic Search en production</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/25/elasticsearch-logstash-Kibana/">Combo Logstash, Elastic Search & Kibana, l&#8217;arme absolue des logs</a>
       </li>
     
   </ul>
@@ -1171,6 +1104,10 @@ De notre coté nous avons sélectionner Elastic Serach pour plusierus fonctionna
 	        <a href="/blog/categories/objets/" rel="1">objets</a>
 		
 	        <a href="/blog/categories/mobile/" rel="1">mobile</a>
+		
+	        <a href="/blog/categories/big/" rel="1">big</a>
+		
+	        <a href="/blog/categories/data/" rel="1">data</a>
 		
 	</div>
 </section>	
