@@ -4,7 +4,7 @@
   <title><![CDATA[Category: java | Le Blog d'Eric Vidal]]></title>
   <link href="http://evidal.github.io/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://evidal.github.io/"/>
-  <updated>2014-06-23T19:07:29+02:00</updated>
+  <updated>2015-01-12T22:02:09+01:00</updated>
   <id>http://evidal.github.io/</id>
   <author>
     <name><![CDATA[Eric Vidal]]></name>
@@ -12,6 +12,45 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Sophisme et Spring]]></title>
+    <link href="http://evidal.github.io/blog/2012/07/24/sophisme-et-spring/"/>
+    <updated>2012-07-24T00:00:00+02:00</updated>
+    <id>http://evidal.github.io/blog/2012/07/24/sophisme-et-spring</id>
+    <content type="html"><![CDATA[<p>Une petite note en passant suite aux commentaires d'un fournisseur (qui m'énerve).</p>
+
+<p>Ce fournisseur donc aime bien travailler avec Spring, ils sont à l'aise avec et travaille plutôt bien dessus.
+Ces gens là donc sont en train de récupérer un logiciel pour en assurer sa maintenance et sa roadmap.
+Une de leur mission et d'améliorer les tests unitaires qui sont pour l'instant faible, et la c'est le drame (avec le ton d'Enquêtes exclusives ).</p>
+
+<p>Voila leur argumentaire:</p>
+
+<ul>
+<li>Spring c'est super testable</li>
+<li>Votre application utilise des EJB (NB: JEE 1.5, EJB 3.1)</li>
+<li>Votre application n'est pas testable, il faut tout injecter à la main, c'est trop compliqué.</li>
+<li>Vous auriez dû utiliser Spring</li>
+</ul>
+
+
+<p>AAaaaaah mais que ça me fatigue/énerve.</p>
+
+<p>Disclaimer : Je considère que le système d'injection de Spring ne sert à rien dans un serveur d'application depuis JEE 1.5.
+Après pour les autres éléments &ldquo;Springuiens&rdquo;, c'est une autre histoire.
+D'autant plus que l'utilisation de JEE ou Spring n'est pas exclusive !</p>
+
+<p>Quand j'entends des arguments du genre Spring c'est mieux parce que c'est plus simple à tester, ça me fait juste bondir. C'est un argument moisi.
+Il serait beaucoup plus honnête et acceptable de dire &ldquo;je suis plus à l'aise avec Spring qu'avec JEE 1.5, alors s'il te plait laisse moi utiliser Spring&rdquo;.
+Ça je pourrais l'entendre. Le reste, c'est juste de l'incompétence.</p>
+
+<p>Pour mémoire &ndash;> <a href="http://www.adam-bien.com/roller/abien/entry/unit_testing_ejb_3_1">http://www.adam-bien.com/roller/abien/entry/unit_testing_ejb_3_1</a></p>
+
+<p>ou alors</p>
+
+<p><a href="http://www.jboss.org/arquillian.html">http://www.jboss.org/arquillian.html</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Pas de test en JEE]]></title>
@@ -181,126 +220,6 @@ Voilà ce que nous utilisons en production:</p>
 <li>un <a href="http://www.datadisk.co.uk/html_docs/java_app/jboss5/jboss5_tuning.htm">blog</a> qui nous avait bien aidé</li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Gestion des performances]]></title>
-    <link href="http://evidal.github.io/blog/2012/01/12/Gestion-des-performances/"/>
-    <updated>2012-01-12T00:00:00+01:00</updated>
-    <id>http://evidal.github.io/blog/2012/01/12/Gestion-des-performances</id>
-    <content type="html"><![CDATA[<p>Je travaille depuis maintenant 2 ans sur un très gros projet qui gère des dizaines de millions d'utilisateurs. Notre logiciel est donc très sensible à la charge et à toutes améliorations de performance. Voilà une petite liste d'actions qui permettent de traquer ou de prévenir les problèmes de performances en général.</p>
-
-<p></p>
-
-<h2>Prévention</h2>
-
-<h3>Simplification</h3>
-
-<p>De manière général plus un traitement est simple, plus il est performant. Il faut donc rechercher dans le design la façon de faire la plus simple.
-En bonne pratique il faut:</p>
-
-<ul>
-<li>ne pas multiplier les couches d'abstraction. Plus on multiplie les intermédiaires, moins on est réactif.</li>
-<li>ne pas multiplier l'utilisation de librairies techniques (construire de gros échafaudages de librairie). On prend le risque de rendre une fonctionnalité simple beaucoup plus compliquée.</li>
-<li>utiliser des environnements maitrisés. Utiliser les dernières technologies c'est super, mais si on ne maitrise pas tous les impacts, on peut construire de vraies bombes à retardement.</li>
-</ul>
-
-
-<h3>Faire des tests de performance</h3>
-
-<p>Sur notre projet nous avons utilisé JMeter pour simuler du trafic. Attention on ne doit pas seulement faire un hit sur de 2-3 pages mais réaliser un scénario complet et dynamisé.
-Par la suite les tests doivent se dérouler sur plusieurs heures ou jours pour voir si la plateforme est stable dans le temps.
-Pendant ces tests il ne faut pas forcément essayer de trouver les limites de l'application mais la soumettre à un stress nominal.
-Les tests aux limites sont intéressants mais uniquement si la plate-forme répond correctement au stress nominal.</p>
-
-<h3>Dimensionner l'infrastructure, limiter la charge</h3>
-
-<p>A partir des tests établis précédemment on peut en déduire des infrastructures cibles.
-On ne va pas mettre la même infrastructure chez un client ayant 2 millions de comptes que chez un client ayant 80 millions de comptes.
-Il est important de définir ces infrastructures dans les contrats quand on vend le logiciel.
-De plus il est important pour les applications critiques de mettre en place des mécanismes de protection pour éviter la saturation de la plate-forme.
-On peut par exemple mettre en place un système de licence qui limite le nombre d'utilisateurs à 10 millions et/ou à un certain nombre de requêtes HTTP par seconde.
-Avec cela on garantit le service pour la charge que l'on a défini contractuellement. Il faudra bien sur penser à ce système dès la conception du logiciel.</p>
-
-<h2>Corrections</h2>
-
-<p>Au niveau développement voilà un certain nombre d'éléments permettant de traquer les problèmes.</p>
-
-<h3>Optimisation SQL</h3>
-
-<p>De manière générale le tout premier élément limitant d'un logiciel sur un serveur est la base de données mal utilisée. Il peut y avoir plusieurs causes:</p>
-
-<ul>
-<li>mauvais modèle de données</li>
-<li>pas d'index</li>
-<li>trop de requêtes SQL</li>
-<li>requêtes SQL non optimisées</li>
-<li>non maitrise du Framework technique accédant à la base</li>
-</ul>
-
-
-<p>Dans un premier temps, il va falloir tracer les requêtes SQL générées par l'application. Si vous utilisez Hibernate, vous pouvez par exemple mettre à true le paramètre hibernate.show_sql.
-Par la suite vous allez exécuter un scenario de test unitaire sur votre application. Cela va vous permettre d'identifier les requêtes SQL exécutées à chaque étape de votre scénario.
-Des actions doivent être prises si:</p>
-
-<ul>
-<li>une même requête est exécutée plusieurs fois pour une étape donnée</li>
-<li>une ou plusieurs requêtes inattendues apparaissent (par exemple un delete et des insert alors qu'on fait un simple select, si si c'est possible voir [[www.yonita.com/2011_11_16_PERFORMANCE_ANTIPATTERNS_DEVOXX.pdf|ici]])
-Ils faut impérativement rester maitre des requêtes faites vers la base de données.</li>
-</ul>
-
-
-<p>Dans un deuxième temps il fait traquer les requêtes consommatrices de ressources. Sur Oracle, on peut utiliser l'outil Oracle Enterprise Manager qui est une console d'administration Web de la base de données.
-Cet outil permet de monitorer en temps réel la charge de la base de donnée mais aussi d'avoir la liste des requêtes les plus consommatrices. Un fois ces requêtes identifiées on pourra les optimiser en:</p>
-
-<ul>
-<li>ajoutant des index</li>
-<li>ajoutant des hints pour l'optimiseur SQL (les hints sont tout à fait compatible avec des outils comme Hibernate)</li>
-<li>en repensant une partie du modèle de base de données pour l'optimiser</li>
-</ul>
-
-
-<p>Enfin une des dernières optimisations au niveau base de données est de bien préparer la base.
-Si le modèle a un impact très fort sur les performances, il ne faut pas négliger la configuration de la base.
-Il faut notamment travailler avec un DBA pour optimiser (pour Oracle) la taille des blocs, des redo-logs, des archives-logs.
-Attention toutefois à ne pas faire n'importe quoi, si vous ne maitrisez  pas ces paramètres, n'y touchez pas.</p>
-
-<h3>Optimisation des Objets/Mémoire/Threads</h3>
-
-<p>Ce paragraphe s'intéresse à l'étude et l'optimisation du code java.</p>
-
-<p>L'utilitaire jmap permet d'avoir plus d'information sur l'utilisation de la mémoire et des objets. Cet outil est utile pour monitorer la JVM quand elle est stressée de manière normale.</p>
-
-<ul>
-<li>jmap -d64 -heap <pid> > heap.txt
-
-<ul>
-<li>cette commande permet d'avoir un état détaillé de la mémoire. Cela vous permettra d'ajuster les paramètres mémoires de la JVM.</li>
-</ul>
-</li>
-<li>jmap -d64 -histo:live <pid> > histo.txt
-
-<ul>
-<li>cette commande permet d'avoir la liste de toutes les instances tournant dans la JVM. On pourra détecter un trop grand nombre d'instance pour un type d'objet.</li>
-</ul>
-</li>
-</ul>
-
-
-<p>Les applications JEE sont multi-threadés, les threads sont cachés par les APIs de haut niveau de la norme JEE (Servlet, EJB).
-Si c'est API sont mal utilisées, des problèmes de performance apparaissent (notamment des cas d'inter-blocage).
-Pour s'assurer que notre application n'est pas dans ce cas, il faut la soumettre à sa charge nominale grâce à des injecteurs ou des outils comme JMeter.
-Une fois que l'application est en cours de fonctionnement, on va faire des Threads Dump de manière régulière pour vérifier qu'aucun thread n'est bloqué.
-La résolution des cas d'inter-blocage en changeant l'implémentation d'une méthode a souvent des résultats spectaculaires.
-A noter que les threads dump en Java se font en envoyant SIGQUIT au process à l'aide de la commande kill -3 &lt;process_id>.
-Sous JBoss on peut faire ça via la console JMX sur le bean ServerInfo.</p>
-
-<p>Une des dernières techniques pour voir plus claire dans le fonctionnement d'une application. Personnellement j'ai rarement progressé en profilant une application.
-De nombreux outils existent pour profiler une application, cependant un profiler est livré avec le JDK: HPROF. Il peut fonctionner en mode classique (on enregistre tous les évènements) ou en mode sampling (on prend un photo de la JVM toutes les minutes par exemple).
-Si on travaille sur environnement stressé, il est préférable d'utiliser le mode Sampling.</p>
-
-<p>Voilà, c'était un petit aperçu des différentes techniques que j'utilise pour améliorer les performances de mes applications. Il en existe certainement bien d'autres mais celles-ci nous ont bien aidé pour avoir une application performante en production.</p>
 ]]></content>
   </entry>
   

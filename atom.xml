@@ -4,7 +4,7 @@
   <title><![CDATA[Le Blog d'Eric Vidal]]></title>
   <link href="http://evidal.github.io/atom.xml" rel="self"/>
   <link href="http://evidal.github.io/"/>
-  <updated>2014-06-23T19:07:29+02:00</updated>
+  <updated>2015-01-12T22:02:09+01:00</updated>
   <id>http://evidal.github.io/</id>
   <author>
     <name><![CDATA[Eric Vidal]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[MOOC Machine Learning par Andrew Ng]]></title>
+    <link href="http://evidal.github.io/blog/2014/12/23/mooc-machine-learning/"/>
+    <updated>2014-12-23T00:00:00+01:00</updated>
+    <id>http://evidal.github.io/blog/2014/12/23/mooc-machine-learning</id>
+    <content type="html"><![CDATA[<p>Ca y&#8217;est, c&#8217;est fait. Je viens de terminer le MOOC <a href="https://www.coursera.org/course/ml">Machine Learning</a> donnée par <a href="http://cs.stanford.edu/people/ang/">Andrew Ng</a> de l&#8217;université de Stanford. Je suis d&#8217;autant plus content que ce MOOC, n&#8217;est pas un petit. Il dure 10 semaines avec environ 5-7 heures de travail par semaine. J&#8217;avais déjà fait 2 tentatives sur un autre sujet, mais j&#8217;avais arrêté au premier tiers à chaque fois par manque de temps. En effet toutes les semaines il faut rendre un exercice de programmation et répondre à un ou plusieurs QCM. Si on rend ses devoirs en retard, on est pénalisé de 20%. Et pour être &ldquo;dîplomé&rdquo;, il faut obtenir au moins 80% de réussite. Bref, si vous voulez suivre un MOOC, il faut se dégager du temps et être régulier dans son travail, sous peine de perdre le fil.</p>
+
+<p>Le cours balayait les méthodes de base du machine learning avec à chaque fois une application pratique:</p>
+
+<ul>
+<li><strong>régression linéaire</strong>, pour prédire une variable en fonction de plusieurs entrées</li>
+<li>rappel d&#8217;<strong>algèbre linéaire</strong>, pour revoir toutes les maths associées aux matrices et aux vecteurs</li>
+<li><strong>régression linaire</strong> avec plusieurs variables, pour predire plusieurs variables en fonction de plusieurs entrées</li>
+<li><strong>régression logistique</strong>, classification sur une ou plusieurs classes et normalisation des données (avec en application un OCR !)</li>
+<li><strong>réseau neuronaux</strong> (toujours l&#8217;OCR en application)</li>
+<li><strong>conseils pratiques</strong> pour la mise en oeuvre des algorithmes de Machine Learning : Comment développer, débugger, structurer, tester, etc&hellip;</li>
+<li><strong>Machine à vecteurs de support (SVMs)</strong>, un algorithme encore plus puissant de classification</li>
+<li>Apprentissage non supervisé: <strong>clustering</strong>, pour former des groupes d&#8217;éléments se ressemblant</li>
+<li><strong>Réduction dimensionnelle</strong> pour notamment la visualisation des données</li>
+<li><strong>Détection d&#8217;anomalies</strong></li>
+<li><strong>Système de recommandations</strong> qui est en fait le résultat de plusieurs classifications faite à grand échelle</li>
+<li>Machine Learning sur des <strong>gros volumes de données</strong> (Big Data)</li>
+<li>Présentation d&#8217;une application complète de Machine Learning (plusieurs algorithmes enchainés pour effectuer une tâche)</li>
+</ul>
+
+
+<p>Au niveau de la plate-forme, <a href="https://www.coursera.org">Coursera</a> est un site très bien fait. La recherche de cours est efficace et les sujets sont assez variés. Les cours sont présentés à travers de petites vidéos d&#8217;introduction et d&#8217;un résumé des sujets abordés.</p>
+
+<p>Une fois inscrit à un cours, on accède à une page dédiée à celui-ci. Cette page est mise à jour toutes les semaines avec l&#8217;ajout des vidéos du cours de la semaine et parfois de news. Ces vidéos montrent le professeur et un support de cours. Le professeur dispose d&#8217;un crayon avec lequel il peut annoter le support du cours, ce qui rend sa présentation plus vivante. De plus les vidéos sont parfois agrémentées de QCM (ne comptant pas dans la note finale) permettant de vérifier que l&#8217;on comprend bien le cours. Les vidéos et les supports sont disponibles en téléchargement pour une utilisation off-line, ce qui est pratique quand on est en déplacement.</p>
+
+<p>Chaque semaine des devoirs doivent être rendu. Que ce soit un QCM ou un exercice de programmation, les résultats sont connus immédiatement. On peut soumettre un devoir autant de fois que l&#8217;on veut, ce qui permet de viser à chaque fois un score parfait. Des dispositifs sont en place pour éviter la soumission de devoir en force brute, ainsi chaque tentative de QCM doit être espacée d&#8217;au moins 10 minutes et de 5 minutes pour les exercices de programmation.</p>
+
+<p>Les exercices de programmation utilisait <a href="https://www.gnu.org/software/octave/">Octave</a> une version GNU de <a href="http://fr.mathworks.com/products/matlab/index.html?ref=nn_matlab">Matlab</a>. Chaque semaine il fallait télécharger une archive contenant un code source incomplet et des instructions en PDF pour le compléter. Le code source contenait également de quoi soumettre l&#8217;exercice en ligne.</p>
+
+<p>Enfin un forum et un chanel IRC était disponible pour socialiser pendant le cours ou poser des questions à l&#8217;équipe pédagogique.</p>
+
+<p>Bref que ce soit au niveau contenu ou niveau de la forme, c&#8217;était un vrai plaisir de suivre ce cours et une fierté d&#8217;être allé au bout.
+Je vous conseille vivement de participer à une des prochaines sessions.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Introduction &agrave; Hadoop]]></title>
@@ -1188,6 +1229,45 @@ De notre coté nous avons sélectionner Elastic Serach pour plusierus fonctionna
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[Sophisme et Spring]]></title>
+    <link href="http://evidal.github.io/blog/2012/07/24/sophisme-et-spring/"/>
+    <updated>2012-07-24T00:00:00+02:00</updated>
+    <id>http://evidal.github.io/blog/2012/07/24/sophisme-et-spring</id>
+    <content type="html"><![CDATA[<p>Une petite note en passant suite aux commentaires d&#8217;un fournisseur (qui m&#8217;énerve).</p>
+
+<p>Ce fournisseur donc aime bien travailler avec Spring, ils sont à l&#8217;aise avec et travaille plutôt bien dessus.
+Ces gens là donc sont en train de récupérer un logiciel pour en assurer sa maintenance et sa roadmap.
+Une de leur mission et d&#8217;améliorer les tests unitaires qui sont pour l&#8217;instant faible, et la c&#8217;est le drame (avec le ton d&#8217;Enquêtes exclusives ).</p>
+
+<p>Voila leur argumentaire:</p>
+
+<ul>
+<li>Spring c&#8217;est super testable</li>
+<li>Votre application utilise des EJB (NB: JEE 1.5, EJB 3.1)</li>
+<li>Votre application n&#8217;est pas testable, il faut tout injecter à la main, c&#8217;est trop compliqué.</li>
+<li>Vous auriez dû utiliser Spring</li>
+</ul>
+
+
+<p>AAaaaaah mais que ça me fatigue/énerve.</p>
+
+<p>Disclaimer : Je considère que le système d&#8217;injection de Spring ne sert à rien dans un serveur d&#8217;application depuis JEE 1.5.
+Après pour les autres éléments &ldquo;Springuiens&rdquo;, c&#8217;est une autre histoire.
+D&#8217;autant plus que l&#8217;utilisation de JEE ou Spring n&#8217;est pas exclusive !</p>
+
+<p>Quand j&#8217;entends des arguments du genre Spring c&#8217;est mieux parce que c&#8217;est plus simple à tester, ça me fait juste bondir. C&#8217;est un argument moisi.
+Il serait beaucoup plus honnête et acceptable de dire &ldquo;je suis plus à l&#8217;aise avec Spring qu&#8217;avec JEE 1.5, alors s&#8217;il te plait laisse moi utiliser Spring&rdquo;.
+Ça je pourrais l&#8217;entendre. Le reste, c&#8217;est juste de l&#8217;incompétence.</p>
+
+<p>Pour mémoire &ndash;> <a href="http://www.adam-bien.com/roller/abien/entry/unit_testing_ejb_3_1">http://www.adam-bien.com/roller/abien/entry/unit_testing_ejb_3_1</a></p>
+
+<p>ou alors</p>
+
+<p><a href="http://www.jboss.org/arquillian.html">http://www.jboss.org/arquillian.html</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Pas de test en JEE]]></title>
     <link href="http://evidal.github.io/blog/2012/07/24/excuse-test/"/>
     <updated>2012-07-24T00:00:00+02:00</updated>
@@ -1817,447 +1897,6 @@ Voila un aperçu de leurs solutions:</p>
 <h2>Conclusion</h2>
 
 <p>On voit que les possibilités du Cloud sont immenses et que les fournisseurs et leurs services sont nombreux. Aussi il me parait important avant de se lancer dans n&#8217;importe quel projet Cloud de faire un étude sérieuse et de ne pas promettre à ses clients/décideurs que le Cloud est la réponse à tous leurs problèmes.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hibernate OGM]]></title>
-    <link href="http://evidal.github.io/blog/2011/06/30/Hibernate-OGM/"/>
-    <updated>2011-06-30T00:00:00+02:00</updated>
-    <id>http://evidal.github.io/blog/2011/06/30/Hibernate-OGM</id>
-    <content type="html"><![CDATA[<p><a href="http://blog.emmanuelbernard.com/">Emmanuel Bernard</a> était au Lyon JUG ce jeudi 23 juin, il nous a présenté Hibernate OGM (pour Object Grid Mapping), un nouveau sous-projet de l&#8217;équipe Hibernate dédié au NoSQL. En deuxième partie, un dialogue permettait de mieux connaître les solutions Hibernate.</p>
-
-<!--more-->
-
-
-<h2>Hibernate OGM</h2>
-
-<p>Le but d&#8217;Hibernate OGM et d&#8217;offrir une API standard pour fédérer les différents solution NoSQL.</p>
-
-<p>Premier problème, chaque solution NoSQL a son propre modèle de stockage de données:</p>
-
-<ul>
-<li>Stockage Clé-Valeur (Hashmap), on stocke une clé et une valeur <a href="http://project-voldemort.com/">Voldemort</a>, <a href="http://www.jboss.org/infinispan">Infinispan</a></li>
-<li>base de données orientées graphe <a href="http://neo4j.org/">Neo4j</a></li>
-<li>base de données orientée document <a href="http://couchdb.apache.org/">Couch DB</a>, <a href="http://www.mongodb.org/">Mongo DB</a></li>
-<li>base de données orientée Colonne  <a href="http://cassandra.apache.org/">Cassandra</a>, <a href="http://code.google.com/intl/fr/appengine/docs/python/gettingstarted/usingdatastore.html">Google Datastore</a></li>
-</ul>
-
-
-<p><img src="http://blog.xebia.fr/wp-content/uploads/2010/04/nosql.png" alt="Technos NoSQL" /></p>
-
-<p>Source <a href="http://blog.xebia.fr/2010/04/21/nosql-europe-tour-dhorizon-des-bases-de-donnees-nosql/">Xebia</a></p>
-
-<p>Deuxième problème, comme avant l&#8217;avènement de SQL, aucune solution NoSQL n&#8217;a le
-même système de requêtage, ni les mêmes capacités.</p>
-
-<p>Hibernate OGM a commencé il y a environ un an et Emmanuel y a bosser à temps partiel
-cette année, le temps de laisser mûrir les choses. Emmanuel c&#8217;est beaucoup appuyé
-sur Hibernate Core et Hibernate Search pour implémenter Hibernate OGM.
-Pour l&#8217;instant Hibernate OGM supporte:</p>
-
-<ul>
-<li><a href="http://www.jboss.org/infinispan">Infinispan</a></li>
-<li>CRUD d&#8217;objets</li>
-<li>requêtes Hibernate Search</li>
-</ul>
-
-
-<p>Il ne supporte pas encore:</p>
-
-<ul>
-<li>JP-QL</li>
-<li>autre chose qu&#8217;<a href="http://www.jboss.org/infinispan">Infinispan</a></li>
-</ul>
-
-
-<p>Une démo a été montrée, Emmanuel faisait tournée une série de tests en utilisant
-la base de données H2. Il faisait tournée la même démo mais en changeant la conf
-de son persistence.xml pour utiliser Hibernate OGM.
-Emmanuel a lancer un appel à tous les développeurs qui souhaitent proposer des
-améliorations ou des implémentations pour d&#8217;autre solution NoSQL.
-Le projet n&#8217;en est qu&#8217;à son début mais est à surveiller par toutes les entreprises
-qui souhaitent tester une solution NoSQL mais sans trop dépendre d&#8217;une solution
-particulière. Cela leur permettra éventuellement de revenir à du SQL standard.
-Pour l&#8217;instant je pense que l&#8217;approche est à surveiller pour voir comment elle va
-évoluer. Je me deamnde juste si dans le cadre de NoSQL, la persistence objet a du
-sens. En effet, vu la volumétrie des données qu&#8217;on est censée gérer dans des BBD
-de type NoSQL, est-ce quel le modèle JPA est le meilleur ?
-Je n&#8217;ai pas la réponse pour l&#8217;instant.</p>
-
-<p>Les slides de la présentation sont disponible <a href="http://emmanuelbernard.com/various/presentations/hibernate-ogm-concepts-1.1.pdf">ici</a></p>
-
-<h2>Hibernate</h2>
-
-<p>La deuxième partie de la conférence était un dialogue entre Emmanuel et le public
-à propose des différentes solutions Hibernate. J&#8217;ai découvert un module d&#8217;Hibernate
-que je ne connaissais pas Hibernate Envers et qui permet de versionné des entités.
-Très bon !</p>
-
-<p>Merci au Lyon JUG, c&#8217;était vraiment une bonne soirée.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Mix-IT]]></title>
-    <link href="http://evidal.github.io/blog/2011/05/03/Mix-IT/"/>
-    <updated>2011-05-03T00:00:00+02:00</updated>
-    <id>http://evidal.github.io/blog/2011/05/03/Mix-IT</id>
-    <content type="html"><![CDATA[<p>J&#8217;ai assisté le 5 avril à la Conférence <a href="http://www.mix-it.fr/">Mix-it</a> avec l&#8217;aimable participation de mon employeur.
-Pour une première, j&#8217;ai trouvé que c&#8217;était plutôt réussi, les sujets étaient nombreux et variés.
-Un petit bémol sur le manque de Clim&#8217;: Ça sentait &ldquo;l&#8217;homme&rdquo; en fin de journée.</p>
-
-<p>5 tracks étaient accessibles:</p>
-
-<ul>
-<li>Techy : Java et son écosystème,</li>
-<li>Agility : Agilité pour débutants et passionnés,</li>
-<li>Trendy : Tendances novatrices et avant-gardistes,</li>
-<li>Mixy : Le meilleur de l’agilité et des technologies Java,</li>
-<li>Gamy : Echanges autour de jeux agiles et de coding dojos</li>
-</ul>
-
-
-<p>J&#8217;ai participé aux sessions suivantes:</p>
-
-<ul>
-<li>Let&rsquo;s make this test suite run faster</li>
-<li>HTML 5</li>
-<li>Clojure</li>
-<li>Apache Mahout</li>
-<li>ASGI &amp; Flex</li>
-</ul>
-
-
-<p>Voilà les notes (complétés) que j&#8217;ai prises, la suite après le break (attention, c&#8217;est long).</p>
-
-<!--more-->
-
-
-<h2>Let&rsquo;s make this test suite run faster</h2>
-
-<p>Une présentation assez intéréssante pour les équipes qui ont des builds interminables (plus d&#8217;un heure tests compris).
-Le speaker <a href="http://blog.javabien.net/">David Gageot</a> était assez pertinent est a présenté 3 stratégies combinables ont été présentées sur le mode le bon, la brute, le truand : The Cheater (le tricheur), The Lazy (le fainéant), The Brave (le brave).</p>
-
-<ul>
-<li>Stratégie du Cheater
-
-<ul>
-<li>Acheter une machine plus puissante</li>
-<li>Utilisez les nouvelle options de Maven MultiCore support (-T 4, -T 1C)</li>
-<li>Utilisez des outils comme SureFire sur Ant pour distribuer les test</li>
-<li>Stratégie du Lazy</li>
-<li>Nettoyer les tests inutiles (ça enlève du temps de test),</li>
-<li>Nettoyer le code mort et les tests associés (ça enlève également du temps de test)</li>
-<li>Ne pas utiliser les vrais IO pour les test (Réseau, Sytème de fichiers, base de données)
-
-<ul>
-<li>utilisation d&#8217;une base en mémoire comme H2</li>
-<li>utiliser Apache Virtual File System pour simuler un file system</li>
-<li>utiliser un serveur Smtp light comme Subetha</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Stratégie du Brave
-
-<ul>
-<li>Restructurer tous les tests pour
-
-<ul>
-<li>éviter de tester plusieurs fois la même fonctionnalité</li>
-<li>éviter de tester les couches basses (persistence, frameworks, etc…)</li>
-<li>mettre le plus de test du coté unitaire pour éviter de surcharger les tests d&#8217;intégration</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<p>J&#8217;ai trouvé une version de la présentation ici :
-<a href="http://www.slideshare.net/dgageot/lets-make-this-test-suite-run-faster-paris-jug-2011">http://www.slideshare.net/dgageot/lets-make-this-test-suite-run-faster-paris-jug-2011</a></p>
-
-<p>J&#8217;ai beaucoup aimé cette présentation car elle donnait des solutions pragmatiques à des problèmes qu&#8217;on rencontre tous les jours.</p>
-
-<h2>HTML 5</h2>
-
-<p>Une des grosses présentations (pour moi) de Mix-It donnée par Alain Duval et Cédric Beurtheret.
-Je m&#8217;intéresse depuis peu de temps à HTML 5, pendant longtemps les frameworks java ont cherché à tous prix à masquer le HTML.
-Avec les possibilités redécouvertes de Javascript, et les nouvelles API ajoutées aux différentes normes, il va falloir se remettre très sérieusement à HTML.
-Voilà un petit résumé de la présentation :</p>
-
-<ul>
-<li>HTML 4 est vieux, il a été livré en 1998 !</li>
-<li>Le travail sur HTML 5 a commencé en  2004, la release finale est prévue entre 2012-2014</li>
-<li>3 consortiums bossent sur le sujet : W3C, IETF, WHATWG</li>
-<li>La plupart des dernières version des navigateurs commence a supporté des éléments de HTML 5 (pour voir comment se comporte le votre, allez sur <a href="http://html5test.com/">http://html5test.com/</a>)</li>
-<li>HTML 5 cen&#8217;est pas seulement le HTML, c&#8217;est aussi tout un tas d&#8217;évolutions et d&#8217;APIs qui ont été ajoutées.</li>
-</ul>
-
-
-<h4>Les évolutions en détails</h4>
-
-<ul>
-<li>Des headers plus simples
-
-<ul>
-<li>doctype, charset</li>
-</ul>
-</li>
-<li>Des nouveaux tags pour une approche plus sémantique des pages
-
-<ul>
-<li>article, aside, header, footer, nav, etc&hellip;</li>
-<li>C&#8217;est particulièrement intéressant pour l&#8217;accessibilité des sites WEB (malvoyants)</li>
-</ul>
-</li>
-<li>le querySelector
-
-<ul>
-<li>Je le vois comme un standardisation de la sélection d&#8217;éléments avec Jquery</li>
-</ul>
-</li>
-</ul>
-
-
-<p><img src="http://blog.referencementschool.com/wp-content/uploads/2009/07/html5_structure.png" alt="..." /></p>
-
-<ul>
-<li>Les formulaires HTML 5 sont enrichis
-
-<ul>
-<li>de nouveau type de champs (Number, Phone, URL, email, Date, Color Picker, Slider), les navigateurs ne râlent pas mais n&#8217;implémentent pas encore ces types de champs.</li>
-<li>de nouveau attributs (PlaceHolder, AutoComplete, AutoFocus,&hellip;)</li>
-<li>de la validation coté client</li>
-</ul>
-</li>
-<li>Widget
-
-<ul>
-<li>Des Applications WEB disponibles comme de vrais applications</li>
-</ul>
-</li>
-<li>Les Canvas (attention les yeux)
-
-<ul>
-<li>Je crois qu&#8217;on peut oublier Flash, VML ou Silverlight</li>
-<li>On peut rendre de la 2D, de la 3D en utilisant Javascript
-
-<ul>
-<li>comme exemple célèbre, Google a porté Quake 2 avec cette technologie</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Support du SVG natif</li>
-<li>Tags Audio et Video
-
-<ul>
-<li>Sans plugin, sans flash</li>
-<li>les formats audios supportés : AAC, MP3, OGG VORBIS</li>
-<li>les formats vidéo supportés : H264, VPM, OGG THEORA (pas encore validé)</li>
-</ul>
-</li>
-<li>Des évolutions sur les APIs Javascript
-
-<ul>
-<li>Drag &amp; Drop, Geolocation, Web Socket (Full duplex connection), Offline Web</li>
-</ul>
-</li>
-<li>Web Workers
-
-<ul>
-<li>C&#8217;est un genre de Thread dans un navigateur</li>
-</ul>
-</li>
-<li>Cross Window Messaging, API pour communiquer entre différentes fenêtres</li>
-<li>Web Storage, de nouveaux espaces pour stocker des informations offline de manière plus ou moins structurée
-
-<ul>
-<li>Session (hashmap) durée de vie Session,</li>
-<li>Local (hashmap persisted) durée de vie du cache du navigateur,</li>
-<li>Database (Real SQL database persisted) durée de vie du cache du navigateur,</li>
-<li>Ces storages sont accessibles uniquement par les sites qui les ont créés, mais à mon avis la sécurité de ces espaces sera faible. Il faudra donc faire attention à ce que l&#8217;on stocke dans ces espaces.</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>Focus sur Device API</h4>
-
-<p>Device API m&#8217;intéresse particulièrement. Elle a juste été évoquée mais j&#8217;ai eu la chance de pouvoir discuter avec Cédric Beurtheret qui m&#8217;a donné plus de détails et des liens pour creuser.
-La Device API est une initiative qui permet d&#8217;accéder à des informations sur la machine sur laquelle est vue le site.
-Une initiative parallèle a été démarré par un autre consortium <a href="http://www.wacapps.net">WAC</a> mais les APIs définis coté HTML 5 et WAC vont convergés.
-Device API est clairement une des specs les moins avancés de HTML 5, mais elle clairement prometteuse pour les développeurs d&#8217;application mobile.
-C&#8217;est particulièrement intéressant quand on tourne sur un téléphone Mobile car cette Device API exposera tout un tas d&#8217;information et d&#8217;actions à propos du Device (téléphone):</p>
-
-<ul>
-<li>Application Launcher (pour lancer des applications à partir d&#8217;un site Web)</li>
-<li>Contacts (accès et gestion)</li>
-<li>Calendar (accès et gestion)</li>
-<li>Tasks (accès et gestion)</li>
-<li>Camera (accès et gestion)</li>
-<li>Messaging : SMS, MMS, Email (accès et gestion)</li>
-<li>Communication Logs (accès et gestion)</li>
-<li>File System (Accès)</li>
-<li>Gallery (accès et gestion)</li>
-<li>System Information &amp; Event (accès statistiques CPU, network, etc.)</li>
-<li>User Interface (Gestion)</li>
-<li>Permissions (pour autoriser/bloquer un site WEB souhaitant utiliser les Device API)
-Quelques navigateurs mobiles en mode pre-release supportent ces fonctionnalités : Webkit, Opera et Obigo.</li>
-</ul>
-
-
-<p>Quelques liens:</p>
-
-<ul>
-<li>Une version de la présentation : <a href="http://www.slideshare.net/normandyjug/html5-jug">http://www.slideshare.net/normandyjug/html5-jug</a></li>
-<li>Les specs : <a href="http://dev.w3.org/html5/spec/Overview.html">http://dev.w3.org/html5/spec/Overview.html</a></li>
-<li>Sur Device API :
-
-<ul>
-<li><a href="http://www.wacapps.net">http://www.wacapps.net</a></li>
-<li><a href="http://www.w3.org/2009/dap/">http://www.w3.org/2009/dap/</a> (Device API)</li>
-</ul>
-</li>
-<li>Quelques démos
-
-<ul>
-<li><a href="http://html5demos.com/">http://html5demos.com/</a></li>
-<li><a href="http://mrdoob.com/">http://mrdoob.com/</a> (Canvas Demos)</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>Clojure</h2>
-
-<p>Bon pour être honnête j&#8217;ai pas été très convaincu. Je n&#8217;avais jamais regardé à quoi ressemblait Clojure, donc je suis vraiment arrivé &ldquo;vierge&rdquo; sur le sujet.
-Et là le choc, Clojure est un langage LISP. La dernière fois que j&#8217;ai fait du LISP, c&#8217;était à la FAC. Je me souviens que la principale difficulté du langage était de s&#8217;y retrouver dans les parenthèses.
-Bon ben là c&#8217;est un peu pareil. En plus la présentation était juste après le déjeuner, ça n&#8217;a pas aidé.
-En gros, voilà les buts de Coljure:</p>
-
-<ul>
-<li>Réduire la complexité</li>
-<li>faire des applications concurrentes</li>
-<li>être expressif</li>
-<li>d&#8217;être un langage généraliste</li>
-<li>d&#8217;être compatible avec le Byte Code</li>
-<li>faire de la programmation fonctionnelle</li>
-<li>gérer les états</li>
-<li>Syntaxe LISP :&lsquo;(</li>
-</ul>
-
-
-<p>Quelques exemples :</p>
-
-<ul>
-<li>(def a (/ 1.0 3.0))</li>
-<li>(def b (/ 3.0 1.0))</li>
-<li>(* a b)</li>
-<li>(def c (* a a a a a a a a a a))</li>
-<li>(def d (* b b b b b b b b b b))</li>
-<li>(* c d)</li>
-<li>(defn plusn [x]   (fn [y] (+ x y)))</li>
-<li>(def plus5 (plusn 5))</li>
-<li>(plus5 3)</li>
-</ul>
-
-
-<p>Je n&#8217;en dis pas plus, je n&#8217;ai pas accroché. Par contre j&#8217;ajouterai qu&#8217;il y a une tendance dans l&#8217;univers Java pour utilser la JVM différement.
-De nombreux langages bytecode compatible apparaissent : Jython, Groovy, Scala, Clojure, Ceylon, &hellip;
-Cela est dû en fait à une longue pause de 5 ans au niveau de la syntaxe Java, du coup d&#8217;autres langages ont voulu prendre le relais.
-Il faut dire que certains aspects de Java font assez vieillots (je pense à la lecture d&#8217;un fichier texte en JAVA par rapport à son équivalent en Groovy).</p>
-
-<p>Pour revenir à Clojure, pour en savoir plus ilfaut aller voir: <a href="http://clojure.org/">http://clojure.org/</a></p>
-
-<h2>Apache Mahout</h2>
-
-<p>Apache Mahout est un nouveau projet Apache, très jeune mais prometteur. Il propose de mettre à disposition des algorithmes puissants d&#8217;analyse sur de très gros volumes de données.
-Pour se faire, il utilise la méthode MapReduce (la version Hadoop) pour traiter les très gros volumes de données.
-Grace à ce système on va pouvoir par exemple:</p>
-
-<ul>
-<li>Recommander
-
-<ul>
-<li>sur Amazon, ce genre d&#8217;outil permet de proposer des articles similaires ou ayant été acheté par le même type d&#8217;utilisateurs</li>
-</ul>
-</li>
-<li>Classifier
-
-<ul>
-<li>Classer des documents à partir d&#8217;un échantillon déja classer</li>
-<li>détections de SPAM sur Gmail par exemple</li>
-<li>détections de document suspect (ou hors sujet)</li>
-</ul>
-</li>
-<li>Rassembler
-
-<ul>
-<li>Trouver des groupes de documents dans un vaste ensemble de documents</li>
-<li>Trouver les tendances, les idées directrices dans un ensemble de documents (comme dans Google News par exemple)</li>
-<li>Trouver des comportements typiques d&#8217;utilisateurs</li>
-</ul>
-</li>
-<li>Pattern Mining, evolutionary algorithm</li>
-</ul>
-
-
-<p>Si on va faire un tour sur le site de Apache Mahout, on verra que de nombreux algorithmes sont déjà disponibles (et qu&#8217;il grossit):</p>
-
-<ul>
-<li>Classification : Logisitc Regression, Bayesian, Support Vector Machines, Perceptron an Winnow, Neural Network, &hellip;</li>
-<li>Clustering : Canopy, K-Means, Fuzzy K-Means, Expectation Maximization, Mean Shift Clustering, Hierachical Clustering, &hellip;</li>
-<li>Pattern : FP Growth Alorithm</li>
-<li>Regression : Locally Weighted Linear Regression</li>
-<li>Dimension Reduction : Singular Value Decomposition, Principal Components Analysis, Independent Component Analysis, &hellip;</li>
-<li>Evolutionary Algorithms</li>
-<li>Recommenders / Collaborative Filtering</li>
-</ul>
-
-
-<p>Pour plus d&#8217;informations:</p>
-
-<ul>
-<li><a href="http://www.slideshare.net/mfiguiere/mixit-apr-2011-intelligence-collective-et-apache-mahout">http://www.slideshare.net/mfiguiere/mixit-apr-2011-intelligence-collective-et-apache-mahout</a></li>
-<li><a href="http://mahout.apache.org/">http://mahout.apache.org/</a></li>
-</ul>
-
-
-<h2>OSGI and Flex</h2>
-
-<p>C&#8217;est un peu l&#8217;erreur de casting cette journée. Je pensais qu&#8217;on allait avoir une vue d&#8217;ensemble de ces technologies, en fait il fallait venir en connaissant déjà Flex ou OSGI.
-C&#8217;était une session très technique avec des réponses à des problèmes précis.</p>
-
-<p>Voilà ce qu&#8217;il faut retenir:</p>
-
-<ul>
-<li>Le but du mariage entre OSGI et Flex est de modulariser l&#8217;application</li>
-<li>Flex normalement utilise HTTP ou SOAP pour échanger avec la partie serveur</li>
-<li>Avec OSGI, on va pouvoir avoir plus d&#8217;interaction avec des objets distants ou travailler en mode Producer/Consumer (Topic)</li>
-<li>Plusieurs Frameworks sont disponibles pour faciliter l&#8217;interaction avec le serveur
-
-<ul>
-<li>AMF 3</li>
-<li>GraniteDS</li>
-<li>Spring Flex</li>
-</ul>
-</li>
-<li>Le code source était assez compliqué pour les néophytes comme moi sur Flex et OSGI></li>
-<li>Par contre la démo était assez bluffante:
-
-<ul>
-<li>quand le speaker ajouter des JAR sur le serveur, de nouvelles portion d&#8217;écran apparaissaient sur la GUI.</li>
-<li>Différentes version d&#8217;un portlet pouvait également cohabiter sur la GUI</li>
-</ul>
-</li>
-</ul>
-
-
-<p>Plus d&#8217;informations sur
-<a href="http://www.slideshare.net/ougf/ougf-osgi-flex-5395089">http://www.slideshare.net/ougf/ougf-osgi-flex-5395089</a></p>
 ]]></content>
   </entry>
   
