@@ -9,7 +9,7 @@ published: true
 
 Ca y'est, c'est fait. Je viens de terminer le MOOC [Machine Learning](https://www.coursera.org/course/ml) donnée par [Andrew Ng](http://cs.stanford.edu/people/ang/) de l'université de Stanford. Je suis d'autant plus content que ce MOOC, est assez conséquent. Il dure 10 semaines avec environ 5-7 heures de travail par semaine. J'avais déjà fait 2 tentatives sur un autre sujet, mais j'avais arrêté au premier tiers à chaque fois par manque de temps. En effet toutes les semaines il faut rendre un exercice de programmation et répondre à un ou plusieurs QCM. Si on rend ses devoirs en retard, on est pénalisé de 20%. Et pour être "dîplomé", il faut obtenir au moins 80% de réussite. Bref, si vous voulez suivre un MOOC, il faut se dégager du temps et être régulier dans son travail, sous peine de perdre le fil.
 
-![HDFS Architecture](/images/posts/2014-12-17-mooc-machine-learning/coursera-logo-nobg.png)
+![logo coursera](/images/posts/2014-12-17-mooc-machine-learning/coursera-logo-nobg.png)
 
 Le cours balayait les méthodes de base du machine learning avec à chaque fois une application pratique:
 
