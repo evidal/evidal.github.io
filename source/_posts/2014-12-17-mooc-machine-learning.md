@@ -7,24 +7,25 @@ categories: 'big data'
 published: true
 ---
 
-Ca y'est, c'est fait. Je viens de terminer le MOOC [Machine Learning](https://www.coursera.org/course/ml) donnée par [Andrew Ng](http://cs.stanford.edu/people/ang/) de l'université de Stanford. Je suis d'autant plus content que ce MOOC, n'est pas un petit. Il dure 10 semaines avec environ 5-7 heures de travail par semaine. J'avais déjà fait 2 tentatives sur un autre sujet, mais j'avais arrêté au premier tiers à chaque fois par manque de temps. En effet toutes les semaines il faut rendre un exercice de programmation et répondre à un ou plusieurs QCM. Si on rend ses devoirs en retard, on est pénalisé de 20%. Et pour être "dîplomé", il faut obtenir au moins 80% de réussite. Bref, si vous voulez suivre un MOOC, il faut se dégager du temps et être régulier dans son travail, sous peine de perdre le fil.
+Ca y'est, c'est fait. Je viens de terminer le MOOC [Machine Learning](https://www.coursera.org/course/ml) donnée par [Andrew Ng](http://cs.stanford.edu/people/ang/) de l'université de Stanford. Je suis d'autant plus content que ce MOOC, est assez conséquent. Il dure 10 semaines avec environ 5-7 heures de travail par semaine. J'avais déjà fait 2 tentatives sur un autre sujet, mais j'avais arrêté au premier tiers à chaque fois par manque de temps. En effet toutes les semaines il faut rendre un exercice de programmation et répondre à un ou plusieurs QCM. Si on rend ses devoirs en retard, on est pénalisé de 20%. Et pour être "dîplomé", il faut obtenir au moins 80% de réussite. Bref, si vous voulez suivre un MOOC, il faut se dégager du temps et être régulier dans son travail, sous peine de perdre le fil.
+
+![HDFS Architecture](/images/posts/2014-12-17-mooc-machine-learning/coursera-logo-nobg.png)
 
 Le cours balayait les méthodes de base du machine learning avec à chaque fois une application pratique:
 
-- **régression linéaire**, pour prédire une variable en fonction de plusieurs entrées
-- rappel d'**algèbre linéaire**, pour revoir toutes les maths associées aux matrices et aux vecteurs
-- **régression linaire** avec plusieurs variables, pour predire plusieurs variables en fonction de plusieurs entrées
-- **régression logistique**, classification sur une ou plusieurs classes et normalisation des données (avec en application un OCR !)
-- **réseau neuronaux** (toujours l'OCR en application)
-- **conseils pratiques** pour la mise en oeuvre des algorithmes de Machine Learning : Comment développer, débugger, structurer, tester, etc...
+- La **régression linéaire**, permettant de prédire une variable en fonction de plusieurs entrées
+- Un rappel d'**algèbre linéaire**, pour revoir toutes les maths associées aux matrices et aux vecteurs
+- La **régression linaire** généralisée à plusieurs variables, permettant de predire plusieurs variables cette fois
+- La **régression logistique**, permettant la classification sur une ou plusieurs classes (le TP était le codage d'un petit OCR !)
+- Les **réseaux neuronaux**, permettant de faire classification plus complexe (toujours l'OCR en TP)
+- Des **conseils pratiques** pour la mise en oeuvre des algorithmes de Machine Learning : Comment développer, débugger, structurer, tester, etc...
 - **Machine à vecteurs de support (SVMs)**, un algorithme encore plus puissant de classification
-- Apprentissage non supervisé: **clustering**, pour former des groupes d'éléments se ressemblant 
-- **Réduction dimensionnelle** pour notamment la visualisation des données
-- **Détection d'anomalies**
-- **Système de recommandations** qui est en fait le résultat de plusieurs classifications faite à grand échelle
-- Machine Learning sur des **gros volumes de données** (Big Data)
-- Présentation d'une application complète de Machine Learning (plusieurs algorithmes enchainés pour effectuer une tâche)
-
+- Le **clustering**, au comment former des groupes d'éléments se ressemblant 
+- La **réduction dimensionnelle** facilitant la visualisation des données ou permttant une "compression" des données avant d'appliquer un algorithme standard
+- La **Détection d'anomalies** pour trouver les éléments s'écartant trop d'une norme
+- Les **Système de recommandations** qui est en fait le résultat de plusieurs classifications faite à grand échelle
+- Le Machine Learning sur des **gros volumes de données** (Big Data)
+- La présentation d'une application complète de Machine Learning (plusieurs algorithmes enchainés pour effectuer une tâche)
 
 Au niveau de la plate-forme, [Coursera](https://www.coursera.org) est un site très bien fait. La recherche de cours est efficace et les sujets sont assez variés. Les cours sont présentés à travers de petites vidéos d'introduction et d'un résumé des sujets abordés.
 
