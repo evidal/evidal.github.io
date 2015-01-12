@@ -4,7 +4,7 @@
   <title><![CDATA[Le Blog d'Eric Vidal]]></title>
   <link href="http://evidal.github.io/atom.xml" rel="self"/>
   <link href="http://evidal.github.io/"/>
-  <updated>2015-01-12T22:02:09+01:00</updated>
+  <updated>2015-01-12T22:04:24+01:00</updated>
   <id>http://evidal.github.io/</id>
   <author>
     <name><![CDATA[Eric Vidal]]></name>
@@ -18,7 +18,7 @@
     <link href="http://evidal.github.io/blog/2014/12/23/mooc-machine-learning/"/>
     <updated>2014-12-23T00:00:00+01:00</updated>
     <id>http://evidal.github.io/blog/2014/12/23/mooc-machine-learning</id>
-    <content type="html"><![CDATA[<p>Ca y&#8217;est, c&#8217;est fait. Je viens de terminer le MOOC <a href="https://www.coursera.org/course/ml">Machine Learning</a> donnée par <a href="http://cs.stanford.edu/people/ang/">Andrew Ng</a> de l&#8217;université de Stanford. Je suis d&#8217;autant plus content que ce MOOC, n&#8217;est pas un petit. Il dure 10 semaines avec environ 5-7 heures de travail par semaine. J&#8217;avais déjà fait 2 tentatives sur un autre sujet, mais j&#8217;avais arrêté au premier tiers à chaque fois par manque de temps. En effet toutes les semaines il faut rendre un exercice de programmation et répondre à un ou plusieurs QCM. Si on rend ses devoirs en retard, on est pénalisé de 20%. Et pour être &ldquo;dîplomé&rdquo;, il faut obtenir au moins 80% de réussite. Bref, si vous voulez suivre un MOOC, il faut se dégager du temps et être régulier dans son travail, sous peine de perdre le fil.</p>
+    <content type="html"><![CDATA[<p>Ca y&#8217;est, c&#8217;est fait. Je viens de terminer le MOOC <a href="https://www.coursera.org/course/ml">Machine Learning</a> donnée par <a href="http://cs.stanford.edu/people/ang/">Andrew Ng</a> de l&#8217;université de Stanford. Je suis d&#8217;autant plus content que ce MOOC, est assez conséquent. Il dure 10 semaines avec environ 5-7 heures de travail par semaine. J&#8217;avais déjà fait 2 tentatives sur un autre sujet, mais j&#8217;avais arrêté au premier tiers à chaque fois par manque de temps. En effet toutes les semaines il faut rendre un exercice de programmation et répondre à un ou plusieurs QCM. Si on rend ses devoirs en retard, on est pénalisé de 20%. Et pour être &ldquo;dîplomé&rdquo;, il faut obtenir au moins 80% de réussite. Bref, si vous voulez suivre un MOOC, il faut se dégager du temps et être régulier dans son travail, sous peine de perdre le fil.</p>
 
 <p>Le cours balayait les méthodes de base du machine learning avec à chaque fois une application pratique:</p>
 
