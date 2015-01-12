@@ -4,7 +4,7 @@
   <title><![CDATA[Category: big | Le Blog d'Eric Vidal]]></title>
   <link href="http://evidal.github.io/blog/categories/big/atom.xml" rel="self"/>
   <link href="http://evidal.github.io/"/>
-  <updated>2015-01-12T22:04:24+01:00</updated>
+  <updated>2015-01-12T22:24:16+01:00</updated>
   <id>http://evidal.github.io/</id>
   <author>
     <name><![CDATA[Eric Vidal]]></name>
@@ -20,22 +20,24 @@
     <id>http://evidal.github.io/blog/2014/12/23/mooc-machine-learning</id>
     <content type="html"><![CDATA[<p>Ca y'est, c'est fait. Je viens de terminer le MOOC <a href="https://www.coursera.org/course/ml">Machine Learning</a> donnée par <a href="http://cs.stanford.edu/people/ang/">Andrew Ng</a> de l'université de Stanford. Je suis d'autant plus content que ce MOOC, est assez conséquent. Il dure 10 semaines avec environ 5-7 heures de travail par semaine. J'avais déjà fait 2 tentatives sur un autre sujet, mais j'avais arrêté au premier tiers à chaque fois par manque de temps. En effet toutes les semaines il faut rendre un exercice de programmation et répondre à un ou plusieurs QCM. Si on rend ses devoirs en retard, on est pénalisé de 20%. Et pour être &ldquo;dîplomé&rdquo;, il faut obtenir au moins 80% de réussite. Bref, si vous voulez suivre un MOOC, il faut se dégager du temps et être régulier dans son travail, sous peine de perdre le fil.</p>
 
+<p><img src="/images/posts/2014-12-17-mooc-machine-learning/coursera-logo-nobg.png" alt="HDFS Architecture" /></p>
+
 <p>Le cours balayait les méthodes de base du machine learning avec à chaque fois une application pratique:</p>
 
 <ul>
-<li><strong>régression linéaire</strong>, pour prédire une variable en fonction de plusieurs entrées</li>
-<li>rappel d'<strong>algèbre linéaire</strong>, pour revoir toutes les maths associées aux matrices et aux vecteurs</li>
-<li><strong>régression linaire</strong> avec plusieurs variables, pour predire plusieurs variables en fonction de plusieurs entrées</li>
-<li><strong>régression logistique</strong>, classification sur une ou plusieurs classes et normalisation des données (avec en application un OCR !)</li>
-<li><strong>réseau neuronaux</strong> (toujours l'OCR en application)</li>
-<li><strong>conseils pratiques</strong> pour la mise en oeuvre des algorithmes de Machine Learning : Comment développer, débugger, structurer, tester, etc&hellip;</li>
+<li>La <strong>régression linéaire</strong>, permettant de prédire une variable en fonction de plusieurs entrées</li>
+<li>Un rappel d'<strong>algèbre linéaire</strong>, pour revoir toutes les maths associées aux matrices et aux vecteurs</li>
+<li>La <strong>régression linaire</strong> généralisée à plusieurs variables, permettant de predire plusieurs variables cette fois</li>
+<li>La <strong>régression logistique</strong>, permettant la classification sur une ou plusieurs classes (le TP était le codage d'un petit OCR !)</li>
+<li>Les <strong>réseaux neuronaux</strong>, permettant de faire classification plus complexe (toujours l'OCR en TP)</li>
+<li>Des <strong>conseils pratiques</strong> pour la mise en oeuvre des algorithmes de Machine Learning : Comment développer, débugger, structurer, tester, etc&hellip;</li>
 <li><strong>Machine à vecteurs de support (SVMs)</strong>, un algorithme encore plus puissant de classification</li>
-<li>Apprentissage non supervisé: <strong>clustering</strong>, pour former des groupes d'éléments se ressemblant</li>
-<li><strong>Réduction dimensionnelle</strong> pour notamment la visualisation des données</li>
-<li><strong>Détection d'anomalies</strong></li>
-<li><strong>Système de recommandations</strong> qui est en fait le résultat de plusieurs classifications faite à grand échelle</li>
-<li>Machine Learning sur des <strong>gros volumes de données</strong> (Big Data)</li>
-<li>Présentation d'une application complète de Machine Learning (plusieurs algorithmes enchainés pour effectuer une tâche)</li>
+<li>Le <strong>clustering</strong>, au comment former des groupes d'éléments se ressemblant</li>
+<li>La <strong>réduction dimensionnelle</strong> facilitant la visualisation des données ou permttant une &ldquo;compression&rdquo; des données avant d'appliquer un algorithme standard</li>
+<li>La <strong>Détection d'anomalies</strong> pour trouver les éléments s'écartant trop d'une norme</li>
+<li>Les <strong>Système de recommandations</strong> qui est en fait le résultat de plusieurs classifications faite à grand échelle</li>
+<li>Le Machine Learning sur des <strong>gros volumes de données</strong> (Big Data)</li>
+<li>La présentation d'une application complète de Machine Learning (plusieurs algorithmes enchainés pour effectuer une tâche)</li>
 </ul>
 
 
