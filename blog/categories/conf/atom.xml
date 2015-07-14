@@ -4,7 +4,7 @@
   <title><![CDATA[Category: conf | Le Blog d'Eric Vidal]]></title>
   <link href="http://evidal.github.io/blog/categories/conf/atom.xml" rel="self"/>
   <link href="http://evidal.github.io/"/>
-  <updated>2015-01-12T23:14:04+01:00</updated>
+  <updated>2015-07-14T18:09:09+02:00</updated>
   <id>http://evidal.github.io/</id>
   <author>
     <name><![CDATA[Eric Vidal]]></name>
@@ -12,6 +12,233 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Devoxx France 2015]]></title>
+    <link href="http://evidal.github.io/blog/2015/04/08/devoxx/"/>
+    <updated>2015-04-08T00:00:00+02:00</updated>
+    <id>http://evidal.github.io/blog/2015/04/08/devoxx</id>
+    <content type="html"><![CDATA[<p>J'ai eu la grande chance cette année d'aller à <a href="http://www.devoxx.fr/">Devoxx France</a>, organisé du 8 au 10 avril au palais des congrès de Paris.
+J'ai profité de la remise en vente d'une centaine de places au dernier moment pour acheter mon precieux sésame.</p>
+
+<p><img src="/images/posts/2015-04-08-devoxx/devoxx_france.jpg" alt="Devoxx France" /></p>
+
+<!--more-->
+
+
+<h2>Premier Jour, Hands-On &amp; Université</h2>
+
+<ul>
+<li><p><a href="https://www.gitbook.com/book/ssaboum/initiation-a-spark-avec-java-8-et-scala/details">Initiation à Spark avec Java 8 et Scala</a>. Hands-on plutôt bien fait (notamment le support), c'est une bonne première approche sur le framework spark.</p></li>
+<li><p><a href="http://cfp.devoxx.fr/2015/talk/ECE-2168/Microservices_Bootcamp">Microservices Bootcamp</a>. Présentation un peu gachée par le manque de Wifi, nous n'avons eu que la parti présentation, nous n'avons pas touché à la partie <a href="https://github.com/joshlong/devoxx-france-2015-microservices-hol">code</a>. Si sur la forme j'ai été un peu déçu, cette session m'a confirmé que <a href="http://projects.spring.io/spring-boot/">Spring Boot</a> est une super plate-forme. Je vais désormais packager nos applications Spring Boot sous la forme d'un &ldquo;fat jar&rdquo;, mettre en place les &ldquo;<a href="http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#production-ready">actuators</a>&rdquo; pour avoir toutes les interfaces de monitoring. Et pourquoi pas mettre en place la partie <a href="http://www.crashub.org/">CRaSH</a>. Il faut juste que je vérifie qu'en terme de performances l'activation de ces 2 derniers éléments n'ait pas trop d'impact.</p></li>
+</ul>
+
+
+<p>En fin de journée, j'ai assisté à 3 Tools in Actions, des petites sessions de 30 minutes</p>
+
+<ul>
+<li><a href="https://speakerdeck.com/mathieuancelin/openbci-ou-comment-lire-dans-les-pensees-en-java">OpenBCI ou comment lire dans les pensées en Java</a>, une session rigolote ou <a href="https://twitter.com/TrevorReznik">Mathieu Ancelin</a> nous montrait comment capter les signaux cérébraux pour les exploiter par exemple pour piloter quelque chose. Pour cela il utilise le système <a href="http://www.openbci.com/">Open BCI</a>, le code de sa démo est disponible <a href="https://github.com/mathieuancelin/devoxx-fr-2015-openbci">ici</a>.</li>
+<li><p><a href="http://cfp.devoxx.fr/2015/talk/PPH-7984/Java_dans_le_hardware_avec_la_librairie_Libbulldog">Java dans le hardware avec la librairie Libbulldog</a> ou <a href="https://twitter.com/lhuet35">Laurent Huet</a> nous montre comment piloter les GPIO de toutes les cartes type raspberry en java</p></li>
+<li><p><a href="http://cfp.devoxx.fr/2015/talk/VRH-4567/Elasticsearch_-_De_l'importance_du_mapping">Elasticsearch &ndash; De l'importance du mapping</a> par (Jérôme Mainaud)[<a href="https://twitter.com/@jxerome">https://twitter.com/@jxerome</a>] qui montrait l'importance de controler le mapping des ses index Elastic Search.</p></li>
+</ul>
+
+
+<p>Une première journée bien remplie.</p>
+
+<h2>Deuxième jour, Conférence</h2>
+
+<h3>Les Keynotes</h3>
+
+<p>La journée commence avec des conférences :</p>
+
+<ul>
+<li><a href="http://cfp.devoxx.fr/2015/talk/JYV-2538/Keynote_de_l'equipe_Devoxx_France">Keynote équipe Devoxx</a>, ou j'ai retenu le lancement de Devoxx Morocco (avec comme sponsor Meditel)</li>
+<li><a href="http://cfp.devoxx.fr/2015/talk/DGW-1332/Le_futur_de_la_robotique_personnelle">Le futur de la robotique personnelle</a> ou <a href="https://twitter.com/rodogelin">Rodolphe Gelin</a> expliquait sa vision concernant la robotique. Il voit les robots comme des assitants de vie, un des exemples qu'il montrait était un robot intéragissant avec une personne agée. Il nous a fait remarqué également qu'un des enjeux pour le futur était la sécurité des données.</li>
+<li><a href="http://cfp.devoxx.fr/2015/talk/FWV-8601/La_problematique_du_controle_des_technologies_de_l'information">La problématique du contrôle des technologies de l'information</a> par <a href="https://twitter.com/@efiliol">Eric Filiol</a>. Ce chercheur et militaire expliquait que ce n'était plus les inventeurs qui controlaient les technologies mais des bureaucrates qui ne les comprennent pas. L'enjeu pour ces personnes est d'avoir plus de pouvoir. C'est pour cela qu'on assiste à des déclarations comme celle d'Obama ou il affirme qu'Internet est la propriété des Etats-Unis. Pour lui (Eric Filiol), les révélations Snowden ne sont pas vraiment nouvelles, en effet cet espionnage massif existe depuis des dizaines d'années. Il a ensuite parlé du projet de loi sur le renseignement. Pour lui l'important est qu'il y ait un controle indépendant du pouvoir, selon nos valeurs : nous ne voulons pas de cyber-dictature. Actuellement, l'état est à la fois juge et parti. Le problème est également le traitement automatique qui est mis en place, les algorithmes d'analyse manquent de contexte. Ils n'ont pas non plus d'esprit critique. Ils vont donc enregistrer beaucoup de faux positifs. Il faut impérativement mettre en place des controles et l'anonymisation des données, car ce pouvoir technologique dans les mains de l'état est trop sensible. La démarche du moteur de recherche <a href="https://www.qwant.com/">Qwant</a> est par exemple intéressante. Les développeurs ont une responsabilité morale sur ces sujets et doivent être les gardiens du bon usage de la technologie.</li>
+<li><a href="http://cfp.devoxx.fr/2015/talk/SAO-4732/Reading_and_Writing_in_20_Years">Reading and Writing in 20 Years</a> par <a href="https://twitter.com/@mojavelinux">Dan Allen</a>. Une réflexion sur comment nous allons pouvoir transmettre nos écrits pour les générations futures sans support physique.</li>
+</ul>
+
+
+<h3>Conférences</h3>
+
+<p>La journée continue avec les conférences :</p>
+
+<ul>
+<li><a href="http://cfp.devoxx.fr/2015/talk/SFY-1478/Web_Components,_Polymer_and_Material_Design">Web Components, Polymer and Material Design</a>, une présentation par <a href="https://twitter.com/Lostinbrittany">Horacio Gonzalez</a>. Une présention intéressante qui montre une approche défendue par Google pout étendre le HTML avec des composants. L'idée est de pouvoir développer une application WEB comme une application SWING, ou les composants sont faiblement corrélés au code métier. Une approche d'une autre manièrer par GWT mais qui a des limites sur les gros projets. Le <a href="http://webcomponents.org/">site</a> du projet décrit les principes de cette nouvelle approche. On peut créer des bibliothèques de composants et les livrer dans des polyfills. Cette approche est déjà utilisable dés maintenant dans Chrome et Opera ou dans d'autres navigateurs si on intégre la bonne librairie. La présentation est disponible <a href="http://fr.slideshare.net/LostInBrittany/devoxx-france-web-components-polymer-et-material-design">ici</a> et le code <a href="https://github.com/LostInBrittany/polymer-devoxxfr">là</a>. Une démo Topéka est visible <a href="https://polymer-topeka.appspot.com/">ici</a></li>
+<li><a href="http://cfp.devoxx.fr/2015/talk/OVZ-1861/I_don't_always_write_Reactive_applications,_but_when_I_do,_it_runs_on_Raspberry_Pi">Reactive Programming &ndash; I'dont always write reactive applications but when I do, it runs on Raspberry Pi.</a> était une super présentation par <a href="https://twitter.com/chanksleroux">Alexandre Delegue</a> et <a href="https://twitter.com/TrevorReznik">Mathieu ANCELIN</a>. Le but de leur présentation était d'illustrer les concepts des architectures reactives avec du hardware bon marché : 7 raspberry pi et un router.
+<img src="/images/posts/2015-04-08-devoxx/cluster_pi.jpg" alt="Devoxx France" />
+La pile technique était Elastic Search, Cassandra, des applications Scala/Play/Akka. Un des points clés de la présentation était la démonstration que le site Web se dégradait proprement quand certains Raspberry étaient débranchés. <a href="https://speakerdeck.com/mathieuancelin/i-dont-always-write-reactive-applications-but-when-i-do-it-runs-on-raspberry-pi-devoxx-france-2015">Présentation</a> et <a href="https://github.com/mathieuancelin/reactive-raspberry-pi-cluster">Code</a></li>
+<li><a href="http://cfp.devoxx.fr/2015/talk/UVY-4302/Refactoring_to_Functional">Refactor to Fucntionnal Programming</a> était une presentation de <a href="https://twitter.com/@hhariri">Hadi Hariri</a> sur le langage (Kotlin)[<a href="http://blog.jetbrains.com/kotlin/">http://blog.jetbrains.com/kotlin/</a>]</li>
+<li><p><a href="http://cfp.devoxx.fr/2015/talk/BTS-0374/Securiser_votre_produit,_from_scratch">Secure your product from scratch</a> par <a href="https://twitter.com/@gcouprie">Geoffroy Couprie</a>, une présentation intéréssante sur la sécurisation d'une application, voilà mes notes :</p>
+
+<pre><code>  Pas de réponses purement techniques, la sécurité se met en place globalement dans l'entreprise.
+
+  Qu'est ce qu'une attaque : des cibles à voler et Détruire
+  - un point d'entrée : exploitation d'une faille
+  - rester connecté  pour élévation de privilège ou pivot
+  - extraction des données
+
+  Ce n'est pas que notre système, c'est aussi tous les autres qui sont connectés à nous
+
+  Les cibles peuvent être à voler ou à détruire
+  - ça peut être de l'argent, sa réputation (activités), les données(entreprise, mot de passes, IP)
+  - la cible peut très bien être une autre entreprise avec laquelle on est connnecté
+  - il faut définir ce qu'il faut protéger en priorité
+
+  Un point d'entrée c'est :
+  - Une entrée physique : locaux de l'entreprise, les employés, le wifi, phishing, social engineering
+  - Une entrée soft : email, navigateur, serveurs faibles, site web, API,
+                       mot de passe volé (attention aux ad blocker)
+  Mode d'attaque :
+      - Scripts Automatiques, menace la moins risquée car il suffit de réduire son exposition et
+        d'appliquer les patchs de sécurité lorsqu'ils sont disponibles. Ce sont des bots qui scrutent
+        le réseau
+      - Attaques Ciblées, celle-ci sont plus dangereuses car il y a une réelle volonté de rentrer dans
+        le système
+      - Attaques d'Adversaire d'état, quasiment impossible de s'en protéger (les moyens sont infinis)
+        mais ce ne sont pas forcément les plus dangereurs
+      -&gt; il faut classer les menaces pour bien se protéger
+         Combien ça coute de se protéger pour telle attaques ? Qu'est ce que j'ai à y perdre ?
+         Combien de temps je peux tenir ? Combien de temps je fais pour me protéger ?
+      -&gt; de manièrer générale il vaut mieux se concentrer sur les attaques simple
+          ex :  [Row hammer](http://en.wikipedia.org/wiki/Row_hammer) super complexe, il vaut mieux
+          se protéger contre un [XSS](http://en.wikipedia.org/wiki/Cross-site_scripting)
+      /!\ c'est de plus en plus facile d'attaquer (car il a besoin d'accéder qu'une seule fois)
+
+  Architecture et Sécurité :
+      - Il faut casser le concept de la forteresse (DMZ) -&gt; c'est impossible de bloquer l'accès à tout
+        le monde
+      - Il vaut mieux utiliser le concept de la cité -&gt; isoler les choses, compartimenter
+      - Documenter les interfaces
+
+  Audit d'analyse de risque :
+      - C'est un document vivant qui va être mis à jour en permanence
+      - E-Commerce
+          Cibles : Disponibilité pendants les soldes, numéros de carte de crédit, information
+                   utilisateurs, ...
+          Sources : Réseau, utilisateur anonyme, utilisateur identifié, administrateur du site,
+                    administrateur du serveur
+          ex : XSS, si pas de HTTPS le javascript peut être injecté (spoofing), facile à faire
+               mais facile de se protéger
+      - Mettre en place un Business Continuiity Planning -&gt; qu'est ce qui se passe en cas de
+        problème
+      - Comment répondre à l'incident -&gt; CERT-FR, http://www.cert.ssi.gouv.fr/
+          - En cas de problème, il faut communiquer.
+
+  Que faire :
+      - Revue de code
+      - Corriger, au fur et à mesure
+      - Test de Penetration, mieux le Test de Penetration avec un objectif (un mode d'attaque
+        identifié)
+
+  Recette rapide :
+      - SSL obligatoire
+      - bcrypt ou scrypt pour stocker les mots de passes
+      - 2 factors authentification
+      - faire des backups (et les tester)
+      - garder une liste de mots de passe dans un coffre fort
+</code></pre></li>
+<li><p><a href="http://cfp.devoxx.fr/2015/talk/QDR-5829/Une_application_complete_en_JavaScript">Une application complète en JavaScript</a>, un hands on lab pour construire une application complète uniquement en Javascript</p></li>
+<li><p>BOF Elastic Search : avec <a href="https://twitter.com/@dadoonet">David Pilato</a> et <a href="https://twitter.com/@colinsurprenant">Colin Surprenant</a>. Une discussion sympathique sur Elastic Search et la stack ELK</p>
+
+<ul>
+<li>Version 2 change tout pour Logstash et Elastic Search</li>
+<li>plugin &ldquo;Curator&rdquo; permet de nettoyer des indexs</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Deuxième jour, Conférence</h2>
+
+<p>Dernier jour de conférence, encore un programme bien chargé, on commence par les Keynotes.</p>
+
+<h3>Les Keynotes</h3>
+
+<ul>
+<li><p><a href="http://cfp.devoxx.fr/2015/talk/CXR-8470/Un_robot_peut-il_apprendre_comme_un_enfant%3F">Un Robot peut-il apprendre comme un enfant ?</a> a été pour moi
+(et je pense pour beaucoup de monde) une keynote extraordinaire. <a href="https://twitter.com/pyoudeyer">Pierre Yves Oudeyer</a> nous a montré les sujets de recherche
+sur lesquelles il travaille. Il a conçu un algorithme d'intelligence artificielle qui apprend à apprendre. Et ce qu'il a montré m'a vraiment paru incroyable.
+Il montrait notamment une vidéo d'un robot sur un tapis d'éveil qui apprenait à interragir avec son environnement. Il travaille également sur un plate-forme
+robotique humanoïde open source : <a href="https://www.poppy-project.org/">Poppy</a>. C'est la première fois que l'idée de <a href="https://fr.wikipedia.org/wiki/Singularit%C3%A9_technologique">singularité</a> ne m'a pas paru absurde.</p></li>
+<li><p><a href="http://cfp.devoxx.fr/2015/talk/MKR-2756/The_upcoming_decentralisation_singularity._">The upcoming decentralisation singularity</a> ou <a href="https://twitter.com/stephantual">Stephan Tual</a> nous présenté son entreprise <a href="https://www.ethereum.org/">Ethereum</a>. Le principe de cette entreprise est d'utiliser massivement l'algorithme <a href="https://en.wikipedia.org/wiki/Block_chain_(database)">Block Chain</a> pour créer des applications complétement décentralisées et sécurisées. Je pense qu'on ne mesure pas encore la puissance de l'algorithme Block Chain, et que nous ne sommes qu'au début de quelque chose sur le sujet.</p></li>
+<li><p><a href="http://cfp.devoxx.fr/2015/talk/RRU-6983/The_end_of_server_management_:_hosting_have_to_become_a_commodity">The end of server management</a> par <a href="https://twitter.com/waxzce">Quentin Adam</a> le CEO de <a href="https://www.clever-cloud.com/fr/">Clever Cloud</a>. Il nous montrait sa vision pour l'hébergement pour les années à venir : héberger une application sera bientot comme utiliser de l'électricité. Comme on ne s'occupe plus de savoir comment l'électricité est produite, il pense que de la mème manière que les serveurs seront très prochainement gérer en ferme par des fournisseurs comme Clever Cloud.</p></li>
+<li><p><a href="http://cfp.devoxx.fr/2015/talk/GGJ-3318/Java;_the_next_20_years">Java : The NExt 20 years</a> par <a href="https://twitter.com/briangoetz">Brian Goetz</a> d'Oracle. J'ai pris cette keynote comme un message d'Oracle disant : &ldquo;Regardez tout ce qu'il c'est passé sur Java en 20 ans. Regardez tout ce qui est prévu pour l'avenir. On vous écoute, on supporte Java&rdquo;.</p></li>
+</ul>
+
+
+<h3>Les Conférences</h3>
+
+<ul>
+<li><p><a href="http://cfp.devoxx.fr/2015/talk/EUD-6908/De_l'API_au_protocole">De l'API au protocole</a> une nouvelle présentation par <a href="https://twitter.com/@gcouprie">Geoffroy Couprie</a> (voir plus haut). Une fois de plus c'était assez intéréssant, j'ai pris plein de notes.</p>
+
+<pre><code>  Les protocoles qu'on utilise sont vieux mais suffisamment bon (TCP 1973, IP ~1980)
+
+  Les couches OSI des génération précédentes reposent les unes sur les autres, 
+  - HTTP est utilisé parce que c'était le seul protcole qui passe les proxies
+    (pas comme les protocoles mobiles)
+  - avec les mobiles on fait du push et c'est compliqué (e.g. WEB RTC)
+  - le développement embarqué est compliqué, le développement d'une stack TCP est lourd
+  - Il y a de plus en plus de données
+
+  Pouruoi il faut changer
+  - REST est pour l'accès au resources, pas RPC
+  - JSON est "schema less“
+  - HTTP n'est pas fait pour l'asynchronisme, AJAX est un hack
+  - les errreurs HTTP sont mélangées avec les erreurs RPC
+
+  Pourquoi faire son propre protocole ?
+  - sync vs async
+  - streaming (kafka)
+  - garantie de distribution (ou pas)
+  - topologies de réseau différentes : bus (rabbit mq), star, ring, etc...
+  - embarqué (dans ce cas RSA est complexe)
+  - Prtoctol réseau différent BLE &amp; NFC)
+
+  On a besoin de décrire les protocoles (SOAP en avance sur son temps mais trop lourd, CORBA etc...)
+
+  Il faut éviter l'ambiguité, pour pouvoir tester la communication.
+
+  Comment on défini un protocol:
+  - state machine (bonjour,meta,..., aurevoir)
+      - matrice de transition (inutilisable, mais ça marche)
+      - switch case (ça casse car on peut bypasser des états)
+      - des libs peuvent aider
+      - plus simple possible (gérer les états de la bonne couche, pas ceux de la couche supérieur)
+  - encodage (schema de communication commun)
+      - parser fun to develop, hard to do it well due to grammar problem
+      - parser generaors like antlr in java
+      - parser combinators (plein de petites fonctions)$$
+      - attention au JSON et aux libs de deserialization, il faut controler le plus tot possible
+      - gérer les versions (étape de négotiation)
+      - schema repositry (avro)
+  - error management
+  - authentication and session
+  - text vs binary
+  - token separation vs length fields
+</code></pre></li>
+<li><p><a href="http://cfp.devoxx.fr/2015/talk/LYS-6441/Comprendre_l'IOT_grace_a_une_boule_..._mais_pas_que">Comprendre l'IOT grâce à une boule&hellip; mais pas que</a> par <a href="https://twitter.com/@lhuet35">Laurent HUET</a> et <a href="https://twitter.com/@k33g_org">Philippe Charrière</a> qui nous présentaient comment les devices IoT communiquaient entre elles via MQTT et d'autres protcoles.</p></li>
+</ul>
+
+
+<p>Je n'ai malheursement pas pu terminer la journée, et j'aurais bien aimé assiter à ces présentations :</p>
+
+<ul>
+<li>Java 8 async : <a href="http://fr.slideshare.net/jpaumard/api-asynchrones-en-java-8-46851752">http://fr.slideshare.net/jpaumard/api-asynchrones-en-java-8-46851752</a></li>
+<li>JHipster : <a href="http://fr.slideshare.net/julien.dubois/jhipster-devoxx-2015">http://fr.slideshare.net/julien.dubois/jhipster-devoxx-2015</a></li>
+<li>Dev Web 2015 : <a href="http://fr.slideshare.net/linsolas/devoxx-france-2015-dveloppement-web-en-2015">http://fr.slideshare.net/linsolas/devoxx-france-2015-dveloppement-web-en-2015</a></li>
+<li>Machine Learning : <a href="https://speakerdeck.com/glaforge/introduction-au-machine-learning-devoxx-2015">https://speakerdeck.com/glaforge/introduction-au-machine-learning-devoxx-2015</a></li>
+<li>Grovvy avec Style : <a href="https://speakerdeck.com/glaforge/groovy-with-style-devoxx-2015">https://speakerdeck.com/glaforge/groovy-with-style-devoxx-2015</a></li>
+<li>Jenkins tool chain : <a href="https://twitter.com/arungupta/status/586452760293326848">https://twitter.com/arungupta/status/586452760293326848</a></li>
+<li>Barbus et Barbares : <a href="http://fr.slideshare.net/francoisledroff/devoxx-2015barbusetbarbares">http://fr.slideshare.net/francoisledroff/devoxx-2015barbusetbarbares</a></li>
+<li>Nouveaux outils Web : <a href="http://fr.slideshare.net/philippeantoine/2015-nouveaux-outilsdevweb">http://fr.slideshare.net/philippeantoine/2015-nouveaux-outilsdevweb</a></li>
+<li>Web Crypto : <a href="http://fr.slideshare.net/JeanChristopheSirot/web-cryptoapi-devoxxfr2015">http://fr.slideshare.net/JeanChristopheSirot/web-cryptoapi-devoxxfr2015</a></li>
+</ul>
+
+
+<p>Trés bonne conférence, je pense y retourner l'année prochaine !</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mix-it 2014]]></title>
@@ -353,54 +580,6 @@ De notre coté nous avons sélectionner Elastic Serach pour plusierus fonctionna
 <p>Session très intéréssante et speakers disponibles pour répondre aux questions !</p>
 
 <p>Merci le Lyon JUG.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Mix-IT 2012]]></title>
-    <link href="http://evidal.github.io/blog/2012/04/28/Mix-IT-2012/"/>
-    <updated>2012-04-28T00:00:00+02:00</updated>
-    <id>http://evidal.github.io/blog/2012/04/28/Mix-IT-2012</id>
-    <content type="html"><![CDATA[<p>J'étais avant-hier à Mix-IT 2012 er j'ai passé un très bon moment. Bravo à l'organisation pour avoir fait intervenir des speakers de qualité dans un cadre agréable pour seulement 30€. J'ai participé aux keynotes de bienvenu et à 6 conférences : Social Architecture, Lean Startup, lightning talks, Development Process at Google, Phone Gap et Zero MQ. Je n'ai malheureusement pas pu assister à la keynote finale de Pamela Fox.</p>
-
-<!--more-->
-
-
-<h2>Keynotes</h2>
-
-<p>En fait il y avait 2 keynotes d'accueil, je vais passer rapidement sur la première qui n'était en fait qu'une présentation de Chrome Mobile. En revanche, la 2ème était vraiment rafraîchissante. Claire Blondel c'est présenté à nous comme une Alien : c'est une fille et elle ne fait pas d'informatique. Elle est venue nous parler de notre droit à échouer. Ca réflexion a commencé quand elle est parti quelques années à l'étranger. Ces filles sont allées à l'école la bas et ont adoré ça. Puis lorsque toute la famille est rentrée en France, ses filles ont commencé à détester l'école et à y être mauvaises. En creusant elle s’est aperçu que ces filles étaient bloquées car elles avaient peur d'échouer. Et cette peur les bloquait totalement et les empêchait de faire des progrès. Par la suite tout c'est arrangé pour ces filles mais elle a tiré de cette expérience que la peur de se tromper est un vrai frein. Après tout que peut-il nous arriver si nous échouons. Cette réflexion  4 principes que nous devrions appliquer pour ne plus avoir peur d'échouer et donc devenir finalement entreprenant dans notre vie de tous les jours et dans notre travail. J'ai beaucoup aimé sa présentation.</p>
-
-<h2>Social Architecture 101</h2>
-
-<p>J'ai enchainé avec la présentation de <a href="http://www.mix-it.fr/profile/hintjens">Pieter Hintjens</a>. Bon j'avoue, ce n'était pas tout à fait ce que j'attendais mais la présentation était intéressante. Pieter était là pour expliquer comment construire un projet et monter une équipe efficace. Je pense que cette présentation a été un peu traumatisante pour certains car Pieter a une approche un peu brutale pour un français : on vire les gens quand ils sont mauvais, on définit des règles et on s'y tient, sinon on part. De la même façon il considère que tout projet ne s'appuyant pas sur GitHub et un licence GPL est au pire une hérésie et au mieux une perte de temps et d'argent. Il nous a également donné sa vision pour construire une équipe: pas les meilleurs développeurs du monde mais des gens engagés et capables de travailler ensemble. De manière générale il voit son rôle de manager comme quelqu'un qui est là pour résoudre tous les problèmes qui pourrait ralentir l'avancement du projet. Brutal mais intéressant.</p>
-
-<h2>Lean Startup</h2>
-
-<p>Lean Startup était une session introduisant la méthode Lean, donner ses grands principes.  <a href="http://www.mix-it.fr/profile/PIA_Emmanuel">Emmanuel Levi-Valensi</a> voit la méthode Lean comme une méthode rigoureuse permettant de mêler les méthodes agiles et le Customer Development. La présentation c’est axée sur cette dernière méthode permettant de capter l’avis d’un client. L'idée du Lean c'est de fournir au plus vite un Minimal Viable Product aux clients et mesurer de manière effective si le produit rencontre sa clientèle ou non. En fonction de ces retours on peut être amené à faire des &ldquo;Pivots&rdquo; consistant à changer le produit, parfois de manière radicale.</p>
-
-<h2>Lightning Talks</h2>
-
-<p>Petite pause déjeuné (plus de sandwich à la viande!) ou j'ai pu serrer la main de beaucoup d'anciens collègues, et Lightning Talks. Honnêtement je ne m'attendais pas à ce que ce format fonctionne : 5 minutes pour parler d'un sujet, pas de questions. En fait c'était très bien, ça oblige les speakers à concentrer leur présentation sur l'essentiel. J'ai bien aimé la première intervention sur le fait d'être fier d'être développeur et l'intervention Mongo DB.</p>
-
-<h2>Development Process at Google</h2>
-
-<p>A la présentation Development Process at Google, <a href="http://www.mix-it.fr/profile/GooglePetraCross">Petra Cross</a> nous a expliqué comment les ingénieurs chez Google étaient organisés. Il y a 10000 ingénieurs chez Google. Et tous ces ingénieurs travaillent en mode Agile. Ils ne font pas de Scrum, pas de Kanban ni de Xtreme Programming, mais un peu de tout ça mélangé. Les principes d'organisation sont les suivants, une hiérarchie la plus faible possible et de l'auto-organisation. Pour être efficace, les équipes sont composées d'environ 5 ingénieurs : un Tech Lead et 4 ingénieurs. Les items à développer niveau marketing sont mis dans un tas appellé Icebox. De là, le chef de projet va sortir et prioriser les items. Les ingénieurs vont les découper en tâches et estimer ensemble la complexité (pas le temps) grâce au planning poker (on en a eu un en goodies). Si les tâches so)nt trop complexes, elles sont redécoupées. Une fois que tout est découpé, les ingénieurs prennent les tâchent par ordre d'importance et les réalisent. Pas de filtrage en fonction du niveau de chaque développeur : tout le monde doit être interchangeable. Les revues de code sont obligatoires et un département Q&amp;A valide ou non les développements. Une équipe fait une release toutes les 1 ou 2 semaines. Je ne comprends définitivement pas les boites utilisant encore le cycle en V, permettant au mieux une release tous les 6 mois.</p>
-
-<h2>PhoneGap</h2>
-
-<p>PhoneGap est un sujet qui m'intéresse particulièrement. La société dans laquelle je travaille réalise depuis peu quelques applications mobiles. Nos développements doivent être supportés par le plus grand nombre d'appareil et la fragmentation des systèmes est un vrai problème. <a href="http://www.pamelafox.org/">Pamela Fox</a>, une ancienne employée de Google qui a créé un système nommé &ldquo;<a href="http://www.eatdifferent.com">eat different</a>&rdquo;. Vu que c'est une application qu'on utilise pendant les repas, il fallait une application mobile. Pamela a exploré plusieurs solutions. L'approche native a pour avantage d'utiliser les performances du téléphone ainsi que tous les appareils qui lui sont liés (caméra, Bluetooth, etc.). Cette approche permet d'être au plus près des API natives et permet de profiter des qualités de l'OS. Le gros problème de cette approche c'est que chaque OS mobile a ça propre plate-forme. iOS utilise de l'Objective C dans l'ide X-IDE, disponible uniquement sous MAC. Android utilise du Java (Pamela a un problème avec Java, c'est le langage que son père utilisait &ndash;> je suis vieux) avec l'IDE Eclipse. Idem pour tous les autres Bada, RIM, Windows, WebOS.</p>
-
-<p>Une autre approche est d'utiliser un langage qui va, à partir d'une même source, générer des applications natives pour tous les systèmes. Cette approche permet de conserver la performance mais empêche une utilisation poussée des API natives.</p>
-
-<p>La dernière approche est de développer son application en utilisant un bridge qui va jouer le rôle d'interface avec l'OS hôte. C'est à cette dernière catégorie que Phone Gap appartient. Avec Phone Gap on développe son application en HTML 5, CSS et Javascript. Cela permet d'utiliser les librairies Javascript habituelles pour réaliser une application tout en ayant accès via le bridge aux capacités du téléphone. Au moment du packaging, Phone Gap intègre les sources HTML, Javascript et CSS et le bridge au sein d'une application native (un navigateur sur lequel on ne peut pas naviguer en fait). Pour avoir une interface  graphique adapté au mobiles, de nombreuses librairies CSS et Javascript existes JQuery Mobile, Zepto, Twitter Bootstrap (qu'elle utilise), etc&hellip;</p>
-
-<p>Bonne présentation, je pense que je vais essayer dans peu de temps Phone Gap.</p>
-
-<h2>ZeroMQ, 0MQ</h2>
-
-<p>Dernière présentation pour moi : ZeroMQ avec le retour de la vengeance de Pieter Hintjens. Là encore, c'était une présentation un petit peu déroutante. Il a expliqué ce qu'on pouvait faire avec ZeroMQ mais sans vraiment présenter d'applications, ce qui a perdu je pense une partie de l'auditoire. Etant dans le monde Télécom, et donc sensible aux questions de messaging, j'ai pu y voir un interet. Zero MQ est donc pour Pieter l'aboutissement de que l'on peut faire dans le monde du messaging. Un système très light écrit en C permettant de supporter des millions de messages secondes. Il est particulièrement adapté aux applications financières traitant un grand nombre de données en temps réel ou aux applications télécoms donc. J'ai demandé quel était la différence avec AMQP et Zero MQ et&hellip; il m'a demandé d'allé voir sur Internet. Ce que j'ai fait. Ce que je comprends c'est que si AMQP a une approche classique centralisée, ZeroMQ permet d'avoir une approche décentralisée pour la distribution des messages. Bon ça reste un peu obscure, je pense que pour comprendre il va falloir y mettre les mains dedans.</p>
-
-<p>Très bonne journée, ambiance détendue, j'y retournerai l'année prochaine.</p>
 ]]></content>
   </entry>
   
